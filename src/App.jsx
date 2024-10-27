@@ -1,9 +1,12 @@
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+
 import "./App.css";
+import Homepage from "./pages/homepage/_page";
 
 function App() {
   return (
     <>
-      <h1 className="text-3xl font-bold underline">React + Vite Scaffold</h1>
+      <Homepage />
     </>
   );
 }
