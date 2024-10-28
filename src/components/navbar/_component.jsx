@@ -1,5 +1,5 @@
 import React from "react";
-import { links, rightLinks } from "../../assets/core/data";
+import { links, navLinks, rightLinks } from "../../assets/core/data";
 import logo from "../../assets/images/svgs/logo.svg";
 
 function Navbar() {
@@ -12,7 +12,7 @@ function Navbar() {
               <img src={logo} className="object-cover w-[4.25rem]" />
             </div>
             <div>
-              {links.map((ll, i) => (
+              {navLinks.map((ll, i) => (
                 <a className="mr-3" href={ll.href} key={i}>
                   {ll.label}
                 </a>

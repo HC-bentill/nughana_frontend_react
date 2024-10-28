@@ -1,16 +1,19 @@
 import React from "react";
 import ready from "../../assets/images/ready.png";
 import { countryCode } from "../../assets/core/data";
-import Select from "react-select/base";
+import Select from "react-select";
 import Button from "../../components/button/_component";
 
 function ReadyToAssist() {
-  const [selectCode, setSelectedCode] = React.useState("");
+  const [selectCode, setSelectedCode] = React.useState(null);
 
   const handleCountryCodeChange = (option) => {
     setSelectedCode(option);
   };
   const handleSubmit = () => {};
+
+  const handleMenuOpen = () => {};
+
   return (
     <>
       <section className="bg-white">
@@ -46,10 +49,11 @@ function ReadyToAssist() {
             <div className="flex items-center">
               <Select
                 className="w-full"
-                value={selectCode}
+                defaultValue={selectCode}
                 onChange={handleCountryCodeChange}
                 options={countryCode}
-                placeholder="Calculation"
+                onMenuOpen={handleMenuOpen}
+                placeholder="+233"
               />
               <input
                 required

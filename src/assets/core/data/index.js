@@ -26,6 +26,25 @@ export const links = [
   },
 ];
 
+export const navLinks = [
+  {
+    label: "Community",
+    href: "/community",
+  },
+  {
+    label: "Exports",
+    href: "/exports",
+  },
+  {
+    label: "Diaspora",
+    href: "/diaspora",
+  },
+  {
+    label: "News & Trends",
+    href: "/news-and-trends",
+  },
+];
+
 export const rightLinks = [
   {
     label: "Sign in",
