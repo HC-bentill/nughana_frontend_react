@@ -6,6 +6,21 @@ import stay5 from "../../../assets/images/stay-conn5.jpeg";
 import whats1 from "../../../assets/icons/whats1.svg";
 import whats2 from "../../../assets/icons/whats2.png";
 import whats3 from "../../../assets/icons/whats3.png";
+import HomeActive from "../../icons/Home_active.png";
+import HomeInactive from "../../icons/Home_inactive.png";
+import ConnectionsActive from "../../icons/Followers_active.png";
+import ConnectionsInActive from "../../icons/Followers_inactive.png";
+import CommunitiesActive from "../../icons/Community_active.png";
+import CommunitiesInActive from "../../icons/Community_inactive.png";
+import MarketPlaceActive from "../../icons/Marketplace_active.png";
+import MarketPlaceInActive from "../../icons/Marketplace_inactive.png";
+import EventsActive from "../../icons/Events_active.png";
+import EventsInActive from "../../icons/Events_inactive.png";
+import ResourceCenterActive from "../../icons/Resource_center_active.png";
+import ResourceCenterInActive from "../../icons/Resource_center_inactive.png";
+import BusinessDirectoryActive from "../../icons/Business_Directory_active.png";
+import BusinessDirectoryInActive from "../../icons/Business_Directory_inactive.png";
+
 
 export const links = [
   {
@@ -129,5 +144,50 @@ export const whatCanDo = [
       "Access to News we help victims of natural disasters and the poor to help them to be happier with us",
     icon: whats3,
     iconBgColor: "bg-[#E2E8F4]",
+  },
+];
+
+export const sidemenuIcons = [
+  // {
+  //   route: "",
+  //   activeIcon: HomeActive,
+  //   inactiveIcon: HomeInactive,
+  //   label: "Home",
+  // },
+  {
+    route: "/connections",
+    activeIcon: ConnectionsActive,
+    inactiveIcon: ConnectionsInActive,
+    label: "Connections",
+  },
+  {
+    route: "/communites",
+    activeIcon: CommunitiesActive,
+    inactiveIcon: CommunitiesInActive,
+    label: "Communites",
+  },
+  {
+    route: "/marketplace",
+    activeIcon: MarketPlaceActive,
+    inactiveIcon: MarketPlaceInActive,
+    label: "Marketplace",
+  },
+  {
+    route: "/events",
+    activeIcon: EventsActive,
+    inactiveIcon: EventsInActive,
+    label: "Events",
+  },
+  {
+    route: "/resource-center",
+    activeIcon: ResourceCenterActive,
+    inactiveIcon: ResourceCenterInActive,
+    label: "Resource Center",
+  },
+  {
+    route: "/business-directory",
+    activeIcon: BusinessDirectoryActive,
+    inactiveIcon: BusinessDirectoryInActive,
+    label: "Business Directory",
   },
 ];
