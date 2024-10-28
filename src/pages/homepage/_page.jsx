@@ -1,12 +1,14 @@
 import React from "react";
 import banner from "../../assets/images/banner.png";
 import logo from "../../assets/images/svgs/logo.svg";
-import { leftLinks, links, pilesItems } from "../../assets/core/data";
+import { links, pilesItems, rightLinks } from "../../assets/core/data";
 import Piles from "../../components/piles/_component";
 import StayConnected from "./stay_connected";
 import Welcome from "./welcome";
 import WhatCanDo from "./what_can_do";
 import CatchEveryEvent from "./catch_every_event";
+import News from "./news";
+import ReadyToAssist from "./ready_to_assist";
 
 function Homepage() {
   return (
@@ -29,7 +31,7 @@ function Homepage() {
                 ))}
               </div>
               <div className="">
-                {leftLinks.map((ll, i) => (
+                {rightLinks.map((ll, i) => (
                   <a className={`mr-3 ${ll.className}`} href={ll.href} key={i}>
                     {ll.label}
                   </a>
@@ -51,11 +53,14 @@ function Homepage() {
             </div>
           </div>
         </div>
-
         <StayConnected />
         <Welcome />
         <WhatCanDo />
-        <CatchEveryEvent />
+        <div className="bg-[#EEF2F5]">
+          <CatchEveryEvent />
+          <News />
+        </div>
+        <ReadyToAssist />
       </section>
     </>
   );

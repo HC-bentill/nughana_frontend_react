@@ -6,6 +6,10 @@ import stay5 from "../../../assets/images/stay-conn5.jpeg";
 import whats1 from "../../../assets/icons/whats1.svg";
 import whats2 from "../../../assets/icons/whats2.png";
 import whats3 from "../../../assets/icons/whats3.png";
+import news1 from "../../../assets/images/news1.png";
+import news2 from "../../../assets/images/news2.png";
+import news3 from "../../../assets/images/news3.png";
+import news4 from "../../../assets/images/news4.png";
 
 export const links = [
   {
@@ -22,10 +26,10 @@ export const links = [
   },
 ];
 
-export const leftLinks = [
+export const rightLinks = [
   {
     label: "Sign in",
-    href: "/sign-in",
+    href: "/login",
   },
   {
     label: "Sign up",
@@ -130,4 +134,37 @@ export const whatCanDo = [
     icon: whats3,
     iconBgColor: "bg-[#E2E8F4]",
   },
+];
+
+export const newsItems = [
+  {
+    img: news1,
+    date: "11/09/2022",
+    title: "GH Healthcare offers schools guidance on monkeypox",
+    desc: "According to GHC, schools do not  need to take extra precaution on  monkey pox spread nationwide.",
+  },
+  {
+    img: news2,
+    date: "11/09/2022",
+    title: "COVID-19 cases to subside by 30% in 2023",
+    desc: "A stunning turn in everyday healthy living sees a drastic decline in cases. Health experts speculate that by mid year 2023, COVID will become obsolete.",
+  },
+  {
+    img: news3,
+    date: "11/09/2022",
+    title: "How can we increase our life span?",
+    desc: "A dose of health recipes from our experts to increase life span of individuals by at most 15 years",
+  },
+  {
+    img: news4,
+    date: "11/09/2022",
+    title: "MHC yet again is organising GH Myhealth Marathon 2023",
+    desc: "After the previous years thriller, MyhealthCop has brought out intentions of another marathon in the upcoming year.",
+  },
+];
+
+export const countryCode = [
+  { value: "+233", label: "+233" },
+  { value: "+234", label: "+234" },
+  { value: "+235", label: "+235" },
 ];

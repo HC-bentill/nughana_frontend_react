@@ -8,7 +8,7 @@ function WhatCanDo() {
   return (
     <>
       <div className="bg-[#EEF2F5] flex justify-center">
-        <div className="">
+        <div>
           <h3 className="mb-3 text-3xl font-semibold text-center ">
             What you can do
           </h3>
