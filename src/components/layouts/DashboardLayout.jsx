@@ -39,8 +39,10 @@ export default function DashboardLayout() {
               />
             </div>
             <div className="flex items-center">
-              <div className="bg-red-400 rounded-full px-[10px] py-[2px] cursor-pointer">
-                d
+              <div className="bg-red-400 rounded-full px-[1.5px] py-[1.5px] cursor-pointer">
+                <div className="bg-transparent border-[2px] border-white rounded-full px-[10px] py-[2px] cursor-pointer">
+                  d
+                </div>
               </div>
               <img
                 src={Dropdown}
