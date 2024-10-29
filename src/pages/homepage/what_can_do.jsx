@@ -5,7 +5,7 @@ import Button from "../../components/button/_component";
 import ad from "../../assets/icons/ad.png";
 
 function WhatCanDo() {
-  return (
+  return ( 
     <>
       <div className="bg-[#EEF2F5] flex justify-center">
         <div className="">
