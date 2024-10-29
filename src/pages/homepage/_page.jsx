@@ -1,7 +1,7 @@
 import React from "react";
 import banner from "../../assets/images/banner.png";
 import logo from "../../assets/images/svgs/logo.svg";
-import { links, pilesItems, rightLinks } from "../../assets/core/data";
+import { imgs, links, pilesItems, rightLinks } from "../../assets/core/data";
 import Piles from "../../components/piles/_component";
 import StayConnected from "./stay_connected";
 import Welcome from "./welcome";
@@ -9,6 +9,7 @@ import WhatCanDo from "./what_can_do";
 import CatchEveryEvent from "./catch_every_event";
 import News from "./news";
 import ReadyToAssist from "./ready_to_assist";
+import Footer from "./footer";
 
 function Homepage() {
   return (
@@ -19,9 +20,9 @@ function Homepage() {
             <img className="object-fill w-full h-screen" src={banner} />
           </div>
           <div className="absolute top-0 w-full">
-            <div className="flex items-center justify-between text-sm text-white ">
+            <div className="flex items-center justify-between px-56 text-sm text-white">
               <div>
-                <img src={logo} className="object-cover w-[4.25rem]" />
+                <img src={logo} className="object-cover w-[3.25rem]" />
               </div>
               <div>
                 {links.map((ll, i) => (
@@ -38,14 +39,19 @@ function Homepage() {
                 ))}
               </div>
             </div>
-            <div className="flex flex-col items-center justify-center w-1/2 p-24 border-[1px] border-none rounded-2xl m-auto backdrop-blur-lg">
-              <div className="mb-8 text-4xl text-center text-white">
+            <div className="flex mt-24 flex-col items-center justify-center mx-56 p-24 border-[1px] border-none rounded-2xl m-auto backdrop-blur-lg">
+              <div className="mb-8 text-5xl text-center text-white">
                 <h3 className="custom-underline">Connecting you to</h3>
+                <img
+                  className="flex w-1/2 m-auto"
+                  src={imgs.underline}
+                  alt=""
+                />
                 <h3>Africa</h3>
               </div>
               <div className="grid grid-cols-3 gap-3">
                 {pilesItems.map((pl, i) => (
-                  <div className={i > 4 && pl.span} key={i}>
+                  <div className={i >= 3 ? "w-full" : ""} key={i}>
                     <Piles name={pl.label} />
                   </div>
                 ))}
@@ -61,6 +67,7 @@ function Homepage() {
           <News />
         </div>
         <ReadyToAssist />
+        <Footer />
       </section>
     </>
   );

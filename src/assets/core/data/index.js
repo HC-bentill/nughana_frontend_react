@@ -10,6 +10,13 @@ import news1 from "../../../assets/images/news1.png";
 import news2 from "../../../assets/images/news2.png";
 import news3 from "../../../assets/images/news3.png";
 import news4 from "../../../assets/images/news4.png";
+import call from "../../../assets/icons/call.png";
+import snap from "../../../assets/icons/snap.png";
+import fb from "../../../assets/icons/fb.png";
+import insta from "../../../assets/icons/insta.png";
+import whatsapp from "../../../assets/icons/whatsapp.png";
+import mail from "../../../assets/icons/mail.png";
+import underline from "../../../assets/images/underline.png";
 
 export const links = [
   {
@@ -26,6 +33,34 @@ export const links = [
   },
 ];
 
+export const imgs = { underline: underline };
+
+export const footerIcons = [
+  {
+    icon: call,
+    href: "#",
+  },
+  {
+    icon: snap,
+    href: "#",
+  },
+  {
+    icon: fb,
+    href: "#",
+  },
+  {
+    icon: insta,
+    href: "#",
+  },
+  {
+    icon: whatsapp,
+    href: "#",
+  },
+  {
+    icon: mail,
+    href: "#",
+  },
+];
 export const navLinks = [
   {
     label: "Community",

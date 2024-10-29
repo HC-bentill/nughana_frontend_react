@@ -12,8 +12,6 @@ function ReadyToAssist() {
   };
   const handleSubmit = () => {};
 
-  const handleMenuOpen = () => {};
-
   return (
     <>
       <section className="bg-white">
@@ -46,25 +44,27 @@ function ReadyToAssist() {
                 className="my-3 block w-full mr-2 p-2.5 text-sm text-gray-900 border border-gray-300 rounded-lg bg-white outline-0"
               />
             </div>
+            <label>Phone number</label>
             <div className="flex items-center">
               <Select
-                className="w-full"
+                className="w-1/3 mr-3"
                 defaultValue={selectCode}
                 onChange={handleCountryCodeChange}
                 options={countryCode}
-                onMenuOpen={handleMenuOpen}
                 placeholder="+233"
               />
               <input
                 required
                 type="number"
                 name="number"
-                className="my-3 block w-full mr-2 p-2.5 text-sm text-gray-900 border border-gray-300 rounded-lg bg-white outline-0"
+                className="my-3 block w-full mr-2 p-2.5 spin-button-none text-sm text-gray-900 border border-gray-300 rounded-lg bg-white outline-0"
               />
             </div>
+            <label>Message</label>
             <textarea
               rows={12}
               name="message"
+              placeholder="Message"
               className="my-3 block w-full mr-2 p-2.5 text-sm text-gray-900 border border-gray-300 rounded-lg bg-white outline-0"
             />
             <Button bgColor="bg-black" name="Send message" />
