@@ -6,10 +6,10 @@ import ad from "../../assets/icons/ad.png";
 import Underline from "../../components/underline/_component";
 
 function WhatCanDo() {
-  return (
+  return ( 
     <>
-      <div className="bg-[#EEF2F5] flex justify-center pt-32">
-        <div>
+      <div className="bg-[#EEF2F5] flex justify-center">
+        <div className=""> 
           <h3 className="mb-3 text-3xl font-semibold text-center ">
             What you can do
           </h3>
