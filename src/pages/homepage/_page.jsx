@@ -10,6 +10,7 @@ import CatchEveryEvent from "./catch_every_event";
 import News from "./news";
 import ReadyToAssist from "./ready_to_assist";
 import Footer from "./footer";
+import Underline from "../../components/underline/_component";
 
 function Homepage() {
   return (
@@ -42,17 +43,25 @@ function Homepage() {
             <div className="flex mt-24 flex-col items-center justify-center mx-56 p-24 border-[1px] border-none rounded-2xl m-auto backdrop-blur-lg">
               <div className="mb-8 text-5xl text-center text-white">
                 <h3 className="custom-underline">Connecting you to</h3>
-                <img
-                  className="flex w-1/2 m-auto"
-                  src={imgs.underline}
-                  alt=""
-                />
+                <Underline className="flex w-1/2 m-auto" />
+
                 <h3>Africa</h3>
               </div>
               <div className="grid grid-cols-3 gap-3">
                 {pilesItems.map((pl, i) => (
-                  <div className={i >= 3 ? "w-full" : ""} key={i}>
-                    <Piles name={pl.label} />
+                  <div className={i >= 3 ? "grid" : ""}>
+                    <div
+                      className={
+                        i >= 3 ? "grid col-end-7 col-start-4 col-span-1" : ""
+                      }
+                    >
+                      <div
+                        className={i >= 3 ? "grid-cols-subgrid gap-4" : ""}
+                        key={i}
+                      >
+                        <Piles name={pl.label} />
+                      </div>
+                    </div>
                   </div>
                 ))}
               </div>

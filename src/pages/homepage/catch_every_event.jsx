@@ -4,10 +4,9 @@ import food from "../../assets/images/food.png";
 import "swiper/css";
 import "swiper/css";
 import "swiper/css/pagination";
-
-// import required modules
 import { Pagination } from "swiper/modules";
 import Button from "../../components/button/_component";
+import Underline from "../../components/underline/_component";
 
 function CatchEveryEvent() {
   return (
@@ -17,13 +16,14 @@ function CatchEveryEvent() {
           <div className="flex justify-center">
             <div>
               <h3 className="text-4xl">Catch every event in town</h3>
+              <Underline className="w-56 m-auto mb-4" />
               <small>
                 Never miss an event. NuGhana connect is where all events in
                 Ghana converge.
               </small>
             </div>
           </div>
-          <div>
+          <div className="mt-7">
             <Swiper
               pagination={{
                 dynamicBullets: true,
@@ -32,29 +32,25 @@ function CatchEveryEvent() {
               className="mySwiper"
             >
               <SwiperSlide>
-                <div>
-                  <div className="flex justify-center">
-                    <div className="flex flex-col px-20 w-9/12 border-[1px] border-[##FFFFFF] rounded-xl">
-                      <div className="flex items-center justify-between">
-                        <div className="text-4xl">
-                          <h3>All things Africa</h3> <h3>Event</h3>
-                          <div>
-                            <span className="text-[#E9B328]">
-                              2nd November.
-                            </span>{" "}
-                            <div>8pm sharp</div>
-                          </div>
-                        </div>
-                        <div className="">
-                          <img className="w-[30rem]" src={food} alt="food" />
+                <div className="flex justify-center">
+                  <div className="p-20 flex flex-col  w-9/12 border-[1px] border-[##FFFFFF] rounded-xl">
+                    <div className="relative flex items-center">
+                      <div className="text-4xl">
+                        <h3>All things Africa</h3> <h3>Event</h3>
+                        <div>
+                          <span className="text-[#E9B328]">2nd November.</span>{" "}
+                          <div>8pm sharp</div>
                         </div>
                       </div>
-
-                      <Button
-                        bgColor="bg-black border-[1px] border-[#FFFFFF] w-1/4 m-auto"
-                        name="Subscribe to this event"
-                      />
+                      <div className="absolute -bottom-16 -right-40">
+                        <img className="w-[30rem]" src={food} alt="food" />
+                      </div>
                     </div>
+
+                    <Button
+                      bgColor="bg-black border-[1px] mt-24 border-[#FFFFFF] w-1/4 m-auto"
+                      name="Subscribe to this event"
+                    />
                   </div>
                 </div>
               </SwiperSlide>

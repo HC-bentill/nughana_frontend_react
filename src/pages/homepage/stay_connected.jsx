@@ -1,6 +1,7 @@
 import React from "react";
-import { stayConn } from "../../assets/core/data";
+import { imgs, stayConn } from "../../assets/core/data";
 import StayConnectedCard from "../../components/stay_conn_card/_component";
+import Underline from "../../components/underline/_component";
 
 function StayConnected() {
   return (
@@ -8,11 +9,15 @@ function StayConnected() {
       <section>
         <div className="flex justify-center">
           <div className="bg-[#101010] w-full text-white text-center p-20">
-            <h3 className="text-3xl">
-              Stay <span>connected</span> with the African
-            </h3>
-            <h3 className="text-3xl">culture</h3>
-            <small>
+            <div className="flex justify-center">
+              <h3 className="text-5xl">Stay connected with the african</h3>
+            </div>
+            <div className="flex justify-center mr-60">
+              <Underline className="w-56" />
+            </div>
+
+            <h3 className="text-5xl mb-7">culture</h3>
+            <small className="">
               Here at NuGhana, we connect yhou to everything Ghana regardless of
               your location
             </small>

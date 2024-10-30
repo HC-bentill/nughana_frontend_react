@@ -3,7 +3,7 @@ import React from "react";
 function StayConnectedCard({ img, imgW, imgH, zIndex, title, desc }) {
   return (
     <>
-      <div className="relative -ml-3">
+      <div className="relative py-3 -ml-3">
         <img
           className={`object-cover ${imgW} ${imgH} ${zIndex} rounded-xl`}
           src={img}

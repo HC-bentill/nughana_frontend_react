@@ -87,7 +87,7 @@ export const rightLinks = [
   },
   {
     label: "Sign up",
-    href: "/sign-up",
+    href: "/signup",
     className: "border-[1px] rounded-full  px-6 py-2",
   },
 ];
@@ -150,7 +150,7 @@ export const stayConn = [
     href: "#",
     img: stay4,
     desc: "Description",
-    zIndex: "z-20",
+    zIndex: " z-40",
     imgW: "w-44",
     imgH: "h-44",
   },
@@ -159,7 +159,7 @@ export const stayConn = [
     href: "#",
     img: stay5,
     desc: "Description",
-    zIndex: "z-10",
+    zIndex: " z-30",
     imgW: "w-32",
     imgH: "h-32",
   },

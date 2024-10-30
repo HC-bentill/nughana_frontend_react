@@ -3,15 +3,17 @@ import { whatCanDo } from "../../assets/core/data";
 import Card from "../../components/card/_component";
 import Button from "../../components/button/_component";
 import ad from "../../assets/icons/ad.png";
+import Underline from "../../components/underline/_component";
 
 function WhatCanDo() {
   return (
     <>
-      <div className="bg-[#EEF2F5] flex justify-center">
+      <div className="bg-[#EEF2F5] flex justify-center pt-32">
         <div>
           <h3 className="mb-3 text-3xl font-semibold text-center ">
             What you can do
           </h3>
+          <Underline className="flex justify-center m-auto w-44 mb-7" />
           <div className="flex justify-center">
             {whatCanDo.map((wc, i) => (
               <Card
@@ -24,15 +26,16 @@ function WhatCanDo() {
               />
             ))}
           </div>
-          <div className="mt-12 text-center">
+          <div className="text-center my-44">
             <h3 className="mb-3 text-3xl font-semibold text-center ">
               NuGhana business
             </h3>
+            <Underline className="m-auto mb-2 w-44" />
             <small>
               Do you have a business you want to connect with Ghana?
             </small>
 
-            <div className="grid grid-cols-2 p-20 bg-white rounded-xl">
+            <div className="grid grid-cols-2 p-20 mt-8 bg-white rounded-xl">
               <div className="text-left">
                 <div className="text-3xl mb-7">
                   <h3 className="text-3xl">Business is easy</h3>
