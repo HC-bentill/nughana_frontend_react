@@ -1,7 +1,7 @@
 import React from "react";
 import banner from "../../assets/images/banner.png";
 import logo from "../../assets/images/svgs/logo.svg";
-import { imgs, links, pilesItems, rightLinks } from "../../assets/core/data";
+import { imgs, links, pilesItems, pilesItems2, rightLinks } from "../../assets/core/data";
 import Piles from "../../components/piles/_component";
 import StayConnected from "./stay_connected";
 import Welcome from "./welcome";
@@ -11,6 +11,8 @@ import News from "./news";
 import ReadyToAssist from "./ready_to_assist";
 import Footer from "./footer";
 import Underline from "../../components/underline/_component";
+import bullet from "../../assets/images/svgs/bullet.svg";
+import Testimonials from "./testimonials";
 
 function Homepage() {
   return (
@@ -21,13 +23,13 @@ function Homepage() {
             <img className="object-fill w-full h-screen" src={banner} />
           </div>
           <div className="absolute top-0 w-full">
-            <div className="flex items-center justify-between px-56 text-sm text-white">
+            <div className="flex items-center justify-between md:max-w-[1100px] pt-5 mx-auto text-sm text-white">
               <div>
-                <img src={logo} className="object-cover w-[3.25rem]" />
+                <img src={logo} className="object-contain w-[3.55rem]" />
               </div>
               <div>
                 {links.map((ll, i) => (
-                  <a className="mr-3" href={ll.href} key={i}>
+                  <a className="mr-5" href={ll.href} key={i}>
                     {ll.label}
                   </a>
                 ))}
@@ -40,26 +42,32 @@ function Homepage() {
                 ))}
               </div>
             </div>
-            <div className="flex mt-24 flex-col items-center justify-center mx-56 p-24 border-[1px] border-none rounded-2xl m-auto backdrop-blur-lg">
+            <div className="md:max-w-[1100px] mt-24 p-[150px] border-[1px] border-none rounded-[32px] m-auto backdrop-blur-sm bg-[#ece9e914]">
               <div className="mb-8 text-5xl text-center text-white">
                 <h3 className="custom-underline">Connecting you to</h3>
-                <Underline className="flex w-1/2 m-auto" />
+                <Underline className="flex w-[230px] m-auto" />
 
                 <h3>Africa</h3>
               </div>
-              <div className="grid grid-cols-3 gap-3">
+              <div className="flex items-center justify-center gap-3">
                 {pilesItems.map((pl, i) => (
-                  <div className={i >= 3 ? "grid" : ""}>
-                    <div
-                      className={
-                        i >= 3 ? "grid col-end-7 col-start-4 col-span-1" : ""
-                      }
-                    >
-                      <div
-                        className={i >= 3 ? "grid-cols-subgrid gap-4" : ""}
-                        key={i}
-                      >
-                        <Piles name={pl.label} />
+                  <div>
+                    <div className="px-[12px] py-[6px] bg-white rounded-full opacity-60">
+                      <div className="flex text-[#2E2E2E] items-center justify-center text-[13px] list-disc">
+                        <img src={bullet} className="pr-[5px]" alt="bullet" />
+                        {pl.label}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="flex items-center justify-center gap-3 pt-3">
+                {pilesItems2.map((pl, i) => (
+                  <div>
+                    <div className="px-[13px] py-[6px] bg-white rounded-full opacity-60">
+                      <div className="flex text-[#2E2E2E] items-center justify-center text-[13px] list-disc">
+                        <img src={bullet} className="pr-[5px]" alt="bullet" />
+                        {pl.label}
                       </div>
                     </div>
                   </div>
@@ -73,7 +81,8 @@ function Homepage() {
         <WhatCanDo />
         <div className="bg-[#EEF2F5]">
           <CatchEveryEvent />
-          <News />
+          <Testimonials />
+          {/* <News /> */}
         </div>
         <ReadyToAssist />
         <Footer />
