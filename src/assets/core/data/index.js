@@ -17,6 +17,21 @@ import insta from "../../../assets/icons/insta.png";
 import whatsapp from "../../../assets/icons/whatsapp.png";
 import mail from "../../../assets/icons/mail.png";
 import underline from "../../../assets/images/underline.png";
+import HomeActive from "../../icons/Home_active.png";
+import HomeInactive from "../../icons/Home_inactive.png";
+import ConnectionsActive from "../../icons/Followers_active.png";
+import ConnectionsInActive from "../../icons/Followers_inactive.png";
+import CommunitiesActive from "../../icons/Community_active.png";
+import CommunitiesInActive from "../../icons/Community_inactive.png";
+import MarketPlaceActive from "../../icons/Marketplace_active.png";
+import MarketPlaceInActive from "../../icons/Marketplace_inactive.png";
+import EventsActive from "../../icons/Events_active.png";
+import EventsInActive from "../../icons/Events_inactive.png";
+import ResourceCenterActive from "../../icons/Resource_center_active.png";
+import ResourceCenterInActive from "../../icons/Resource_center_inactive.png";
+import BusinessDirectoryActive from "../../icons/Business_Directory_active.png";
+import BusinessDirectoryInActive from "../../icons/Business_Directory_inactive.png";
+
 
 export const links = [
   {
@@ -221,4 +236,48 @@ export const countryCode = [
   { value: "+233", label: "+233" },
   { value: "+234", label: "+234" },
   { value: "+235", label: "+235" },
+];
+export const sidemenuIcons = [
+  // {
+  //   route: "",
+  //   activeIcon: HomeActive,
+  //   inactiveIcon: HomeInactive,
+  //   label: "Home",
+  // },
+  {
+    route: "/connections",
+    activeIcon: ConnectionsActive,
+    inactiveIcon: ConnectionsInActive,
+    label: "Connections",
+  },
+  {
+    route: "/communites",
+    activeIcon: CommunitiesActive,
+    inactiveIcon: CommunitiesInActive,
+    label: "Communites",
+  },
+  {
+    route: "/marketplace",
+    activeIcon: MarketPlaceActive,
+    inactiveIcon: MarketPlaceInActive,
+    label: "Marketplace",
+  },
+  {
+    route: "/events",
+    activeIcon: EventsActive,
+    inactiveIcon: EventsInActive,
+    label: "Events",
+  },
+  {
+    route: "/resource-center",
+    activeIcon: ResourceCenterActive,
+    inactiveIcon: ResourceCenterInActive,
+    label: "Resource Center",
+  },
+  {
+    route: "/business-directory",
+    activeIcon: BusinessDirectoryActive,
+    inactiveIcon: BusinessDirectoryInActive,
+    label: "Business Directory",
+  },
 ];
