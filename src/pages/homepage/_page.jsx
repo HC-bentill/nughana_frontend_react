@@ -23,7 +23,7 @@ function Homepage() {
             <img className="object-fill w-full h-screen" src={banner} />
           </div>
           <div className="absolute top-0 w-full">
-            <div className="flex items-center justify-between md:max-w-[1100px] pt-5 mx-auto text-sm text-white">
+            <div className="flex items-center justify-between md:max-w-[1100px] pt-5 mx-auto text-[13px] text-white">
               <div>
                 <img src={logo} className="object-contain w-[3.55rem]" />
               </div>

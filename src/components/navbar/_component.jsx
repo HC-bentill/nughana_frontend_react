@@ -8,7 +8,7 @@ function Navbar() {
   return (
     <>
       <div className="absolute top-0 z-30 w-full px-56">
-        <div className="flex items-center justify-between text-sm text-white ">
+        <div className="flex items-center justify-between md:max-w-[1100px] pt-5 mx-auto text-[13px] text-white">
           <div className="cursor-pointer" onClick={() => navigate("/")}>
             <img src={logo} className="object-cover w-[3.25rem]" />
           </div>
