@@ -23,7 +23,7 @@ function News() {
           ))}
         </div>
         <div className="flex justify-center py-8 ">
-          <Button bgColor="bg-black" name="Join our community" />
+          <Button classNames="bg-black" name="Join our community" />
         </div>
       </div>
     </>

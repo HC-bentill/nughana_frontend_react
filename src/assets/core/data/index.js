@@ -17,8 +17,6 @@ import insta from "../../../assets/icons/insta.png";
 import whatsapp from "../../../assets/icons/whatsapp.png";
 import mail from "../../../assets/icons/mail.png";
 import underline from "../../../assets/images/underline.png";
-import HomeActive from "../../icons/Home_active.png";
-import HomeInactive from "../../icons/Home_inactive.png";
 import ConnectionsActive from "../../icons/Followers_active.png";
 import ConnectionsInActive from "../../icons/Followers_inactive.png";
 import CommunitiesActive from "../../icons/Community_active.png";
@@ -31,7 +29,14 @@ import ResourceCenterActive from "../../icons/Resource_center_active.png";
 import ResourceCenterInActive from "../../icons/Resource_center_inactive.png";
 import BusinessDirectoryActive from "../../icons/Business_Directory_active.png";
 import BusinessDirectoryInActive from "../../icons/Business_Directory_inactive.png";
-
+import connect1 from "../../../assets/images/connect1.png";
+import comm1 from "../../../assets/images/comm1.png";
+import comm2 from "../../../assets/images/comm2.png";
+import comm3 from "../../../assets/images/comm3.png";
+import featureFooterImg1 from "../../../assets/images/svgs/ff1.svg";
+import featureFooterImg2 from "../../../assets/images/svgs/ff2.svg";
+import featureFooterImg3 from "../../../assets/images/svgs/ff3.svg";
+import featuredBusiness from "../../../assets/images/featured-business.png";
 
 export const links = [
   {
@@ -279,5 +284,117 @@ export const sidemenuIcons = [
     activeIcon: BusinessDirectoryActive,
     inactiveIcon: BusinessDirectoryInActive,
     label: "Business Directory",
+  },
+];
+
+export const dashboardConnectCardFooter = [
+  {
+    img: connect1,
+    name: "John Doe",
+  },
+  {
+    img: connect1,
+    name: "John Doe",
+  },
+  {
+    img: connect1,
+    name: "John Doe",
+  },
+  {
+    img: connect1,
+    name: "John Doe",
+  },
+  {
+    img: connect1,
+    name: "John Doe",
+  },
+  {
+    img: connect1,
+    name: "John Doe",
+  },
+  {
+    img: connect1,
+    name: "John Doe",
+  },
+  {
+    img: connect1,
+    name: "John Doe",
+  },
+];
+
+export const dashboardFeaturedCommunity = [
+  {
+    img: comm1,
+    name: "Community Name",
+    desc: "Lorem ipsum dolor.",
+    footerImgs: [featureFooterImg1, featureFooterImg2, featureFooterImg3],
+  },
+  {
+    img: comm2,
+    name: "Community Name",
+    desc: "Lorem ipsum dolor.",
+    footerImgs: [featureFooterImg1, featureFooterImg2, featureFooterImg3],
+  },
+  {
+    img: comm1,
+    name: "Community Name",
+    desc: "Lorem ipsum dolor.",
+    footerImgs: [featureFooterImg1, featureFooterImg2, featureFooterImg3],
+  },
+  {
+    img: comm2,
+    name: "Community Name",
+    desc: "Lorem ipsum dolor.",
+    footerImgs: [featureFooterImg1, featureFooterImg2, featureFooterImg3],
+  },
+  {
+    img: comm1,
+    name: "Community Name",
+    desc: "Lorem ipsum dolor.",
+    footerImgs: [featureFooterImg1, featureFooterImg2, featureFooterImg3],
+  },
+  {
+    img: comm3,
+    name: "Community Name",
+    desc: "Lorem ipsum dolor.",
+    footerImgs: [featureFooterImg1, featureFooterImg2, featureFooterImg3],
+  },
+];
+export const dashboardFeaturedBusiness = [
+  {
+    img: featuredBusiness,
+    name: "Business Name",
+    desc: "Lorem ipsum dolor.",
+    footerImgs: [call, whatsapp, mail],
+  },
+  {
+    img: featuredBusiness,
+    name: "Business Name",
+    desc: "Lorem ipsum dolor.",
+    footerImgs: [call, whatsapp, mail],
+  },
+  {
+    img: featuredBusiness,
+    name: "Business Name",
+    desc: "Lorem ipsum dolor.",
+    footerImgs: [call, whatsapp, mail],
+  },
+  {
+    img: featuredBusiness,
+    name: "Business Name",
+    desc: "Lorem ipsum dolor.",
+    footerImgs: [call, whatsapp, mail],
+  },
+  {
+    img: featuredBusiness,
+    name: "Business Name",
+    desc: "Lorem ipsum dolor.",
+    footerImgs: [call, whatsapp, mail],
+  },
+  {
+    img: featuredBusiness,
+    name: "Business Name",
+    desc: "Lorem ipsum dolor.",
+    footerImgs: [call, whatsapp, mail],
   },
 ];

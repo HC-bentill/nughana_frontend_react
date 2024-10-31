@@ -6,10 +6,10 @@ import ad from "../../assets/icons/ad.png";
 import Underline from "../../components/underline/_component";
 
 function WhatCanDo() {
-  return ( 
+  return (
     <>
       <div className="bg-[#EEF2F5] flex justify-center">
-        <div className=""> 
+        <div className="">
           <h3 className="mb-3 text-3xl font-semibold text-center ">
             What you can do
           </h3>
@@ -42,7 +42,7 @@ function WhatCanDo() {
                   with <span className="text-[#E9B328]">NuGhana</span>
                   <div className="text-[#E9B328]">Connect</div>
                 </div>
-                <Button bgColor="bg-black" name="Join our community" />
+                <Button classNames="bg-black" name="Join our community" />
               </div>
               <div className="flex items-center">
                 <div className="mr-8">
