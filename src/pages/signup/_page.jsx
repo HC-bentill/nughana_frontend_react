@@ -66,7 +66,7 @@ function Signup() {
             </div>
             <div className="flex items-center mt-8">
               <Button
-                bgColor="bg-[#00000000] border-[1px] w-1/2 mr-4"
+                classNames="bg-[#00000000] border-[1px] w-1/2 mr-4"
                 name="Sign in"
               />
               <h3 className="cursor-pointer">Forgot password</h3>

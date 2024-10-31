@@ -69,7 +69,7 @@ function CatchEveryEvent() {
                       </div>
 
                       <Button
-                        bgColor="bg-black border-[1px] mt-24 border-[#FFFFFF] m-auto"
+                        classNames="bg-black border-[1px] mt-24 border-[#FFFFFF] m-auto"
                         name="Subscribe to this event"
                       />
                     </div>
@@ -107,7 +107,7 @@ function CatchEveryEvent() {
                     </div>
 
                     <Button
-                      bgColor="bg-black border-[1px] mt-24 border-[#FFFFFF] m-auto"
+                      classNames="bg-black border-[1px] mt-24 border-[#FFFFFF] w-1/4 m-auto"
                       name="Subscribe to this event"
                     />
                   </div>
