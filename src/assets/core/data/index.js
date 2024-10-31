@@ -108,7 +108,7 @@ export const rightLinks = [
   {
     label: "Sign up",
     href: "/signup",
-    className: "border-[1px] rounded-full  px-6 py-2",
+    className: "border-[1px] border-black bg-black rounded-full  px-6 py-2",
   },
 ];
 
