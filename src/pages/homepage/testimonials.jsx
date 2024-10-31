@@ -91,7 +91,7 @@ const Testimonials = () => {
           <p className="text-sm font-semibold">
             What are you waiting for? Join the NuGhana Connect community now!
           </p>
-          <Button bgColor="bg-black" name="Join our community" />
+          <Button classNames="bg-black" name="Join our community" />
         </div>
       </div>
     </div>
