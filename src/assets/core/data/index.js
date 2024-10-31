@@ -119,7 +119,11 @@ export const pilesItems = [
   {
     label: "Website Development",
     href: "/website-development",
-  },
+  }
+];
+
+export const pilesItems2 = [
+
   {
     label: "3D Design",
     href: "/3d-design",
@@ -161,7 +165,7 @@ export const stayConn = [
     imgH: "h-52",
   },
   {
-    label: "First Name",
+    label: "Business Directories",
     href: "#",
     img: stay4,
     desc: "Description",
@@ -170,7 +174,7 @@ export const stayConn = [
     imgH: "h-44",
   },
   {
-    label: "Second Name",
+    label: "Events",
     href: "#",
     img: stay5,
     desc: "Description",
@@ -182,9 +186,9 @@ export const stayConn = [
 
 export const whatCanDo = [
   {
-    title: "Logo Design",
+    title: "Access to News",
     passage:
-      "Access to News we help victims of natural disasters and the poor to help them to be happier with us",
+      "We help victims of natural disasters and the poor to help them to be happier with us",
     icon: whats1,
     iconBgColor: "bg-[#E2D57C]",
     bgColor: "bg-black text-white",
@@ -192,14 +196,14 @@ export const whatCanDo = [
   {
     title: "Business Ads",
     passage:
-      "Access to News we help victims of natural disasters and the poor to help them to be happier with us",
+      "you have a problem, you can share your complaint with us to provide a solution",
     icon: whats2,
-    iconBgColor: "bg-[#E2E8F4]",
+    iconBgColor: "bg-[#E2E8F4] text-[#5B6382]",
   },
   {
     title: "Share Greatness",
     passage:
-      "Access to News we help victims of natural disasters and the poor to help them to be happier with us",
+      "we will assist the community in managing the environment and keeping it protected",
     icon: whats3,
     iconBgColor: "bg-[#E2E8F4]",
   },

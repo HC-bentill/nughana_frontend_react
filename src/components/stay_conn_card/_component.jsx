@@ -1,11 +1,11 @@
 import React from "react";
 
-function StayConnectedCard({ img, imgW, imgH, zIndex, title, desc }) {
+function StayConnectedCard({ img, title, desc }) {
   return (
     <>
       <div className="relative py-3 -ml-3">
         <img
-          className={`object-cover ${imgW} ${imgH} ${zIndex} rounded-xl`}
+          className={`object-cover rounded-xl`}
           src={img}
           alt=""
         />

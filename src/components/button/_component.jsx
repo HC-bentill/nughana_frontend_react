@@ -2,7 +2,7 @@ import React from "react";
 
 function Button({ name, bgColor }) {
   return (
-    <button className={`${bgColor} rounded-full text-white px-5 py-2`}>
+    <button className={`${bgColor} rounded-full text-white px-7 py-3 font-light`}>
       {name}
     </button>
   );
