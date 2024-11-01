@@ -9,8 +9,8 @@ import Sidemenu from "../sidemenu/Sidemenu";
 export default function DashboardLayout() {
   return (
     <>
-      <div className="border-b-[0.5px] border-[#E5E5E7] ">
-        <div className="flex items-center justify-between py-3 mx-auto max-w-7xl">
+      <div className="border-b-[0.5px] border-[#E5E5E7]">
+        <div className="flex items-center justify-between py-3 mx-auto max-w-[90rem]">
           <div className="">
             <img
               src={NuGhanaLogo}
@@ -52,12 +52,11 @@ export default function DashboardLayout() {
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="h-screen bg-[#edf2f5] max-w-7xl mx-auto flex overflow-y-auto">
-        <Sidemenu />
-        <div className="py-6 pl-10 max-w-[90%]">
-          <Outlet />
+        <div className="h-full bg-[#edf2f5] max-w-[90rem] mx-auto flex">
+          <Sidemenu />
+          <div className="py-6 pl-1 max-w-[90%] ">
+            <Outlet />
+          </div>
         </div>
       </div>
     </>

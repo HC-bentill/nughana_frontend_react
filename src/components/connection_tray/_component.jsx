@@ -1,0 +1,62 @@
+import React from "react";
+import call from "../../assets/icons/call.png";
+import snap from "../../assets/icons/snap.png";
+import fb from "../../assets/icons/fb.png";
+import insta from "../../assets/icons/insta.png";
+import whatsapp from "../../assets/icons/whatsapp.png";
+import mail from "../../assets/icons/mail.png";
+
+function ConnectionTray({ profileImg, name, username }) {
+  return (
+    <>
+      <div className="flex items-center justify-between py-[15px] px-[25px] mb-3 bg-white rounded-[10px]">
+        <div className="flex">
+          <img
+            className="w-[52px] h-[52px] mr-3"
+            src={profileImg}
+            alt="profile image"
+          />
+          <div className="flex flex-col">
+            <h3 className="font-medium text-[16px] text-[#424242]">{name}</h3>
+            <h3 className="text-[#202226] font-normal">{username}</h3>
+          </div>
+        </div>
+
+        <div className="flex ">
+          <img
+            src={call}
+            alt=""
+            className="w-[32px] p-2 rounded-full mr-4 bg-[#EFEFEF] h-[32px]"
+          />
+          <img
+            src={snap}
+            alt=""
+            className="w-[32px] p-2 rounded-full mr-4 bg-[#EFEFEF] h-[32px]"
+          />
+          <img
+            src={fb}
+            alt=""
+            className="w-[32px] p-2 rounded-full mr-4 bg-[#EFEFEF] h-[32px]"
+          />
+          <img
+            src={insta}
+            alt=""
+            className="w-[32px] p-2 rounded-full mr-4 bg-[#EFEFEF] h-[32px]"
+          />
+          <img
+            src={whatsapp}
+            alt=""
+            className="w-[32px] p-2 rounded-full mr-4 bg-[#EFEFEF] h-[32px]"
+          />
+          <img
+            src={mail}
+            alt=""
+            className="w-[32px] p-2 rounded-full mr-4 bg-[#EFEFEF] h-[32px]"
+          />
+        </div>
+      </div>
+    </>
+  );
+}
+
+export default ConnectionTray;
