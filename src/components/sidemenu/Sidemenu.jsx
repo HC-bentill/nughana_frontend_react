@@ -8,10 +8,10 @@ export default function Sidemenu() {
   const navigate = useNavigate();
   let location = useLocation();
   return (
-    <div className="bg-[white] ml-[3px] py-2 flex-col items-center justify-between h-screen">
+    <div className="bg-[#fff] ml-[3px] py-2 flex-col items-center justify-between">
       <img
         onClick={() => navigate("/dashboard")}
-        src={location?.pathname === '/dashboard' ? HomeIcon : HomeInactiveIcon}
+        src={location?.pathname === "/dashboard" ? HomeIcon : HomeInactiveIcon}
         alt="img"
         className="cursor-pointer w-[48px] h-[48px] object-contain shadow-sm m-2"
       />
@@ -21,7 +21,11 @@ export default function Sidemenu() {
           <img
             onClick={() => navigate(item.route)}
             key={idx}
-            src={location?.pathname === item.route ? item.activeIcon : item.inactiveIcon}
+            src={
+              location?.pathname === item.route
+                ? item.activeIcon
+                : item.inactiveIcon
+            }
             alt="img"
             className="cursor-pointer w-[48px] h-[48px] object-contain shadow-sm m-2"
           />

@@ -37,6 +37,13 @@ import featureFooterImg1 from "../../../assets/images/svgs/ff1.svg";
 import featureFooterImg2 from "../../../assets/images/svgs/ff2.svg";
 import featureFooterImg3 from "../../../assets/images/svgs/ff3.svg";
 import featuredBusiness from "../../../assets/images/featured-business.png";
+import featuredAdd from "../../../assets/images/featured-ad.png";
+import connProfile1 from "../../../assets/icons/conn-profile.png";
+import connProfile2 from "../../../assets/icons/conn-profile2.png";
+import connProfile3 from "../../../assets/icons/conn-profile3.png";
+import connProfile4 from "../../../assets/icons/conn-profile4.png";
+import connProfile5 from "../../../assets/icons/conn-profile5.png";
+import commProfile from "../../../assets/images/community-profile.png";
 
 export const links = [
   {
@@ -124,11 +131,10 @@ export const pilesItems = [
   {
     label: "Website Development",
     href: "/website-development",
-  }
+  },
 ];
 
 export const pilesItems2 = [
-
   {
     label: "3D Design",
     href: "/3d-design",
@@ -364,6 +370,46 @@ export const dashboardFeaturedCommunity = [
     footerImgs: [featureFooterImg1, featureFooterImg2, featureFooterImg3],
   },
 ];
+
+export const dashboardFeaturedEvents = [
+  {
+    img: comm1,
+    name: "Event Name",
+    desc: "Hartono Mall, YK",
+    footerImgs: [featureFooterImg1, featureFooterImg2, featureFooterImg3],
+  },
+  {
+    img: comm2,
+    name: "Event Name",
+    desc: "Hartono Mall, YK",
+    footerImgs: [featureFooterImg1, featureFooterImg2, featureFooterImg3],
+  },
+  {
+    img: comm1,
+    name: "Event Name",
+    desc: "Hartono Mall, YK",
+    footerImgs: [featureFooterImg1, featureFooterImg2, featureFooterImg3],
+  },
+  {
+    img: comm2,
+    name: "Event Name",
+    desc: "Hartono Mall, YK",
+    footerImgs: [featureFooterImg1, featureFooterImg2, featureFooterImg3],
+  },
+  {
+    img: comm1,
+    name: "Event Name",
+    desc: "Hartono Mall, YK",
+    footerImgs: [featureFooterImg1, featureFooterImg2, featureFooterImg3],
+  },
+  {
+    img: comm3,
+    name: "Event Name",
+    desc: "Hartono Mall, YK",
+    footerImgs: [featureFooterImg1, featureFooterImg2, featureFooterImg3],
+  },
+];
+
 export const dashboardFeaturedBusiness = [
   {
     img: featuredBusiness,
@@ -400,5 +446,196 @@ export const dashboardFeaturedBusiness = [
     name: "Business Name",
     desc: "Lorem ipsum dolor.",
     footerImgs: [call, whatsapp, mail],
+  },
+];
+
+export const dashboardFeaturedAd = [
+  {
+    img: featuredAdd,
+    name: "Business Name",
+    desc: "Lorem ipsum dolor.",
+    footerImgs: [call, whatsapp, mail],
+  },
+  {
+    img: featuredAdd,
+    name: "Business Name",
+    desc: "Lorem ipsum dolor.",
+    footerImgs: [call, whatsapp, mail],
+  },
+  {
+    img: featuredAdd,
+    name: "Business Name",
+    desc: "Lorem ipsum dolor.",
+    footerImgs: [call, whatsapp, mail],
+  },
+  {
+    img: featuredAdd,
+    name: "Business Name",
+    desc: "Lorem ipsum dolor.",
+    footerImgs: [call, whatsapp, mail],
+  },
+  {
+    img: featuredAdd,
+    name: "Business Name",
+    desc: "Lorem ipsum dolor.",
+    footerImgs: [call, whatsapp, mail],
+  },
+  {
+    img: featuredAdd,
+    name: "Business Name",
+    desc: "Lorem ipsum dolor.",
+    footerImgs: [call, whatsapp, mail],
+  },
+];
+
+export const connectionTrayItems = [
+  {
+    section: "A",
+    tray: [
+      {
+        img: connProfile1,
+        name: "John Doe",
+        username: "@codyfisher",
+      },
+      {
+        img: connProfile2,
+        name: "Jane Doe",
+        username: "@codyfisher",
+      },
+      {
+        img: connProfile3,
+        name: "Kathryn Murphy",
+        username: "@codyfisher",
+      },
+      {
+        img: connProfile4,
+        name: "David Doe",
+        username: "@codyfisher",
+      },
+      {
+        img: connProfile5,
+        name: "David Doe",
+        username: "@codyfisher",
+      },
+    ],
+  },
+  {
+    section: "B",
+    tray: [
+      {
+        img: connProfile1,
+        name: "John Doe",
+        username: "@codyfisher",
+      },
+      {
+        img: connProfile2,
+        name: "Jane Doe",
+        username: "@codyfisher",
+      },
+      {
+        img: connProfile3,
+        name: "Kathryn Murphy",
+        username: "@codyfisher",
+      },
+      {
+        img: connProfile4,
+        name: "David Doe",
+        username: "@codyfisher",
+      },
+      {
+        img: connProfile5,
+        name: "David Doe",
+        username: "@codyfisher",
+      },
+    ],
+  },
+  {
+    section: "C",
+    tray: [
+      {
+        img: connProfile1,
+        name: "John Doe",
+        username: "@codyfisher",
+      },
+      {
+        img: connProfile2,
+        name: "Jane Doe",
+        username: "@codyfisher",
+      },
+      {
+        img: connProfile3,
+        name: "Kathryn Murphy",
+        username: "@codyfisher",
+      },
+      {
+        img: connProfile4,
+        name: "David Doe",
+        username: "@codyfisher",
+      },
+      {
+        img: connProfile5,
+        name: "David Doe",
+        username: "@codyfisher",
+      },
+    ],
+  },
+];
+
+export const communitiesSideTray = [
+  {
+    img: commProfile,
+    name: "UI/UX Community",
+  },
+  {
+    img: commProfile,
+    name: "UI/UX Community",
+  },
+  {
+    img: commProfile,
+    name: "UI/UX Community",
+  },
+  {
+    img: commProfile,
+    name: "UI/UX Community",
+  },
+  {
+    img: commProfile,
+    name: "UI/UX Community",
+  },
+  {
+    img: commProfile,
+    name: "UI/UX Community",
+  },
+  {
+    img: commProfile,
+    name: "UI/UX Community",
+  },
+  {
+    img: commProfile,
+    name: "UI/UX Community",
+  },
+  {
+    img: commProfile,
+    name: "UI/UX Community",
+  },
+  {
+    img: commProfile,
+    name: "UI/UX Community",
+  },
+  {
+    img: commProfile,
+    name: "UI/UX Community",
+  },
+  {
+    img: commProfile,
+    name: "UI/UX Community",
+  },
+  {
+    img: commProfile,
+    name: "UI/UX Community",
+  },
+  {
+    img: commProfile,
+    name: "UI/UX Community",
   },
 ];
