@@ -7,7 +7,8 @@ import Signup from "./pages/signup/_page";
 import DashboardLayout from "./components/layouts/DashboardLayout";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Connections from "./pages/connections/Connections";
-import Communities from "./pages/communities/communities";
+import Communities from "./pages/communities/Communities";
+
 
 function App() {
   return (
