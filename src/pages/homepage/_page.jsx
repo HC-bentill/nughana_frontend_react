@@ -1,6 +1,7 @@
 import React from "react";
 import banner from "../../assets/images/banner.png";
 import logo from "../../assets/images/svgs/logo.svg";
+import menuIcon from "../../assets/icons/hamburger.png";
 import { imgs, links, pilesItems, pilesItems2, rightLinks } from "../../assets/core/data";
 import Piles from "../../components/piles/_component";
 import StayConnected from "./stay_connected";
@@ -20,21 +21,22 @@ function Homepage() {
       <section>
         <div className="relative">
           <div>
-            <img className="object-fill w-full h-screen" src={banner} />
+            <img className="md:object-fill object-cover w-full h-screen" src={banner} />
           </div>
           <div className="absolute top-0 w-full">
             <div className="flex items-center justify-between md:max-w-[1100px] pt-5 mx-auto text-[13px] text-white">
               <div>
-                <img src={logo} className="object-contain w-[3.55rem]" />
+                <img src={logo} className="object-contain md:w-[3.55rem] w-[2.55rem]" />
               </div>
-              <div>
+              <img src={menuIcon} className="object-contain md:hidden block" />
+              <div className="hidden md:block">
                 {links.map((ll, i) => (
                   <a className="mr-5" href={ll.href} key={i}>
                     {ll.label}
                   </a>
                 ))}
               </div>
-              <div className="">
+              <div className="hidden md:block">
                 {rightLinks.map((ll, i) => (
                   <a className={`mr-3 ${ll.className}`} href={ll.href} key={i}>
                     {ll.label}
@@ -42,14 +44,14 @@ function Homepage() {
                 ))}
               </div>
             </div>
-            <div className="md:max-w-[1100px] mt-24 p-[150px] border-[1px] border-none rounded-[32px] m-auto backdrop-blur-sm bg-[#ece9e914]">
-              <div className="mb-8 text-5xl text-center text-white">
+            <div className="md:max-w-[1100px] mt-24 p-[40px] md:p-[150px] border-[1px] border-none rounded-[32px] mx-4  md:mx-auto backdrop-blur-sm bg-[#ece9e914]">
+              <div className="mb-8 text-[29px] md:text-5xl text-center text-white">
                 <h3 className="custom-underline">Connecting you to</h3>
                 <Underline className="flex w-[230px] m-auto" />
 
                 <h3>Africa</h3>
               </div>
-              <div className="flex items-center justify-center gap-3">
+              <div className="flex items-center justify-center gap-3 flex-wrap">
                 {pilesItems.map((pl, i) => (
                   <div>
                     <div className="px-[12px] py-[6px] bg-white rounded-full opacity-60">
@@ -61,7 +63,7 @@ function Homepage() {
                   </div>
                 ))}
               </div>
-              <div className="flex items-center justify-center gap-3 pt-3">
+              <div className="flex items-center justify-center gap-3 pt-3 flex-wrap">
                 {pilesItems2.map((pl, i) => (
                   <div>
                     <div className="px-[13px] py-[6px] bg-white rounded-full opacity-60">
