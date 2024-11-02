@@ -22,8 +22,8 @@ const ZoomCarousel = () => {
   };
 
   return (
-    <div className="carousel" onMouseLeave={handleMouseLeave}>
-      <div className="carousel-items">
+    <div onMouseLeave={handleMouseLeave}>
+      <div className="flex items-center md:justify-center overflow-x-scroll scrollbar-hidden">
         {stayConn.map((item, index) => {
           const distance = Math.abs(highlightedIndex - index);
           const scale = distance === 0 ? 1 : Math.max(0.7, 1 - distance * 0.2);
@@ -32,7 +32,7 @@ const ZoomCarousel = () => {
           return (
             <div
               key={index}
-              className={`relative w-[350px] bg-top bg-cover bg-no-repeat mx-[-49px] transition-transform duration-300 ease-in-out flex items-center justify-center rounded-[32px] h-[360px]`}
+              className={`relative px-[180px] mx-[-52px] bg-top bg-cover bg-no-repeat  transition-transform duration-300 ease-in-out flex items-center justify-center rounded-[32px] h-[360px]`}
               style={{
                 transform: `scale(${scale})`,
                 zIndex,
