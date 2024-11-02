@@ -24,7 +24,7 @@ function Homepage() {
             <img className="md:object-fill object-cover w-full h-screen" src={banner} />
           </div>
           <div className="absolute top-0 w-full">
-            <div className="flex items-center justify-between md:max-w-[1100px] pt-5 mx-auto text-[13px] text-white">
+            <div className="flex items-center justify-between md:max-w-[1100px] py-[13px] mx-auto text-[13px] text-white px-4 md:bg-transparent md:backdrop-blur-0 backdrop-blur-lg bg-[#ece9e92f]">
               <div>
                 <img src={logo} className="object-contain md:w-[3.55rem] w-[2.55rem]" />
               </div>
