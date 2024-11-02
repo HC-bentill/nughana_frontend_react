@@ -43,7 +43,7 @@ function WhatCanDo() {
                     with <span className="text-[#E9B328]">NuGhana</span>
                     <div className="text-[#E9B328]">Connect</div>
                   </div>
-                  <Button bgColor="bg-black" name="Join our community" />
+                  <Button classNames="bg-black" name="Join our community" />
                 </div>
               </div>
               <div className="flex items-center">

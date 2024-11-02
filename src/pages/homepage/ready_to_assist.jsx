@@ -73,7 +73,7 @@ function ReadyToAssist() {
                 placeholder="Message"
                 className="my-3 block w-full mr-2 p-2.5 text-sm text-gray-900 border border-gray-300 rounded-lg bg-white outline-0"
               />
-              <Button bgColor="bg-black" name="Send message" />
+              <Button classNames="bg-black" name="Send message" />
             </form>
           </div>
         </div>

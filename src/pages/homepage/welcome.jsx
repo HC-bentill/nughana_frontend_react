@@ -20,7 +20,7 @@ function Welcome() {
               Here at NuGhana, we connect you to everything Ghana regardless of
               your location
             </div>
-            <Button bgColor="bg-black" name="Join our community" />
+            <Button classNames="bg-black" name="Join our community" />
             <div className="grid grid-cols-3 gap-3 text-xl mt-7">
               <div className="flex flex-col">
                 <span className="font-semibold text-[23px] text-[#D68F0D]">300K+</span>
