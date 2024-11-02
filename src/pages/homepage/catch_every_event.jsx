@@ -35,10 +35,10 @@ const settings = {
 function CatchEveryEvent() {
   return (
     <>
-      <section className="bg-[#101010] text-white p-20 pb-36">
+      <section className="bg-[#101010] text-white md:p-20 md:px-20 pb-[170px] pt-[70px] px-7 md:pb-40">
         <div className="mx-auto md:max-w-[1100px]">
           <div className="flex justify-center">
-            <div>
+            <div className="md:text-left text-center">
               <h3 className="text-4xl">Catch every event in town</h3>
               <Underline className="w-56 m-auto mb-4" />
               <small>
@@ -52,9 +52,9 @@ function CatchEveryEvent() {
               <Slider {...settings}>
                 <div>
                   <div className="flex justify-center">
-                    <div className="p-20 py-10 pt-14 flex flex-col w-full border-[1px] border-[##FFFFFF] rounded-[24px]">
-                      <div className="relative flex items-center">
-                        <div className="text-4xl">
+                    <div className="md:p-20 py-[40px] px-[15px] md:py-10 md:pt-14 flex flex-col w-full border-[1px] border-[##FFFFFF] rounded-[24px]">
+                      <div className="relative flex items-center md:mt-0">
+                        <div className="text-xl md:text-4xl md:relative">
                           <h3>All things Africa</h3> <h3>Event</h3>
                           <div className="mt-4">
                             <span className="text-[#E9B328]">
@@ -63,8 +63,8 @@ function CatchEveryEvent() {
                             <div>8pm sharp</div>
                           </div>
                         </div>
-                        <div className="absolute -bottom-[210px] -right-[180px]">
-                          <img className="w-[45rem]" src={food} alt="food" />
+                        <div className="absolute md:-bottom-[210px] -right-[180px]">
+                          <img className="w-[30rem] md:w-[45rem]" src={food} alt="food" />
                         </div>
                       </div>
 
@@ -83,45 +83,6 @@ function CatchEveryEvent() {
                 </div>
               </Slider>
             </div>
-            {/* <Swiper
-              pagination={{
-                dynamicBullets: true,
-              }}
-              modules={[Pagination]}
-              className="mySwiper"
-            >
-              <SwiperSlide>
-                <div className="flex justify-center">
-                  <div className="p-20 py-10 pt-14 flex flex-col w-full border-[1px] border-[##FFFFFF] rounded-[24px]">
-                    <div className="relative flex items-center">
-                      <div className="text-4xl">
-                        <h3>All things Africa</h3> <h3>Event</h3>
-                        <div className="mt-4">
-                          <span className="text-[#E9B328]">2nd November.</span>{" "}
-                          <div>8pm sharp</div>
-                        </div>
-                      </div>
-                      <div className="absolute -bottom-[210px] -right-[180px]">
-                        <img className="w-[45rem]" src={food} alt="food" />
-                      </div>
-                    </div>
-
-                    <Button
-                      classNames="bg-black border-[1px] mt-24 border-[#FFFFFF] w-1/4 m-auto"
-                      name="Subscribe to this event"
-                    />
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>Slide 2</SwiperSlide>
-              <SwiperSlide>Slide 3</SwiperSlide>
-              <SwiperSlide>Slide 4</SwiperSlide>
-              <SwiperSlide>Slide 5</SwiperSlide>
-              <SwiperSlide>Slide 6</SwiperSlide>
-              <SwiperSlide>Slide 7</SwiperSlide>
-              <SwiperSlide>Slide 8</SwiperSlide>
-              <SwiperSlide>Slide 9</SwiperSlide>
-            </Swiper> */}
           </div>
         </div>
       </section>

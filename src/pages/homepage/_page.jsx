@@ -18,10 +18,10 @@ import Testimonials from "./testimonials";
 function Homepage() {
   return (
     <>
-      <section>
+      <section >
         <div className="relative">
           <div>
-            <img className="md:object-fill object-cover w-full h-screen" src={banner} />
+            <img className="md:object-fill object-cover w-full md:h-screen h-[90vh]" src={banner} />
           </div>
           <div className="absolute top-0 w-full">
             <div className="flex items-center justify-between md:max-w-[1100px] py-[13px] mx-auto text-[13px] text-white px-4 md:bg-transparent md:backdrop-blur-0 backdrop-blur-lg bg-[#ece9e92f]">
