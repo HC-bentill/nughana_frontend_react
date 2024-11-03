@@ -27,22 +27,22 @@ function Welcome() {
             </div>
             <div className="flex justify-between md:grid grid-cols-3 md:gap-3 text-xl mt-12 md:mt-7">
               <div className="flex flex-col">
-                <span className="font-semibold md:text-left text-center text-[23px] text-[#D68F0D]">
+                <span className="font-semibold md:text-left text-center text-[15px] md:text-[23px] text-[#D68F0D]">
                   300K+
                 </span>
-                <span>Users</span>
+                <span className="text-[15px] md:text-[23px]">Users</span>
               </div>
               <div className="flex flex-col">
-                <span className="font-semibold md:text-left text-center text-[23px] text-[#D68F0D]">
+                <span className="font-semibold md:text-left text-center text-[15px] md:text-[23px] text-[#D68F0D]">
                   200K+
                 </span>
-                <span>Communities</span>
+                <span className="text-[15px] md:text-[23px]">Communities</span>
               </div>
               <div className="flex flex-col">
-                <span className="font-semibold md:text-left text-center text-[23px] text-[#D68F0D]">
-                  150+
+                <span className="font-semibold md:text-left text-center text-[15px] md:text-[23px] text-[#D68F0D]">
+                  150k+
                 </span>
-                <span>Events</span>
+                <span className="text-[15px] md:text-[23px]">Events</span>
               </div>
             </div>
           </div>

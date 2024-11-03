@@ -68,10 +68,10 @@ const Testimonials = () => {
                     className="object-contain w-[150px] h-[150px] rounded-full"
                   />
                 </div>
-                <p className="text-center text-[#0E1339] font-semibold text-[23px]">
+                <p className="text-center text-[#0E1339] font-semibold text-[20px] md:ext-[23px]">
                   Courtney Henry
                 </p>
-                <p className="text-center font-light text-[19px] md:w-1/3 w-[80%] mt-3 mx-auto text-[#34405E]">
+                <p className="text-center font-light text-[14px] md:text-[19px] md:w-1/3 w-[80%] mt-3 mx-auto text-[#34405E]">
                   A customers review can be here please keep it direct and real
                   you have about 3 to 4 lines at most
                 </p>

@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import banner from "../../assets/images/banner.png";
 import logo from "../../assets/images/svgs/logo.svg";
 import menuIcon from "../../assets/icons/hamburger.png";
-import { imgs, links, pilesItems, pilesItems2, rightLinks } from "../../assets/core/data";
+import {
+  imgs,
+  links,
+  pilesItems,
+  pilesItems2,
+  rightLinks,
+} from "../../assets/core/data";
 import Piles from "../../components/piles/_component";
 import StayConnected from "./stay_connected";
 import Welcome from "./welcome";
@@ -14,21 +20,38 @@ import Footer from "./footer";
 import Underline from "../../components/underline/_component";
 import bullet from "../../assets/images/svgs/bullet.svg";
 import Testimonials from "./testimonials";
+import { AiOutlineClose } from "react-icons/ai";
 
 function Homepage() {
+  const [handleNav, setHandleNav] = useState(false);
+
+  const handleNavToggle = () => {
+    setHandleNav(!handleNav);
+  };
+
   return (
     <>
-      <section >
+      <section>
         <div className="relative">
           <div>
-            <img className="md:object-fill object-cover w-full md:h-screen h-[90vh]" src={banner} />
+            <img
+              className="md:object-fill object-cover w-full md:h-screen h-[90vh]"
+              src={banner}
+            />
           </div>
           <div className="absolute top-0 w-full">
             <div className="flex items-center justify-between md:max-w-[1100px] py-[13px] mx-auto text-[13px] text-white px-4 md:bg-transparent md:backdrop-blur-0 backdrop-blur-lg bg-[#ece9e92f]">
               <div>
-                <img src={logo} className="object-contain md:w-[3.55rem] w-[2.55rem]" />
+                <img
+                  src={logo}
+                  className="object-contain md:w-[3.55rem] w-[2.55rem]"
+                />
               </div>
-              <img src={menuIcon} className="object-contain md:hidden block" />
+              <img
+                src={menuIcon}
+                onClick={handleNavToggle}
+                className="object-contain md:hidden block"
+              />
               <div className="hidden md:block">
                 {links.map((ll, i) => (
                   <a className="mr-5" href={ll.href} key={i}>
@@ -89,6 +112,37 @@ function Homepage() {
         <ReadyToAssist />
         <Footer />
       </section>
+
+      {/* responsive nav */}
+      <div
+        id="mySidenav"
+        className={`h-full fixed top-0 right-0 backdrop-blur-lg bg-[#ece9e92f] overflow-x-hidden z-[100] ${
+          handleNav ? "w-1/2" : "w-0"
+        }`}
+      >
+        <div className="text-black items-center flex justify-end py-3 px-5">
+          <div>
+            <AiOutlineClose
+              size={"1.7em"}
+              onClick={handleNavToggle}
+              className="cursor-pointe mt-2"
+              color="#FFF"
+            />
+          </div>
+        </div>
+        <div className="mt-0 text-[14px]">
+          {links.map((ll, i) => (
+            <a className="block text-white py-3 px-5" href={ll.href} key={i}>
+              {ll.label}
+            </a>
+          ))}
+          {rightLinks.map((ll, i) => (
+            <a className="block text-white py-3 px-5" href={ll.href} key={i}>
+              {ll.label}
+            </a>
+          ))}
+        </div>
+      </div>
     </>
   );
 }
