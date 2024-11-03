@@ -21,6 +21,7 @@ import Underline from "../../components/underline/_component";
 import bullet from "../../assets/images/svgs/bullet.svg";
 import Testimonials from "./testimonials";
 import { AiOutlineClose } from "react-icons/ai";
+import Navbar from "../../components/navbar/_component";
 
 function Homepage() {
   const [handleNav, setHandleNav] = useState(false);
@@ -40,7 +41,9 @@ function Homepage() {
             />
           </div>
           <div className="absolute top-0 w-full">
-            <div className="flex items-center justify-between md:max-w-[1100px] py-[13px] mx-auto text-[13px] text-white px-4 md:bg-transparent md:backdrop-blur-0 backdrop-blur-lg bg-[#ece9e92f]">
+          <Navbar />
+
+            {/* <div className="flex items-center justify-between md:max-w-[1100px] py-[13px] mx-auto text-[13px] text-white px-4 md:bg-transparent md:backdrop-blur-0 backdrop-blur-lg bg-[#ece9e92f]">
               <div>
                 <img
                   src={logo}
@@ -66,7 +69,7 @@ function Homepage() {
                   </a>
                 ))}
               </div>
-            </div>
+            </div> */}
             <div className="md:max-w-[1100px] mt-24 p-[40px] md:p-[150px] border-[1px] border-none rounded-[32px] mx-4  md:mx-auto backdrop-blur-sm bg-[#ece9e914]">
               <div className="mb-8 text-[29px] md:text-5xl text-center text-white">
                 <h3 className="custom-underline">Connecting you to</h3>
@@ -113,36 +116,6 @@ function Homepage() {
         <Footer />
       </section>
 
-      {/* responsive nav */}
-      <div
-        id="mySidenav"
-        className={`h-full fixed top-0 right-0 bg-[#121212] z-[100] ${
-          handleNav ? "w-1/2" : "w-0"
-        }`}
-      >
-        <div className="text-black items-center flex justify-end py-3 px-5">
-          <div>
-            <AiOutlineClose
-              size={"1.7em"}
-              onClick={handleNavToggle}
-              className="cursor-pointe mt-2"
-              color="#FFF"
-            />
-          </div>
-        </div>
-        <div className="mt-0 text-[14px]">
-          {links.map((ll, i) => (
-            <a className="block text-white py-3 px-5" href={ll.href} key={i}>
-              {ll.label}
-            </a>
-          ))}
-          {rightLinks.map((ll, i) => (
-            <a className="block text-white py-3 px-5" href={ll.href} key={i}>
-              {ll.label}
-            </a>
-          ))}
-        </div>
-      </div>
     </>
   );
 }
