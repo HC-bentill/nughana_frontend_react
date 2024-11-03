@@ -7,8 +7,8 @@ import Signup from "./pages/signup/_page";
 import DashboardLayout from "./components/layouts/DashboardLayout";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Connections from "./pages/connections/Connections";
-import Communities from "./pages/communities/Communities";
-
+import Communities from "./pages/communities/communities";
+import ViewCommunities from "./pages/communities/ViewCommunities";
 
 function App() {
   return (
@@ -20,7 +20,8 @@ function App() {
         <Route element={<DashboardLayout />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/connections" element={<Connections />} />
-          <Route path="/communites" element={<Communities />} />
+          <Route path="/communities" element={<Communities />} />
+          <Route path="/view-communities" element={<ViewCommunities />} />
           <Route path="/marketplace" element={<p>marketplace</p>} />
           <Route path="/events" element={<p>events</p>} />
           <Route path="/resource-center" element={<p>Resource Center</p>} />

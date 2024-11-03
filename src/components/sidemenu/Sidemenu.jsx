@@ -13,7 +13,9 @@ export default function Sidemenu() {
         onClick={() => navigate("/dashboard")}
         src={location?.pathname === "/dashboard" ? HomeIcon : HomeInactiveIcon}
         alt="img"
-        className="cursor-pointer w-[48px] h-[48px] object-contain shadow-sm m-2"
+        className={`${
+          location?.pathname === "/dashboard" ? "mr-7" : ""
+        } cursor-pointer w-[48px] h-[48px] object-contain shadow-sm m-2`}
       />
       <div className="h-[1px] my-3 bg-[#E5E5E7]"></div>
       <div className="space-y-5">

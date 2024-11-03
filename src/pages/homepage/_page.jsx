@@ -2,7 +2,13 @@ import React from "react";
 import banner from "../../assets/images/banner.png";
 import logo from "../../assets/images/svgs/logo.svg";
 import menuIcon from "../../assets/icons/hamburger.png";
-import { imgs, links, pilesItems, pilesItems2, rightLinks } from "../../assets/core/data";
+import {
+  imgs,
+  links,
+  pilesItems,
+  pilesItems2,
+  rightLinks,
+} from "../../assets/core/data";
 import Piles from "../../components/piles/_component";
 import StayConnected from "./stay_connected";
 import Welcome from "./welcome";
@@ -21,14 +27,20 @@ function Homepage() {
       <section>
         <div className="relative">
           <div>
-            <img className="md:object-fill object-cover w-full h-screen" src={banner} />
+            <img
+              className="object-cover w-full h-screen md:object-fill"
+              src={banner}
+            />
           </div>
           <div className="absolute top-0 w-full">
             <div className="flex items-center justify-between md:max-w-[1100px] py-[13px] mx-auto text-[13px] text-white px-4 md:bg-transparent md:backdrop-blur-0 backdrop-blur-lg bg-[#ece9e92f]">
               <div>
-                <img src={logo} className="object-contain md:w-[3.55rem] w-[2.55rem]" />
+                <img
+                  src={logo}
+                  className="object-contain md:w-[3.55rem] w-[2.55rem]"
+                />
               </div>
-              <img src={menuIcon} className="object-contain md:hidden block" />
+              <img src={menuIcon} className="block object-contain md:hidden" />
               <div className="hidden md:block">
                 {links.map((ll, i) => (
                   <a className="mr-5" href={ll.href} key={i}>
@@ -51,7 +63,7 @@ function Homepage() {
 
                 <h3>Africa</h3>
               </div>
-              <div className="flex items-center justify-center gap-3 flex-wrap">
+              <div className="flex flex-wrap items-center justify-center gap-3">
                 {pilesItems.map((pl, i) => (
                   <div>
                     <div className="px-[12px] py-[6px] bg-white rounded-full opacity-60">
@@ -63,9 +75,9 @@ function Homepage() {
                   </div>
                 ))}
               </div>
-              <div className="flex items-center justify-center gap-3 pt-3 flex-wrap">
+              <div className="flex flex-wrap items-center justify-center gap-3 pt-3">
                 {pilesItems2.map((pl, i) => (
-                  <div>
+                  <div key={i}>
                     <div className="px-[13px] py-[6px] bg-white rounded-full opacity-60">
                       <div className="flex text-[#2E2E2E] items-center justify-center text-[13px] list-disc">
                         <img src={bullet} className="pr-[5px]" alt="bullet" />

@@ -7,40 +7,12 @@ import Search from "../../assets/images/svgs/search.svg?react";
 import { Modal } from "../../components/modal/_component";
 import CreateCommunity from "./CreateCommunity";
 import { useNavigate } from "react-router-dom";
+import link from "../../assets/icons/link.png";
 
-function Communities() {
+function ViewCommunities() {
   const [modalOpen, setModalOpen] = React.useState(false);
   const navigate = useNavigate();
-  const tabOptions = [
-    {
-      label: "All",
-      content: (
-        <div className="">
-          <AllCommunities />
-        </div>
-      ),
-    },
-    {
-      label: "Finance",
-      content: <div className="">Finance</div>,
-    },
-    {
-      label: "Start up",
-      content: <div className="">Start up</div>,
-    },
-    {
-      label: "Entrepreneur",
-      content: <div className="">Entrepreneur</div>,
-    },
-    {
-      label: "Golfing",
-      content: <div className="">Golfing</div>,
-    },
-    {
-      label: "Sports",
-      content: <div className="">Sports</div>,
-    },
-  ];
+
   return (
     <>
       <Modal open={modalOpen} close={() => setModalOpen(false)}>
@@ -75,36 +47,41 @@ function Communities() {
           </div>
         </div>
         <div>
+          <div className="flex items-center mb-8">
+            <img
+              onClick={() => navigate("/communities")}
+              src={link}
+              alt=""
+              className="w-[40px] cursor-pointer h-[40px] mr-5"
+            />
+            <h3 className="text-[14px] font-semibold text-[#1A314D]">
+              My Communities
+            </h3>
+          </div>
           <div className="bg-[#FED28A] flex justify-center text-center ml-2 border-[7px] border-white rounded-[15px] py-8 w-[1070px] h-[194px]">
             <div>
               <h3 className="font-extrabold text-[22px]">
-                Title for Community Banner
+                Communities you have created
               </h3>
               <small className="font-semibold text-[12.7px]">
-                Taglines needed
+                34 communities created by you
               </small>
-              <div className="flex mt-8">
+              <div className="flex justify-center mt-8">
                 <Button
                   onClick={() => setModalOpen(true)}
                   classNames="bg-black mr-3 w-[186px] text-[12px] !px-5 !py-3 text-xs"
                   name={"Create a community"}
                 />
-                <Button
-                  onClick={() => navigate("/view-communities")}
-                  classNames="bg-[#FED28A] font-semibold !text-black w-[200px] text-[12px] border-[1px] border-black !px-5 !py-3 text-xs"
-                  name={"View your communities"}
-                />
               </div>
             </div>
           </div>
-          <h3 className="mt-12 ml-4 font-semibold text-[18px]">
-            Explore communities
-          </h3>
-          <PilesTab tabs={tabOptions} />
+          <div className="mt-8">
+            <AllCommunities />
+          </div>
         </div>
       </div>
     </>
   );
 }
 
-export default Communities;
+export default ViewCommunities;
