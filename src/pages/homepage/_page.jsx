@@ -116,7 +116,7 @@ function Homepage() {
       {/* responsive nav */}
       <div
         id="mySidenav"
-        className={`h-full fixed top-0 right-0 backdrop-blur-3xl bg-[#ece9e92f] overflow-x-hidden z-[100] ${
+        className={`h-full fixed top-0 right-0 bg-[#121212] z-[100] ${
           handleNav ? "w-1/2" : "w-0"
         }`}
       >
