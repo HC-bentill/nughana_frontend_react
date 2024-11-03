@@ -64,7 +64,7 @@ function CatchEveryEvent() {
                           </div>
                         </div>
                         <div className="absolute md:-bottom-[210px] -right-[180px]">
-                          <img className="w-[30rem] md:w-[45rem]" src={food} alt="food" />
+                          <img className="w-[22rem] sm:w-[24rem] md:w-[45rem]" src={food} alt="food" />
                         </div>
                       </div>
 

@@ -5,7 +5,7 @@ import { footerIcons, navLinks } from "../../assets/core/data";
 function Footer() {
   return (
     <>
-      <div className="flex justify-center p-12 mt-12 text-center text-white bg-black container">
+      <div className="flex justify-center p-12 text-center text-white bg-black container">
         <div>
           <img
             src={logo}

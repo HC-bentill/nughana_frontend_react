@@ -7,6 +7,7 @@ import X from "../../assets/icons/X.png";
 import apple from "../../assets/icons/apple.png";
 import facebook from "../../assets/icons/facebook.png";
 import Button from "../../components/button/_component";
+import Footer from "../homepage/footer";
 
 function Login() {
   const [showPassword, setShowPassword] = React.useState(false);
@@ -18,7 +19,7 @@ function Login() {
   return (
     <>
       <div
-        className="relative h-screen z-10 grid place-items-center"
+        className="relative h-screen z-10 flex md:grid place-items-center"
         style={{
           backgroundImage: "url(" + loginImg + ")",
           backgroundSize: "cover",
@@ -27,8 +28,8 @@ function Login() {
         }}
       >
         <Navbar />
-        <div className="relative !z-30 mt-14">
-          <div className="m-auto border-noneborder-[1px] px-[55px] py-[42px] w-[420px] rounded-[20px] text-white backdrop-blur-md bg-[#9e9d9d21] shadow-[0px_0px_9px_0.1px_#555252;]">
+        <div className="relative !z-30 mt-14 w-full">
+          <div className="md:m-auto border-noneborder-[1px] mx-5 px-[55px] py-[42px]  md:w-[420px] rounded-[20px] text-white backdrop-blur-md bg-[#9e9d9d21] shadow-[0px_0px_9px_0.1px_#555252;]">
             <form className="w-full" onSubmit={handleSubmit}>
               <div>
                 <h3 className="text-[24px] font-500">Let's connect you</h3>
@@ -110,6 +111,7 @@ function Login() {
         </div>
         <div class="absolute inset-0 bg-black bg-opacity-70 z-20"></div>
       </div>
+      <Footer />
     </>
   );
 }
