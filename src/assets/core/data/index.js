@@ -44,6 +44,7 @@ import connProfile3 from "../../../assets/icons/conn-profile3.png";
 import connProfile4 from "../../../assets/icons/conn-profile4.png";
 import connProfile5 from "../../../assets/icons/conn-profile5.png";
 import commProfile from "../../../assets/images/community-profile.png";
+import market from "../../../assets/images/market.png";
 
 export const links = [
   {
@@ -671,5 +672,41 @@ export const messages = [
     img: connProfile1,
     name: "Darlene Steward",
     message: "Pls take a look at the images",
+  },
+];
+
+export const allMarketPlace = [
+  {
+    img: market,
+    name: "Catogory Name",
+    route: "/market-category",
+  },
+  {
+    img: market,
+    name: "Catogory Name",
+  },
+  {
+    img: market,
+    name: "Catogory Name",
+  },
+  {
+    img: market,
+    name: "Catogory Name",
+  },
+  {
+    img: market,
+    name: "Catogory Name",
+  },
+  {
+    img: market,
+    name: "Catogory Name",
+  },
+  {
+    img: market,
+    name: "Catogory Name",
+  },
+  {
+    img: market,
+    name: "Catogory Name",
   },
 ];
