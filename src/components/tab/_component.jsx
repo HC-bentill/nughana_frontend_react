@@ -12,7 +12,7 @@ const Tabs = ({ tabs }) => {
             onClick={() => setActiveTab(tab.label)}
             className={`text-gray-800 text-sm w-52 mr-8 font-medium py-2 ${
               activeTab === tab.label
-                ? "text-[#FEB828] w-52 border-b-2 border-[#FEB828]"
+                ? "!text-[#FEB828] w-52 border-b-2 border-[#FEB828]"
                 : "text-gray-600"
             }`}
           >

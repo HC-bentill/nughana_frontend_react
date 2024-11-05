@@ -24,16 +24,12 @@ function FeaturedCard({
         >
           <div className="flex items-center">
             {footerImgs?.map((fi, i) => (
-              <>
-                <div className={`flex ${footerDesc == " " ? "mr-3" : ""}`}>
-                  <img
-                    className={footerIconsWith}
-                    key={i}
-                    src={fi}
-                    alt="image"
-                  />
-                </div>
-              </>
+              <div
+                key={i}
+                className={`flex ${footerDesc == " " ? "mr-3" : ""}`}
+              >
+                <img className={footerIconsWith} src={fi} alt="image" />
+              </div>
             ))}
           </div>
           <div className="flex items-center justify-between">

@@ -42,34 +42,6 @@ function Homepage() {
           </div>
           <div className="absolute top-0 w-full">
           <Navbar />
-
-            {/* <div className="flex items-center justify-between md:max-w-[1100px] py-[13px] mx-auto text-[13px] text-white px-4 md:bg-transparent md:backdrop-blur-0 backdrop-blur-lg bg-[#ece9e92f]">
-              <div>
-                <img
-                  src={logo}
-                  className="object-contain md:w-[3.55rem] w-[2.55rem]"
-                />
-              </div>
-              <img
-                src={menuIcon}
-                onClick={handleNavToggle}
-                className="object-contain md:hidden block"
-              />
-              <div className="hidden md:block">
-                {links.map((ll, i) => (
-                  <a className="mr-5" href={ll.href} key={i}>
-                    {ll.label}
-                  </a>
-                ))}
-              </div>
-              <div className="hidden md:block">
-                {rightLinks.map((ll, i) => (
-                  <a className={`mr-3 ${ll.className}`} href={ll.href} key={i}>
-                    {ll.label}
-                  </a>
-                ))}
-              </div>
-            </div> */}
             <div className="md:max-w-[1100px] mt-24 p-[40px] md:p-[150px] border-[1px] border-none rounded-[32px] mx-4  md:mx-auto backdrop-blur-sm bg-[#ece9e914]">
               <div className="mb-8 text-[29px] md:text-5xl text-center text-white">
                 <h3 className="custom-underline">Connecting you to</h3>
@@ -77,7 +49,7 @@ function Homepage() {
 
                 <h3>Africa</h3>
               </div>
-              <div className="flex items-center justify-center gap-3 flex-wrap">
+              <div className="flex flex-wrap items-center justify-center gap-3">
                 {pilesItems.map((pl, i) => (
                   <div>
                     <div className="px-[12px] py-[6px] bg-white rounded-full opacity-60">
@@ -89,9 +61,9 @@ function Homepage() {
                   </div>
                 ))}
               </div>
-              <div className="flex items-center justify-center gap-3 pt-3 flex-wrap">
+              <div className="flex flex-wrap items-center justify-center gap-3 pt-3">
                 {pilesItems2.map((pl, i) => (
-                  <div>
+                  <div key={i}>
                     <div className="px-[13px] py-[6px] bg-white rounded-full opacity-60">
                       <div className="flex text-[#2E2E2E] items-center justify-center text-[13px] list-disc">
                         <img src={bullet} className="pr-[5px]" alt="bullet" />

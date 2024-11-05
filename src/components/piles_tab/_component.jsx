@@ -10,7 +10,7 @@ const PilesTab = ({ tabs }) => {
           <button
             key={tab.label}
             onClick={() => setActiveTab(tab.label)}
-            className={`text-[#1F2937] mr-3 rounded-full border-[#9CA3AF] border-[2px] text-sm px-4 font-medium py-2 ${
+            className={`text-[#1F2937] mr-3 rounded-full border-[#9CA3AF] border-[2px] text-[12px] px-4 font-medium py-2 ${
               activeTab === tab.label
                 ? "!text-white !border-none bg-black rounded-full"
                 : "text-gray-600"

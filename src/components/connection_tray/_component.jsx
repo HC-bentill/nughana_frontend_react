@@ -10,19 +10,19 @@ function ConnectionTray({ profileImg, name, username }) {
   return (
     <>
       <div className="flex items-center justify-between py-[15px] px-[25px] mb-3 bg-white rounded-[10px]">
-        <div className="flex">
+        <div className="flex items-center">
           <img
             className="w-[52px] h-[52px] mr-3"
             src={profileImg}
             alt="profile image"
           />
-          <div className="flex flex-col">
-            <h3 className="font-medium text-[16px] text-[#424242]">{name}</h3>
+          <div className="text-[14px] flex flex-col">
+            <h3 className="font-medium  text-[#424242]">{name}</h3>
             <h3 className="text-[#202226] font-normal">{username}</h3>
           </div>
         </div>
 
-        <div className="flex ">
+        <div className="flex">
           <img
             src={call}
             alt=""

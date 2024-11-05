@@ -1,8 +1,11 @@
 import React from "react";
 
-function Button({ name, classNames }) {
+function Button({ name, classNames, onClick }) {
   return (
-    <button className={`${classNames} text-[14px] rounded-full text-white px-7 py-3 font-light`}>
+    <button
+      onClick={onClick}
+      className={`${classNames} text-[14px] rounded-full text-white px-7 py-3 font-light`}
+    >
       {name}
     </button>
   );

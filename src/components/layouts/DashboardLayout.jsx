@@ -54,7 +54,7 @@ export default function DashboardLayout() {
         </div>
         <div className="h-full bg-[#edf2f5] max-w-[90rem] mx-auto flex">
           <Sidemenu />
-          <div className="py-6 pl-1 max-w-[90%] ">
+          <div className="py-6 pl-1 min-w-[90%]">
             <Outlet />
           </div>
         </div>

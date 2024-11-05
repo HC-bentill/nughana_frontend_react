@@ -266,10 +266,10 @@ export const sidemenuIcons = [
     label: "Connections",
   },
   {
-    route: "/communites",
+    route: "/communities",
     activeIcon: CommunitiesActive,
     inactiveIcon: CommunitiesInActive,
-    label: "Communites",
+    label: "communities",
   },
   {
     route: "/marketplace",
@@ -637,5 +637,39 @@ export const communitiesSideTray = [
   {
     img: commProfile,
     name: "UI/UX Community",
+  },
+];
+
+export const messages = [
+  {
+    img: connProfile1,
+    name: "Darlene Steward",
+    message: "Pls take a look at the images",
+    otherClassNames: "bg-[#2F80ED]",
+  },
+  {
+    img: connProfile1,
+    name: "Darlene Steward",
+    message: "Pls take a look at the images",
+  },
+  {
+    img: connProfile1,
+    name: "Darlene Steward",
+    message: "Pls take a look at the images",
+  },
+  {
+    img: connProfile1,
+    name: "Darlene Steward",
+    message: "Pls take a look at the images",
+  },
+  {
+    img: connProfile1,
+    name: "Darlene Steward",
+    message: "Pls take a look at the images",
+  },
+  {
+    img: connProfile1,
+    name: "Darlene Steward",
+    message: "Pls take a look at the images",
   },
 ];
