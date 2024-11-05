@@ -29,7 +29,7 @@ function Homepage() {
   const handleNavToggle = () => {
     setHandleNav(!handleNav);
   };
-
+   
   return (
     <>
       <section>
