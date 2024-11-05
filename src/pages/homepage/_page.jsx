@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import banner from "../../assets/images/banner.png";
 import logo from "../../assets/images/svgs/logo.svg";
 import menuIcon from "../../assets/icons/hamburger.png";
@@ -20,42 +20,28 @@ import Footer from "./footer";
 import Underline from "../../components/underline/_component";
 import bullet from "../../assets/images/svgs/bullet.svg";
 import Testimonials from "./testimonials";
+import { AiOutlineClose } from "react-icons/ai";
+import Navbar from "../../components/navbar/_component";
 
 function Homepage() {
+  const [handleNav, setHandleNav] = useState(false);
+
+  const handleNavToggle = () => {
+    setHandleNav(!handleNav);
+  };
+
   return (
     <>
       <section>
         <div className="relative">
           <div>
             <img
-              className="object-cover w-full h-screen md:object-fill"
+              className="md:object-fill object-cover w-full md:h-screen h-[90vh]"
               src={banner}
             />
           </div>
           <div className="absolute top-0 w-full">
-            <div className="flex items-center justify-between md:max-w-[1100px] py-[13px] mx-auto text-[13px] text-white px-4 md:bg-transparent md:backdrop-blur-0 backdrop-blur-lg bg-[#ece9e92f]">
-              <div>
-                <img
-                  src={logo}
-                  className="object-contain md:w-[3.55rem] w-[2.55rem]"
-                />
-              </div>
-              <img src={menuIcon} className="block object-contain md:hidden" />
-              <div className="hidden md:block">
-                {links.map((ll, i) => (
-                  <a className="mr-5" href={ll.href} key={i}>
-                    {ll.label}
-                  </a>
-                ))}
-              </div>
-              <div className="hidden md:block">
-                {rightLinks.map((ll, i) => (
-                  <a className={`mr-3 ${ll.className}`} href={ll.href} key={i}>
-                    {ll.label}
-                  </a>
-                ))}
-              </div>
-            </div>
+          <Navbar />
             <div className="md:max-w-[1100px] mt-24 p-[40px] md:p-[150px] border-[1px] border-none rounded-[32px] mx-4  md:mx-auto backdrop-blur-sm bg-[#ece9e914]">
               <div className="mb-8 text-[29px] md:text-5xl text-center text-white">
                 <h3 className="custom-underline">Connecting you to</h3>
@@ -101,6 +87,7 @@ function Homepage() {
         <ReadyToAssist />
         <Footer />
       </section>
+
     </>
   );
 }

@@ -3,6 +3,7 @@ import ready from "../../assets/images/ready.png";
 import { countryCode } from "../../assets/core/data";
 import Select from "react-select";
 import Button from "../../components/button/_component";
+import Underline from "../../components/underline/_component";
 
 function ReadyToAssist() {
   const [selectCode, setSelectedCode] = React.useState(null);
@@ -14,18 +15,21 @@ function ReadyToAssist() {
 
   return (
     <>
-      <section className="bg-white">
-        <h3 className="flex justify-center mb-3 text-4xl mt-14">
-          We are always ready to assist
-        </h3>
-        <p className="flex justify-center mb-8">
+      <section className="bg-white container md:px-0 px-7">
+        <div className="mt-16">
+          <h3 className="mb-1 text-[30px] md:text-[43px] font-[500] text-center ">
+            We are always ready to assist
+          </h3>
+          <Underline className="flex justify-center m-auto w-44 mb-7" />
+        </div>
+        <p className="flex justify-center mb-8 md:text-left text-center text-[13px]">
           Do you have a concern you need addressed? Reach out directly to us.
         </p>
-        <div className="flex justify-center items-cente">
+        <div className="md:flex justify-center items-cente">
           <div>
             <img src={ready} className="mr-8" alt="" />
           </div>
-          <form className="w-1/4" onSubmit={handleSubmit}>
+          <form className="md:mt-0 mt-10" onSubmit={handleSubmit}>
             <div>
               <label>Name</label>
               <input

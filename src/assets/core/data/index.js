@@ -94,8 +94,8 @@ export const navLinks = [
     href: "/community",
   },
   {
-    label: "Exports",
-    href: "/exports",
+    label: "Expats",
+    href: "/expats",
   },
   {
     label: "Diaspora",

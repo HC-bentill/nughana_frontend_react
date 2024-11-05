@@ -5,17 +5,17 @@ import { footerIcons, navLinks } from "../../assets/core/data";
 function Footer() {
   return (
     <>
-      <div className="flex justify-center p-12 mt-12 text-center text-white bg-black">
+      <div className="flex justify-center p-12 text-center text-white bg-black container">
         <div>
           <img
             src={logo}
             alt="logo"
             className="flex justify-center w-12 m-auto mb-8 text-center"
           />
-          <h3>Nu Ghana</h3>
-          <div className="my-8">
+          <h3 className="text-[14px] text-gray-400">Nu Ghana</h3>
+          <div className="my-8 md:block flex-col flex justify-center space-y-7">
             {navLinks.map((ll, i) => (
-              <a className="mr-14" href={ll.href} key={i}>
+              <a className="md:mr-14 text-[13px]" href={ll.href} key={i}>
                 {ll.label}
               </a>
             ))}

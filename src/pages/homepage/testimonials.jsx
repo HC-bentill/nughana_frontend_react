@@ -46,19 +46,19 @@ const settings = {
 
 const Testimonials = () => {
   return (
-    <div className="py-20">
+    <div className="pb-20 container">
       <div className="md:max-w-[1100px] mx-auto ">
         <div className="my-4 grid place-items-center">
           <Button bgColor="bg-black !px-16" name="Join our community" />
         </div>
-        <div className="mt-28">
-          <h3 className="mb-1 text-[43px] font-[500] text-center ">
+        <div className="md:mt-16 mt-0">
+          <h3 className="mb-1 text-[30px] md:text-[43px] font-[500] text-center ">
             Hear what Connect members say
           </h3>
           <Underline className="flex justify-center m-auto w-44 mb-7" />
         </div>
 
-        <div className="mt-24">
+        <div className="md:mt-16">
           <div className="slider-container">
             <Slider {...settings}>
               <div>
@@ -68,10 +68,10 @@ const Testimonials = () => {
                     className="object-contain w-[150px] h-[150px] rounded-full"
                   />
                 </div>
-                <p className="text-center text-[#0E1339] font-semibold text-[23px]">
+                <p className="text-center text-[#0E1339] font-semibold text-[20px] md:ext-[23px]">
                   Courtney Henry
                 </p>
-                <p className="text-center font-light text-[19px] w-1/3 mt-3 mx-auto text-[#34405E]">
+                <p className="text-center font-light text-[14px] md:text-[19px] md:w-1/3 w-[80%] mt-3 mx-auto text-[#34405E]">
                   A customers review can be here please keep it direct and real
                   you have about 3 to 4 lines at most
                 </p>
@@ -86,11 +86,11 @@ const Testimonials = () => {
           </div>
         </div>
 
-        <div className="flex items-center justify-between mt-[200px] bg-[#FFEBB9] rounded-[24px] py-[28px] px-[123px]">
-          <p className="text-sm font-semibold">
+        <div className="md:flex items-center justify-between mt-[200px] bg-[#FFEBB9] rounded-[24px] py-[28px] px-[29px] md:w-auto w-3/4 mx-auto  md:px-[123px]">
+          <p className="text-sm font-semibold leading-[30px]">
             What are you waiting for? Join the NuGhana Connect community now!
           </p>
-          <Button classNames="bg-black" name="Join our community" />
+          <Button classNames="bg-black md:mt-0 mt-5" name="Join our community" />
         </div>
       </div>
     </div>
