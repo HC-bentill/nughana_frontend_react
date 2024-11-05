@@ -5,7 +5,7 @@ import AllMarketPlace from "./AllMarketPlace";
 import CreateAd from "./CreateAd";
 import Messages from "../connections/Messages";
 import { useNavigate } from "react-router-dom";
-import link from "../../assets/icons/link.png";
+import link from "../../assets/icons/Link.png";
 import adBanner from "../../assets/images/adBanner.png";
 import g_bullet from "../../assets/icons/g-bullet.png";
 import adProfile from "../../assets/images/ad-profile.png";

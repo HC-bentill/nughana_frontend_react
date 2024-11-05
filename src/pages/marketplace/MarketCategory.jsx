@@ -4,7 +4,7 @@ import { communitiesSideTray } from "../../assets/core/data";
 import Search from "../../assets/images/svgs/search.svg?react";
 import { Modal } from "../../components/modal/_component";
 import { useNavigate } from "react-router-dom";
-import link from "../../assets/icons/link.png";
+import link from "../../assets/icons/Link.png";
 import AllCommunities from "../communities/AllCommunities";
 import CreateAd from "./CreateAd";
 import MarketCategoryAds from "./MarketCategoryAds";
