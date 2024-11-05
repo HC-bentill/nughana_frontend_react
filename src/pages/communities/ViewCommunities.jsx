@@ -7,7 +7,7 @@ import Search from "../../assets/images/svgs/search.svg?react";
 import { Modal } from "../../components/modal/_component";
 import CreateCommunity from "./CreateCommunity";
 import { useNavigate } from "react-router-dom";
-import link from "../../assets/icons/link.png";
+import link from "../../assets/icons/Link.png";
 
 function ViewCommunities() {
   const [modalOpen, setModalOpen] = React.useState(false);
