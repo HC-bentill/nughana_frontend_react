@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 
-const PilesTab = ({ tabs }) => {
+const PilesTab = ({ tabs, section }) => {
   const [activeTab, setActiveTab] = useState(tabs[0].label);
 
   return (
     <div>
-      <div className="flex justify-start p-4">
+      <div className="flex items-center p-4">
+        <div>{section}</div>
         {tabs.map((tab) => (
           <button
             key={tab.label}
