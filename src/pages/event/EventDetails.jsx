@@ -75,7 +75,7 @@ function EventDetails() {
             <Button
               //   onClick={() => setModalOpen(true)}
               classNames="bg-black mr-3 w-[173px] text-[12px] !px-5 !py-3 text-xs"
-              name={"Contact Seller"}
+              name={"Register"}
             />
           </div>
           <div className="flex justify-center text-center ml-2 py-8 w-[973px] h-[190px]">
