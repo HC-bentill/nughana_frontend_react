@@ -4,24 +4,24 @@ function FeaturedEventCard({
   img,
   footerImgs,
   footerDesc,
-  footerAction,
+  otherClassNames,
   footerIconsWith,
-  header,
-  desc,
+  eventfooterDesc,
+  dashboardfooterDesc,
 }) {
   return (
     <>
-      <div className="w-[270px] flex flex-col">
+      <div className={`${otherClassNames} flex flex-col`}>
         <div>
           <img src={img} alt="image" />
         </div>
         <div className="px-4 py-8 bg-white rounded-b-xl">
-          <div className="flex justify-between">
-            <div className="">
+          <div className="flex items-center">
+            <div className="mr-5">
               <h3 className="text-[#92929D] text-sm">APR</h3>
               <h3 className="text-lg font-semibold">27</h3>
             </div>
-            <div className="text-xs">
+            <div className="-mt-[3px] text-xs">
               <h3 className="mb-2 font-semibold">Event Name</h3>
               <div className="flex text-[#92929D]">
                 <h3 className="mr-2">Thu 10.00</h3>
@@ -31,19 +31,16 @@ function FeaturedEventCard({
           </div>
           <div className="flex items-center mt-7">
             {footerImgs?.map((fi, i) => (
-              <>
-                <div className={`flex ${footerDesc == " " ? "mr-3" : ""}`}>
-                  <img
-                    className={footerIconsWith}
-                    key={i}
-                    src={fi}
-                    alt="image"
-                  />
-                </div>
-              </>
+              <div
+                key={i}
+                className={`flex ${footerDesc == " " ? "mr-3" : ""}`}
+              >
+                <img className={footerIconsWith} src={fi} alt="image" />
+              </div>
             ))}
+            <h3 className="text-[12px] text-[#696974]">{eventfooterDesc}</h3>
           </div>
-          <h3 className="mt-2 text-xs font-semibold">700+ registered</h3>
+          <h3 className="mt-2 text-xs font-semibold">{dashboardfooterDesc}</h3>
         </div>
       </div>
     </>

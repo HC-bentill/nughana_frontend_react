@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const PilesTab = ({ tabs, section }) => {
+const PilesTab = ({ tabs, section, tabHeader }) => {
   const [activeTab, setActiveTab] = useState(tabs[0].label);
 
   return (
@@ -23,6 +23,7 @@ const PilesTab = ({ tabs, section }) => {
       </div>
 
       <div className="p-4">
+        <h3 className="font-semibold text-[18px] mb-6">{tabHeader}</h3>
         {tabs.map((tab) =>
           activeTab === tab.label ? (
             <div key={tab.label} className="tab-content">
