@@ -42,7 +42,7 @@ function Homepage() {
           </div>
           <div className="absolute top-0 w-full">
           <Navbar />
-            <div className="md:max-w-[1100px] mt-24 p-[40px] md:p-[150px] border-[1px] border-none rounded-[32px] mx-4  md:mx-auto backdrop-blur-sm bg-[#ece9e914]">
+            <div className="md:max-w-[1100px] md:mt-24 mt-52 p-[40px] md:p-[150px] border-[1px] border-none rounded-[32px] mx-4  md:mx-auto backdrop-blur-sm bg-[#ece9e914]">
               <div className="mb-8 text-[29px] md:text-5xl text-center text-white">
                 <h3 className="custom-underline">Connecting you to</h3>
                 <Underline className="flex w-[230px] m-auto" />
@@ -55,7 +55,7 @@ function Homepage() {
                     <div className="px-[12px] py-[6px] bg-white rounded-full opacity-60">
                       <div className="flex text-[#2E2E2E] items-center justify-center text-[13px] list-disc">
                         <img src={bullet} className="pr-[5px]" alt="bullet" />
-                        {pl.label}
+                        {pl.label} 
                       </div>
                     </div>
                   </div>
