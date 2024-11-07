@@ -11,6 +11,9 @@ import ViewCommunities from "./pages/communities/ViewCommunities";
 import MarketPlace from "./pages/marketplace/MarketPlace";
 import MarketCategory from "./pages/marketplace/MarketCategory";
 import MarketAdDetails from "./pages/marketplace/MarketAdDetails";
+import "flatpickr/dist/flatpickr.css";
+import Event from "./pages/event/Event";
+import EventDetails from "./pages/event/EventDetails";
 
 function App() {
   return (
@@ -27,7 +30,8 @@ function App() {
           <Route path="/marketplace" element={<MarketPlace />} />
           <Route path="/market-ad-details" element={<MarketAdDetails />} />
           <Route path="/market-category" element={<MarketCategory />} />
-          <Route path="/events" element={<p>events</p>} />
+          <Route path="/events" element={<Event />} />
+          <Route path="/event-details" element={<EventDetails />} />
           <Route path="/resource-center" element={<p>Resource Center</p>} />
           <Route
             path="/business-directory"

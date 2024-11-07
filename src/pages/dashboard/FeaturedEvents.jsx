@@ -25,18 +25,13 @@ function FeaturedEvents() {
           {dashboardFeaturedEvents?.map((df, i) => (
             <div key={i} className="flex-shrink-0 w-[25%]">
               <FeaturedEventCard
+                otherClassNames={"w-[270px]"}
                 img={df.img}
                 footerImgs={df.footerImgs}
                 footerIconsWith={"w-[24px]"}
                 header={df.name}
                 desc={df.desc}
-                footerDesc={"700+ members"}
-                footerAction={
-                  <Button
-                    classNames="-mt-7 !px-4 !py-1 text-xs bg-black"
-                    name="Join"
-                  />
-                }
+                dashboardfooterDesc={"700+ members"}
               />
             </div>
           ))}
