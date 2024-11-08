@@ -92,14 +92,14 @@ function EventDetails() {
             </div>
           </div>
           <div className="grid grid-cols-3 gap-3 mx-4 mt-16">
-            <div className="col-span-2">
-              <div className="flex items-center justify-between mb-6">
-                <h3 className="font-extrabold text-[22px]">Event Name</h3>
-                <h3 className="font-extrabold text-[22px] text-[#AF7E00]">
+            <div className="col-span-2 w-[617px]">
+              <div className="flex items-center text-[22px] justify-between mb-6">
+                <h3 className="font-extrabold">Event Name</h3>
+                <h3 className="font-extrabold  text-[#AF7E00]">
                   3rd November, 2024
                 </h3>
               </div>
-              <div className="bg-white w-[617px] h-[243px] rounded-[15px]">
+              <div className="bg-white h-[243px] rounded-[15px]">
                 <h3 className="p-4">Description</h3>
                 <hr />
                 <p className="p-4 text-[#44444F]">
