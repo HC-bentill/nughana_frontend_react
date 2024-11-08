@@ -49,6 +49,7 @@ import doc from "../../../assets/images/doc.png";
 import biz from "../../../assets/images/biz.png";
 import home from "../../../assets/images/home.png";
 import directory from "../../../assets/images/directory.png";
+import business from "../../../assets/images/business.png";
 
 export const links = [
   {
@@ -412,6 +413,44 @@ export const dashboardFeaturedEvents = [
     name: "Event Name",
     desc: "Hartono Mall, YK",
     footerImgs: [featureFooterImg1, featureFooterImg2, featureFooterImg3],
+  },
+];
+export const dashboardBusiness = [
+  {
+    img: business,
+    name: "Event Name",
+    desc: "Hartono Mall, YK",
+    footerImgs: [call, whatsapp, mail],
+  },
+  {
+    img: business,
+    name: "Event Name",
+    desc: "Hartono Mall, YK",
+    footerImgs: [call, whatsapp, mail],
+  },
+  {
+    img: business,
+    name: "Event Name",
+    desc: "Hartono Mall, YK",
+    footerImgs: [call, whatsapp, mail],
+  },
+  {
+    img: business,
+    name: "Event Name",
+    desc: "Hartono Mall, YK",
+    footerImgs: [call, whatsapp, mail],
+  },
+  {
+    img: business,
+    name: "Event Name",
+    desc: "Hartono Mall, YK",
+    footerImgs: [call, whatsapp, mail],
+  },
+  {
+    img: business,
+    name: "Event Name",
+    desc: "Hartono Mall, YK",
+    footerImgs: [call, whatsapp, mail],
   },
 ];
 
