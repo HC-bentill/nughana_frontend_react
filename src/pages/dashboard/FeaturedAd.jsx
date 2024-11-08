@@ -21,9 +21,9 @@ function FeaturedAd() {
           </div>
         </div>
 
-        <div className="flex max-w-full gap-4 mt-2 overflow-x-auto hide-scrollbar">
+        <div className="flex max-w-full gap-2 mt-2 overflow-x-auto hide-scrollbar">
           {dashboardFeaturedAd?.map((df, i) => (
-            <div key={i} className="flex-shrink-0" style={{ width: "21%" }}>
+            <div key={i} className="flex-shrink-0">
               <FeaturedAdCard
                 footerDesc=" "
                 img={df.img}
@@ -31,11 +31,6 @@ function FeaturedAd() {
                 footerImgs={df.footerImgs}
                 header={df.name}
                 desc={df.desc}
-                footerAction={
-                  <a className="text-sm text-blue-500 underline" href="#">
-                    View in maps
-                  </a>
-                }
               />
             </div>
           ))}

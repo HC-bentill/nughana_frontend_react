@@ -8,6 +8,7 @@ function FeaturedCard({
   footerIconsWith,
   header,
   desc,
+  footerImgsOverlay
 }) {
   return (
     <div className="block w-[240px] rounded-[15px] bg-white text-surface shadow-secondary-1 dark:bg-surface-dark dark:text-white">
@@ -22,11 +23,11 @@ function FeaturedCard({
             footerDesc == " " ? "" : "flex-col"
           } flex justify-between mt-4`}
         >
-          <div className="flex items-center justify-between gap-7">
+          <div className="flex items-center w-full justify-between gap-7">
             <div className="shrink-0">
               <div className="flex items-center ml-2 mb-[-4px]">
                 {footerImgs?.map((fi, i) => (
-                  <div key={i} className={`flex ml-[-10px]`}>
+                  <div key={i} className={`flex ${footerImgsOverlay ? 'ml-[-10px]':' mr-4'}`}>
                     <img className={footerIconsWith} src={fi} alt="image" />
                   </div>
                 ))}

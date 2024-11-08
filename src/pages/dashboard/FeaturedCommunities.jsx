@@ -28,6 +28,7 @@ function FeaturedCommunities() {
                 img={df.img}
                 footerImgs={df.footerImgs}
                 footerIconsWith={"w-[24px]"}
+                footerImgsOverlay={true}
                 header={df.name}
                 desc={df.desc}
                 footerDesc={"700+ members"}
