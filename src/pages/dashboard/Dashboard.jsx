@@ -10,7 +10,7 @@ import FeaturedAd from "./FeaturedAd";
 export default function Dashboard() {
   return (
     <>
-      <div className="ml-8">
+      <div className="md:ml-8 ml-7">
         <div className="flex">
           <Button
             classNames="bg-black !text-[11px] !px-5 !py-2 mr-3 text-xs"

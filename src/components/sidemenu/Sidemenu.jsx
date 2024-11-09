@@ -8,7 +8,7 @@ export default function Sidemenu() {
   const navigate = useNavigate();
   let location = useLocation();
   return (
-    <div className="bg-[#fff]  py-2 flex-col items-center justify-between shrink-0 fixed z-30 min-h-screen">
+    <div className="bg-[#fff]  py-2 flex-col items-center justify-between shrink-0 fixed z-30 min-h-screen hidden md:block">
       <img
         onClick={() => navigate("/dashboard")}
         src={location?.pathname === "/dashboard" ? HomeIcon : HomeInactiveIcon}
