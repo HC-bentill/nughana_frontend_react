@@ -41,7 +41,7 @@ function CreateEvent({ closeModal }) {
                 Select Category
               </label>
               <Select
-                className="w-[268px] !h-[49px] !rounded-full"
+                className="w-[268px]"
                 defaultValue={selectCode}
                 onChange={handleCountryCodeChange}
                 options={countryCode}

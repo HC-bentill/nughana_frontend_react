@@ -14,6 +14,7 @@ import MarketAdDetails from "./pages/marketplace/MarketAdDetails";
 import "flatpickr/dist/flatpickr.css";
 import Event from "./pages/event/Event";
 import EventDetails from "./pages/event/EventDetails";
+import ResourceCenter from "./pages/resource_center/ResourceCenter";
 
 function App() {
   return (
@@ -32,7 +33,7 @@ function App() {
           <Route path="/market-category" element={<MarketCategory />} />
           <Route path="/events" element={<Event />} />
           <Route path="/event-details" element={<EventDetails />} />
-          <Route path="/resource-center" element={<p>Resource Center</p>} />
+          <Route path="/resource-center" element={<ResourceCenter />} />
           <Route
             path="/business-directory"
             element={<p>Business directory</p>}

@@ -58,6 +58,10 @@ import connProfile4 from "../../../assets/icons/conn-profile4.png";
 import connProfile5 from "../../../assets/icons/conn-profile5.png";
 import commProfile from "../../../assets/images/community-profile.png";
 import market from "../../../assets/images/market.png";
+import doc from "../../../assets/images/doc.png";
+import biz from "../../../assets/images/biz.png";
+import home from "../../../assets/images/home.png";
+import directory from "../../../assets/images/directory.png";
 
 import NotificationIcon from "../../../assets/icons/notification2.png";
 import MessagesIcon from "../../../assets/icons/messages.png";
@@ -734,6 +738,24 @@ export const allMarketPlace = [
   },
 ];
 
+export const expats = [
+  {
+    icon: doc,
+    name: "Experience Name",
+  },
+  {
+    icon: biz,
+    name: "Experience Name",
+  },
+  {
+    icon: home,
+    name: "Experience Name",
+  },
+  {
+    icon: directory,
+    name: "Experience Name",
+  },
+];
 
 export const profileMenuNavigation = [
   {
@@ -747,3 +769,4 @@ export const profileMenuNavigation = [
     href: "/messages",
   }
 ]
+
