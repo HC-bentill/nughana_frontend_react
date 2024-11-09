@@ -17,18 +17,31 @@ import insta from "../../../assets/icons/insta.png";
 import whatsapp from "../../../assets/icons/whatsapp.png";
 import mail from "../../../assets/icons/mail.png";
 import underline from "../../../assets/images/underline.png";
+
 import ConnectionsActive from "../../icons/Followers_active.png";
 import ConnectionsInActive from "../../icons/Followers_inactive.png";
+import ConnectionsMobile from "../../icons/Followers_mobile.png";
+
 import CommunitiesActive from "../../icons/Community_active.png";
 import CommunitiesInActive from "../../icons/Community_inactive.png";
+import CommunitiesMobile from "../../icons/Community_mobile.png";
+
 import MarketPlaceActive from "../../icons/Marketplace_active.png";
 import MarketPlaceInActive from "../../icons/Marketplace_inactive.png";
+import MarketPlaceMobile from "../../icons/Marketplace_mobile.png";
+
 import EventsActive from "../../icons/Events_active.png";
 import EventsInActive from "../../icons/Events_inactive.png";
+import EventsMobile from "../../icons/Events_mobile.png";
+
 import ResourceCenterActive from "../../icons/Resource_center_active.png";
 import ResourceCenterInActive from "../../icons/Resource_center_inactive.png";
+import ResourceCenterMobile from "../../icons/Resource_center_mobile.png";
+
 import BusinessDirectoryActive from "../../icons/Business_Directory_active.png";
 import BusinessDirectoryInActive from "../../icons/Business_Directory_inactive.png";
+import BusinessDirectoryMobile from "../../icons/Business_Directory_mobile.png";
+
 import connect1 from "../../../assets/images/connect1.png";
 import comm1 from "../../../assets/images/comm1.png";
 import comm2 from "../../../assets/images/comm2.png";
@@ -49,6 +62,10 @@ import doc from "../../../assets/images/doc.png";
 import biz from "../../../assets/images/biz.png";
 import home from "../../../assets/images/home.png";
 import directory from "../../../assets/images/directory.png";
+
+import NotificationIcon from "../../../assets/icons/notification2.png";
+import MessagesIcon from "../../../assets/icons/messages.png";
+
 
 export const links = [
   {
@@ -268,36 +285,42 @@ export const sidemenuIcons = [
     route: "/connections",
     activeIcon: ConnectionsActive,
     inactiveIcon: ConnectionsInActive,
+    mobileIcon: ConnectionsMobile,
     label: "Connections",
   },
   {
     route: "/communities",
     activeIcon: CommunitiesActive,
     inactiveIcon: CommunitiesInActive,
+    mobileIcon: CommunitiesMobile,
     label: "communities",
   },
   {
     route: "/marketplace",
     activeIcon: MarketPlaceActive,
     inactiveIcon: MarketPlaceInActive,
+    mobileIcon: MarketPlaceMobile,
     label: "Marketplace",
   },
   {
     route: "/events",
     activeIcon: EventsActive,
     inactiveIcon: EventsInActive,
+    mobileIcon: EventsMobile,
     label: "Events",
   },
   {
     route: "/resource-center",
     activeIcon: ResourceCenterActive,
     inactiveIcon: ResourceCenterInActive,
+    mobileIcon: ResourceCenterMobile,
     label: "Resource Center",
   },
   {
     route: "/business-directory",
     activeIcon: BusinessDirectoryActive,
     inactiveIcon: BusinessDirectoryInActive,
+    mobileIcon: BusinessDirectoryMobile,
     label: "Business Directory",
   },
 ];
@@ -733,3 +756,17 @@ export const expats = [
     name: "Experience Name",
   },
 ];
+
+export const profileMenuNavigation = [
+  {
+    label: "Notification",
+    icon: NotificationIcon,
+    href: "/notifications",
+  },
+  {
+    label: "Messages",
+    icon: MessagesIcon,
+    href: "/messages",
+  }
+]
+

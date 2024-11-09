@@ -7,7 +7,7 @@ function FeaturedCommunities() {
   return (
     <>
       <div className="mt-14">
-        <div className="flex justify-between">
+        <div className="flex justify-between items-center">
           <h3 className="font-semibold">Featured Communities</h3>
           <div className="flex">
             <Button
@@ -21,19 +21,20 @@ function FeaturedCommunities() {
           </div>
         </div>
 
-        <div className="flex max-w-full gap-4 mt-2 overflow-x-auto hide-scrollbar">
+        <div className="flex max-w-full gap-2 mt-2 overflow-x-auto hide-scrollbar">
           {dashboardFeaturedCommunity?.map((df, i) => (
-            <div key={i} className="flex-shrink-0" style={{ width: "23%" }}>
+            <div key={i} className="flex-shrink-0">
               <FeaturedCard
                 img={df.img}
                 footerImgs={df.footerImgs}
                 footerIconsWith={"w-[24px]"}
+                footerImgsOverlay={true}
                 header={df.name}
                 desc={df.desc}
                 footerDesc={"700+ members"}
                 footerAction={
                   <Button
-                    classNames="-mt-7 !px-4 !py-1 text-xs bg-black"
+                    classNames="text-xs bg-black w-full  !py-[9px]"
                     name="Join"
                   />
                 }

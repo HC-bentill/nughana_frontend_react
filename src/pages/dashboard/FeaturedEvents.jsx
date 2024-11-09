@@ -21,17 +21,17 @@ function FeaturedEvents() {
           </div>
         </div>
 
-        <div className="flex gap-4 mt-2 overflow-x-scroll hide-scrollbar">
+        <div className="flex gap-2 mt-2 overflow-x-scroll hide-scrollbar">
           {dashboardFeaturedEvents?.map((df, i) => (
-            <div key={i} className="flex-shrink-0 w-[25%]">
+            <div key={i} className="flex-shrink-0">
               <FeaturedEventCard
-                otherClassNames={"w-[270px]"}
+                otherClassNames={"w-[240px]"}
                 img={df.img}
                 footerImgs={df.footerImgs}
                 footerIconsWith={"w-[24px]"}
                 header={df.name}
                 desc={df.desc}
-                dashboardfooterDesc={"700+ members"}
+                dashboardfooterDesc={"700+ registered"}
               />
             </div>
           ))}

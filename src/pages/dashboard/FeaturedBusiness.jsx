@@ -21,18 +21,19 @@ function FeaturedBusiness() {
           </div>
         </div>
 
-        <div className="flex max-w-full gap-4 mt-2 overflow-x-auto hide-scrollbar">
+        <div className="flex max-w-full gap-2 mt-2 overflow-x-auto hide-scrollbar">
           {dashboardFeaturedBusiness?.map((df, i) => (
-            <div key={i} className="flex-shrink-0" style={{ width: "23%" }}>
+            <div key={i} className="flex-shrink-0">
               <FeaturedCard
                 footerDesc=" "
                 img={df.img}
                 footerIconsWith="w-[15px]"
+                footerImgsOverlay={false}
                 footerImgs={df.footerImgs}
                 header={df.name}
                 desc={df.desc}
                 footerAction={
-                  <a className="text-xs text-blue-500 underline" href="#">
+                  <a className="text-[8px] text-blue-400 underline font-semibold" href="#">
                     View in maps
                   </a>
                 }
