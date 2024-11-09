@@ -7,7 +7,7 @@ import NavigationBar from "./NavigationBar";
 export default function DashboardLayout() {
   return (
     <>
-      <div className="relative">
+      <div className="relative"> 
         {/* navigation bar */}
         <NavigationBar/>
 
