@@ -23,7 +23,7 @@ const PilesTab = ({ tabs, section, tabHeader }) => {
       </div>
 
       <div className="p-4">
-        <h3 className="font-semibold text-[18px] mb-6">{tabHeader}</h3>
+        <h3 className="font-semibold text-[18px] ">{tabHeader}</h3>
         {tabs.map((tab) =>
           activeTab === tab.label ? (
             <div key={tab.label} className="tab-content">
