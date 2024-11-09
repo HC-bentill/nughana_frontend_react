@@ -50,7 +50,7 @@ const NavigationBar = () => {
     <>
       <div className="z-50 fixed w-full top-0">
         <div className="border-b-[0.5px] border-[#bfbfbf64] bg-[white]">
-          <div className="flex items-center justify-between py-3 mx-auto md:max-w-[90%] md:px-0 px-7">
+          <div className="flex items-center md:gap-0 gap-4 justify-between py-3 mx-auto md:max-w-[90%] md:px-0 px-7">
             <div className="">
               <img
                 onClick={() => navigate("/dashboard")}
@@ -59,7 +59,7 @@ const NavigationBar = () => {
                 className="w-[40px] h-[40px] md:ml-[18px] shadow-sm"
               />
             </div>
-            <div className="border-[#E5E5E7] border rounded-[30px] flex items-center gap-2 w-72">
+            <div className="border-[#E5E5E7] border rounded-[30px] flex items-center gap-2 w-52 md:w-72">
               <img
                 src={Search}
                 alt="img"
@@ -71,7 +71,7 @@ const NavigationBar = () => {
                 placeholder="Search"
               />
             </div>
-            <div className="flex items-center gap-5">
+            <div className="flex items-center md:gap-5">
               <div className="bg-[#F9FAFB] p-[1px] rounded-full">
                 <img
                   src={BellIcon}
