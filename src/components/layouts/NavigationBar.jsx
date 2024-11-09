@@ -100,7 +100,7 @@ const NavigationBar = () => {
       </div>
       {/* mobile only top menu */}
       <div className=" bg-[white] w-full md:hidden block fixed top-[63px] z-20">
-        <div className="flex items-center justify-between py-2 px-16">
+        <div className="flex items-center justify-between py-2 px-8 pt-3">
           <div className="flex flex-col items-center">
             <img
               onClick={() => navigate("/dashboard")}
