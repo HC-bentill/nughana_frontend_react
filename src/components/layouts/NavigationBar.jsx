@@ -11,7 +11,6 @@ import Dropdown from "../../assets/icons/dropdown.svg?react";
 import { profileMenuNavigation, sidemenuIcons } from "../../assets/core/data";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { AiOutlineClose } from "react-icons/ai";
-import { BsChevronRight } from "react-icons/bs";
 import MobileMenuItem from "../mobileMenuItem/MobileMenuItem";
 import RoundedLeftChev from "../../assets/icons/rounded_chev_left.png";
 
@@ -48,7 +47,7 @@ const NavigationBar = () => {
 
   return (
     <>
-      <div className="z-50 fixed w-full top-0">
+      <div className="fixed top-0 z-50 w-full">
         <div className="border-b-[0.5px] border-[#bfbfbf64] bg-[white]">
           <div className="flex items-center md:gap-0 gap-4 justify-between py-3 mx-auto md:max-w-[90%] md:px-0 px-7">
             <div className="">
@@ -100,25 +99,24 @@ const NavigationBar = () => {
       </div>
       {/* mobile only top menu */}
       <div className=" bg-[white] w-full md:hidden block fixed top-[63px] z-20">
-        <div className="flex items-center justify-between py-2 px-8 pt-3">
+        <div className="flex items-center justify-between px-8 py-2 pt-3">
           <div className="flex flex-col items-center">
             <img
               onClick={() => navigate("/dashboard")}
               src={HomeMobile}
               alt="img"
-              className="cursor-pointer object-contain"
+              className="object-contain cursor-pointer"
             />
             <p className="text-[8px] pt-1">Home</p>
           </div>
 
           {sidemenuIcons?.slice(0, 3).map((item, idx) => (
-            <div className="flex flex-col items-center">
+            <div key={idx} className="flex flex-col items-center">
               <img
                 onClick={() => navigate(item.route)}
-                key={idx}
                 src={item.mobileIcon}
                 alt="img"
-                className="cursor-pointer object-contain"
+                className="object-contain cursor-pointer"
               />
               <p className="text-[8px] pt-1">{item.label}</p>
             </div>
@@ -131,7 +129,7 @@ const NavigationBar = () => {
               onClick={() => handleProfileNavToggle}
               src={ThreeDotsMenu}
               alt="img"
-              className="cursor-pointer object-contain"
+              className="object-contain cursor-pointer"
             />
             <p className="text-[8px] pt-5 mt-[-5px]">More</p>
           </div>
@@ -151,7 +149,7 @@ const NavigationBar = () => {
             <AiOutlineClose
               size={"1em"}
               onClick={handleProfileNavToggle}
-              className="cursor-pointer mt-2"
+              className="mt-2 cursor-pointer"
               color="black"
             />
           </div>
@@ -180,7 +178,12 @@ const NavigationBar = () => {
               />
             ))}
             <img alt="img" src={EventAd} className="my-4" />
-            <MobileMenuItem icon={SupportIcon} label={"Support"} badge={9}  onSelect={handleProfileNavToggle}/>
+            <MobileMenuItem
+              icon={SupportIcon}
+              label={"Support"}
+              badge={9}
+              onSelect={handleProfileNavToggle}
+            />
           </div>
         </div>
       </div>
@@ -192,7 +195,7 @@ const NavigationBar = () => {
         }`}
       >
         <div className="mt-[96px] text-[14px] w-[86%] mx-auto">
-          <div className="flex justify-between items-center">
+          <div className="flex items-center justify-between">
             <img
               onClick={handleMenuNavToggle}
               className="cursor-pointer"
@@ -207,15 +210,14 @@ const NavigationBar = () => {
             <div className="border-b-[1px] border-t-[1px] border-gray-100 py-1">
               <MobileMenuItem
                 icon={HomeMobile}
-                label={'Home'}
-                href={'/dashboard'}
+                label={"Home"}
+                href={"/dashboard"}
                 onSelect={handleMenuNavToggle}
               />
             </div>
             {sidemenuIcons?.map((item, idx) => (
-              <div className="border-b-[1px] border-gray-100 py-1">
+              <div key={idx} className="border-b-[1px] border-gray-100 py-1">
                 <MobileMenuItem
-                  key={idx}
                   icon={item.mobileIcon}
                   label={item.label}
                   href={item.route}
