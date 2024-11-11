@@ -3,12 +3,7 @@ import starLine from "../../assets/images/star-line.png";
 import Button from "../../components/button/_component";
 
 function ReviewBusiness({ closeModal }) {
-  const [selectCode, setSelectedCode] = React.useState(null);
   const [rating, setRating] = React.useState(0);
-
-  const handleCountryCodeChange = (option) => {
-    setSelectedCode(option);
-  };
 
   const handleRating = (index) => {
     setRating(index + 1);

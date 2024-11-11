@@ -42,7 +42,7 @@ function BusinessDirectory() {
       <Modal open={modalOpen} close={() => setModalOpen(false)}>
         <ListBusiness closeModal={() => setModalOpen(false)} />
       </Modal>
-      <div className="flex">
+      <div className="flex justify-between">
         <div>
           <div className="bg-[#FED28A] flex justify-center text-center ml-2 border-[7px] border-white rounded-[15px] py-8 w-[973px] h-[190px]">
             <div>

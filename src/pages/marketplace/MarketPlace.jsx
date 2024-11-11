@@ -42,7 +42,7 @@ function MarketPlace() {
       <Modal open={modalOpen} close={() => setModalOpen(false)}>
         <CreateAd closeModal={() => setModalOpen(false)} />
       </Modal>
-      <div className="flex">
+      <div className="flex justify-between">
         <div>
           <div className="bg-[#FED28A] flex justify-center text-center ml-2 border-[7px] border-white rounded-[15px] py-8 w-[973px] h-[190px]">
             <div>
@@ -61,7 +61,7 @@ function MarketPlace() {
                 <Button
                   onClick={() => navigate("/market-ad-details")}
                   classNames="bg-[#FED28A] font-semibold !text-black w-[200px] text-[12px] border-[1px] border-black !px-5 !py-3 text-xs"
-                  name={"View your Adss"}
+                  name={"View your Ads"}
                 />
               </div>
             </div>

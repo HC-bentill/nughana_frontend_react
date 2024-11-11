@@ -54,7 +54,7 @@ function MarketAdDetails() {
       <Modal open={modalOpen} close={() => setModalOpen(false)}>
         <CreateAd closeModal={() => setModalOpen(false)} />
       </Modal>
-      <div className="flex">
+      <div className="flex justify-between">
         <div>
           <div className="flex items-center justify-between">
             <div className="flex items-center">
