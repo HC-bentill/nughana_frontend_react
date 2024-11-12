@@ -6,7 +6,6 @@ import ThreeDotsMenu from "../../assets/icons/ThreeDotsMenu.png";
 import HomeMobile from "../../assets/icons/Home_mobile.png";
 import EventAd from "../../assets/icons/eventAd.png";
 import SupportIcon from "../../assets/icons/customer_service.png";
-
 import Dropdown from "../../assets/icons/dropdown.svg?react";
 import { profileMenuNavigation, sidemenuIcons } from "../../assets/core/data";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
@@ -25,6 +24,12 @@ const NavigationBar = () => {
 
   // Toggle the navigation visibility
   const handleProfileNavToggle = () => setHandleNav(!handleNav);
+
+  const handleNavigateToProfile = () => {
+    navigate("/profile");
+    setHandleNav(false);
+  };
+
   const handleMenuNavToggle = () => setHandleMenuNav(!handleMenuNav);
 
   // Close the navigation when clicking outside of it
@@ -163,7 +168,12 @@ const NavigationBar = () => {
             </div>
             <div>
               <p className="text-[16px]">Kacy M. Barlet</p>
-              <p className="text-[13px] text-[#AF7E00]">View my profile</p>
+              <p
+                onClick={handleNavigateToProfile}
+                className="cursor-pointer text-[13px] text-[#AF7E00]"
+              >
+                View my profile
+              </p>
             </div>
           </div>
 

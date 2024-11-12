@@ -17,6 +17,8 @@ import EventDetails from "./pages/event/EventDetails";
 import ResourceCenter from "./pages/resource_center/ResourceCenter";
 import BusinessDirectory from "./pages/business/BusinessDirectory";
 import BusinessDetails from "./pages/business/BusinessDetails";
+import Profile from "./pages/profile/Profile";
+import EditProfile from "./pages/profile/EditProfile";
 
 function App() {
   return (
@@ -38,6 +40,8 @@ function App() {
           <Route path="/resource-center" element={<ResourceCenter />} />
           <Route path="/business-directory" element={<BusinessDirectory />} />
           <Route path="/business-details" element={<BusinessDetails />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/edit-profile" element={<EditProfile />} />
         </Route>
       </Routes>
     </>
