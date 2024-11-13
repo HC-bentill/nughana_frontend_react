@@ -183,7 +183,6 @@ const NavigationBar = () => {
             <div>
               <p className="text-[16px]" onClick={handleNavigateToProfile}>{user?.user_display_name}</p>
               <p className="text-[13px] text-[#AF7E00]">View my profile</p>
-
             </div>
           </div>
 
