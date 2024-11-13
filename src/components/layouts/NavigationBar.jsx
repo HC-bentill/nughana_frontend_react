@@ -5,7 +5,7 @@ import BellIcon from "../../assets/icons/bell.svg?react";
 import ThreeDotsMenu from "../../assets/icons/ThreeDotsMenu.png";
 import HomeMobile from "../../assets/icons/Home_mobile.png";
 import EventAd from "../../assets/icons/eventAd.png";
-import SupportIcon from "../../assets/icons/customer_service.png";
+import LogoutIcon from "../../assets/icons/logout.svg";
 
 import Dropdown from "../../assets/icons/dropdown.svg?react";
 import { profileMenuNavigation, sidemenuIcons } from "../../assets/core/data";
@@ -13,13 +13,16 @@ import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { AiOutlineClose } from "react-icons/ai";
 import MobileMenuItem from "../mobileMenuItem/MobileMenuItem";
 import RoundedLeftChev from "../../assets/icons/rounded_chev_left.png";
+import { setLogout, setUserInformation } from "../../redux/user/userSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const NavigationBar = () => {
+  const user = useSelector((state) => state.user.userInformation);
   const navigate = useNavigate();
   let location = useLocation();
   const [handleNav, setHandleNav] = useState(false);
   const [handleMenuNav, setHandleMenuNav] = useState(false);
-
+  const dispatch = useDispatch();
   // Create a ref for the sidebar container
   const sidenavRef = useRef(null);
 
@@ -44,6 +47,15 @@ const NavigationBar = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
+  const handleLogout = () => {
+    if (window.confirm("Are you sure you want to logout?")) {
+      window.location.href = "/login";
+      dispatch(setLogout());
+      dispatch(setUserInformation());
+      localStorage.clear();
+    }
+  };
 
   return (
     <>
@@ -141,7 +153,7 @@ const NavigationBar = () => {
         id="mySidenav"
         ref={sidenavRef}
         className={`h-full fixed top-0 right-0 bg-[white] overflow-x-hidden z-30 shadow ${
-          handleNav ? "w-[75%]" : "w-0"
+          handleNav ? "w-[75%] md:w-[50%] lg:w-[25%]" : "w-0"
         }`}
       >
         <div className="text-black items-center flex justify-end py-3 px-5 mt-[60px]">
@@ -162,7 +174,7 @@ const NavigationBar = () => {
               </div>
             </div>
             <div>
-              <p className="text-[16px]">Kacy M. Barlet</p>
+              <p className="text-[16px]">{user?.user_display_name}</p>
               <p className="text-[13px] text-[#AF7E00]">View my profile</p>
             </div>
           </div>
@@ -179,10 +191,9 @@ const NavigationBar = () => {
             ))}
             <img alt="img" src={EventAd} className="my-4" />
             <MobileMenuItem
-              icon={SupportIcon}
-              label={"Support"}
-              badge={9}
-              onSelect={handleProfileNavToggle}
+              icon={LogoutIcon}
+              label={"Logout"}
+              onSelect={handleLogout}
             />
           </div>
         </div>
