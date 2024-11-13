@@ -23,32 +23,7 @@ function MarketAdDetails() {
   const [modalOpen, setModalOpen] = React.useState(false);
 
   const navigate = useNavigate();
-  const tabOptions = [
-    {
-      label: "All",
-      content: <AllMarketPlace />,
-    },
-    {
-      label: "Finance",
-      content: <div className="">Finance</div>,
-    },
-    {
-      label: "Start up",
-      content: <div className="">Start up</div>,
-    },
-    {
-      label: "Entrepreneur",
-      content: <div className="">Entrepreneur</div>,
-    },
-    {
-      label: "Golfing",
-      content: <div className="">Golfing</div>,
-    },
-    {
-      label: "Sports",
-      content: <div className="">Sports</div>,
-    },
-  ];
+
   return (
     <>
       <Modal open={modalOpen} close={() => setModalOpen(false)}>

@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 
-const Tabs = ({ tabs }) => {
+const Tabs = ({ tabs, showBadge, otherClassNames }) => {
   const [activeTab, setActiveTab] = useState(tabs[0].label);
 
   return (
     <div>
-      <div className="flex justify-around p-4 bg-gray-100 border-b border-[#E5E7EB]">
+      <div
+        className={`${otherClassNames} flex justify-around p-4 bg-gray-100 border-b border-[#E5E7EB]`}
+      >
         {tabs.map((tab) => (
           <button
             key={tab.label}
@@ -17,6 +19,11 @@ const Tabs = ({ tabs }) => {
             }`}
           >
             {tab.label}
+            {showBadge && (
+              <span className="ml-3 text-[#EAB308] bg-[#FEF9C3] rounded-lg p-[3px] text-[10px]">
+                {tab.badge}
+              </span>
+            )}
           </button>
         ))}
       </div>
