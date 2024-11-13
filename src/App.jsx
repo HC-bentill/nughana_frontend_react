@@ -19,30 +19,44 @@ import BusinessDirectory from "./pages/business/BusinessDirectory";
 import BusinessDetails from "./pages/business/BusinessDetails";
 import Profile from "./pages/profile/Profile";
 import EditProfile from "./pages/profile/EditProfile";
+import { useSelector } from "react-redux";
 
 function App() {
+  const user = useSelector((state) => state.user.user);
+  
   return (
     <>
       <Routes>
         <Route path="/" element={<Homepage />}></Route>
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route element={<DashboardLayout />}>
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/connections" element={<Connections />} />
-          <Route path="/communities" element={<Communities />} />
-          <Route path="/view-communities" element={<ViewCommunities />} />
-          <Route path="/marketplace" element={<MarketPlace />} />
-          <Route path="/market-ad-details" element={<MarketAdDetails />} />
-          <Route path="/market-category" element={<MarketCategory />} />
-          <Route path="/events" element={<Event />} />
-          <Route path="/event-details" element={<EventDetails />} />
-          <Route path="/resource-center" element={<ResourceCenter />} />
-          <Route path="/business-directory" element={<BusinessDirectory />} />
-          <Route path="/business-details" element={<BusinessDetails />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/edit-profile" element={<EditProfile />} />
-        </Route>
+        <Route path="*" element={<p>page not found 404</p>} />
+        {user ? (
+          <>
+            <Route element={<DashboardLayout />}>
+              <Route path="/home" element={<Dashboard />} />
+              <Route path="/connections" element={<Connections />} />
+              <Route path="/communities" element={<Communities />} />
+              <Route path="/view-communities" element={<ViewCommunities />} />
+              <Route path="/marketplace" element={<MarketPlace />} />
+              <Route path="/market-ad-details" element={<MarketAdDetails />} />
+              <Route path="/market-category" element={<MarketCategory />} />
+              <Route path="/events" element={<Event />} />
+              <Route path="/event-details" element={<EventDetails />} />
+              <Route path="/resource-center" element={<ResourceCenter />} />
+              <Route
+                path="/business-directory"
+                element={<BusinessDirectory />}
+              />
+              <Route path="/business-details" element={<BusinessDetails />} />
+               <Route path="/profile" element={<Profile />} />
+               <Route path="/edit-profile" element={<EditProfile />} />
+            </Route>
+          </>
+        ) : (
+          <>
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+          </>
+        )}
       </Routes>
     </>
   );
