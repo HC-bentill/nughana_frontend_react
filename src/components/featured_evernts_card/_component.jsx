@@ -33,14 +33,18 @@ function FeaturedEventCard({
             {footerImgs?.map((fi, i) => (
               <div
                 key={i}
-                className={`flex ${footerDesc == " " ? "" : "ml-[-10px]"} mb-[-5px]`}
+                className={`flex ${
+                  footerDesc == " " ? "" : "ml-[-10px]"
+                } mb-[-5px]`}
               >
                 <img className={footerIconsWith} src={fi} alt="image" />
               </div>
             ))}
             <h3 className="text-[12px] text-[#696974]">{eventfooterDesc}</h3>
           </div>
-          <h3 className="mt-2 text-[9px] font-semibold">{dashboardfooterDesc}</h3>
+          <h3 className="mt-2 text-[9px] font-semibold">
+            {dashboardfooterDesc}
+          </h3>
         </div>
       </div>
     </>
