@@ -9,7 +9,10 @@ function FeaturedAd() {
       <div className="mt-14">
         <div className="flex justify-between">
           <h3 className="font-semibold">Featured ads</h3>
-          <div className="flex">
+          <p className="mr-4 text-[15px] text-[#AF7E00] md:hidden block">
+            View More
+          </p>
+          <div className="md:flex hidden mr-2">
             <Button
               classNames="bg-black !px-5 !py-2 mr-3 text-xs"
               name={"Find business"}
@@ -34,6 +37,16 @@ function FeaturedAd() {
               />
             </div>
           ))}
+        </div>
+        <div className="md:hidden flex justify-center mt-7 ">
+          <Button
+            classNames="bg-black w-full !px-5 !py-2 text-xs mr-3"
+            name={"Post an Ad"}
+          />
+          <Button
+            classNames="bg-black w-full  !text-xs !px-5 !py-2"
+            name={"Marketplace"}
+          />
         </div>
       </div>
     </>

@@ -9,7 +9,8 @@ function FeaturedCommunities() {
       <div className="mt-14">
         <div className="flex justify-between items-center">
           <h3 className="font-semibold">Featured Communities</h3>
-          <div className="flex">
+          <p className="mr-4 text-[15px] text-[#AF7E00] md:hidden block">View More</p>
+          <div className="md:flex hidden mr-2">
             <Button
               classNames="bg-black !px-5 !py-2 text-xs mr-3"
               name={"Find community"}
@@ -41,6 +42,16 @@ function FeaturedCommunities() {
               />
             </div>
           ))}
+        </div>
+        <div className="md:hidden flex justify-center mt-7 ">
+          <Button
+            classNames="bg-black w-full !px-5 !py-2 text-xs mr-3"
+            name={"Find community"}
+          />
+          <Button
+            classNames="bg-black w-full  !text-xs !px-5 !py-2"
+            name={"Create a community"}
+          />
         </div>
       </div>
     </>

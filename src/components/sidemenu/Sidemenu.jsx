@@ -10,8 +10,8 @@ export default function Sidemenu() {
   return (
     <div className="bg-[#fff]  py-2 flex-col items-center justify-between shrink-0 fixed z-30 min-h-screen hidden md:block">
       <img
-        onClick={() => navigate("/dashboard")}
-        src={location?.pathname === "/dashboard" ? HomeIcon : HomeInactiveIcon}
+        onClick={() => navigate("/")}
+        src={location?.pathname === "/" ? HomeIcon : HomeInactiveIcon}
         alt="img"
         className={`${
           location?.pathname === "/dashboard" ? "" : ""

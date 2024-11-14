@@ -9,10 +9,52 @@ import facebook from "../../assets/icons/facebook.png";
 import Button from "../../components/button/_component";
 import signup from "../../assets/images/signup.jpeg";
 import Footer from "../homepage/footer";
+import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { UserSignup } from "../../api/auth.service";
+import toast from "react-hot-toast";
+import { storeItem } from "../../api/storage.service";
 
 function Login() {
   const [showPassword, setShowPassword] = React.useState(false);
-  const handleSubmit = () => {};
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [loading, setLoading] = React.useState(false);
+  const {
+    register,
+    handleSubmit,
+    watch,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    setLoading(true);
+    UserSignup(data)
+      .then((res) => {
+        if (res.status === 200) {
+          setLoading(false);
+          storeItem("u_signup_data", res.data.data);
+          toast.success(<p className="text-[12px]">{res?.data?.message}</p>);
+          reset();
+          // dispatch(setLogin(true));
+          // dispatch(setUserInformation(res.data));
+          // navigate("/home");
+        } else {
+          setLoading(false);
+          toast.error(<p className="text-[12px]">Unexpected error occurred</p>);
+        }
+        
+      })
+      .catch((err) => {
+        setLoading(false);
+        console.log(err);
+        toast.error(
+          <p className="text-[12px]">An error occured. Please try again !</p>
+        );
+      });
+  };
 
   const passwordToggle = () => {
     setShowPassword(!showPassword);
@@ -31,32 +73,37 @@ function Login() {
         <Navbar />
         <div className="relative !z-30 mt-14 w-full">
           <div className="md:m-auto border-noneborder-[1px] mx-5 px-[55px] py-[42px]  md:w-[420px] rounded-[20px] text-white backdrop-blur-md bg-[#9e9d9d21] shadow-[0px_0px_9px_0.1px_#555252;]">
-            <form className="w-full" onSubmit={handleSubmit}>
+            <form className="w-full" onSubmit={handleSubmit(onSubmit)}>
               <div>
                 <h3 className="text-[24px] font-500">Welcome!</h3>
-                <p className="text-[12px] font-light">Create an account to get started</p>
+                <p className="text-[12px] font-light">
+                  Create an account to get started
+                </p>
               </div>
               <div className="w-full mt-5">
                 <label className="text-[11px]">Email</label>
                 <div className="w-full flex mt-[1px] px-[9px] py-[12px] rounded-[6px] border-white border-[0.5px]">
                   <input
-                    required
                     placeholder="Email"
-                    name="email"
                     className=" outline-none block w-full text-[11px] bg-transparent rounded-[6px]"
+                    {...register("email", { required: true })}
                   />
                 </div>
+                {errors.email && (
+                  <span className="text-red-500 text-[11px]">
+                    This field is required
+                  </span>
+                )}
               </div>
               <div className="mt-3">
                 <label className="text-[11px]">Password</label>
                 <div className="w-full flex my-3 mt-[1px] rounded-[6px] border-white border-[0.5px]">
                   <div className="flex-grow">
                     <input
-                      required
                       placeholder="Password"
-                      name="password"
                       type={showPassword ? "text" : "password"}
                       className="my-3 w-full px-2.5 text-[11px] rounded-[6px] outline-0 bg-transparent"
+                      {...register("password", { required: true })}
                     />
                   </div>
                   <div
@@ -69,11 +116,18 @@ function Login() {
                     </small>
                   </div>
                 </div>
+                {errors.password && (
+                  <span className="text-red-500 text-[11px]">
+                    This field is required
+                  </span>
+                )}
               </div>
               <div className="flex items-center justify-between mt-6">
                 <Button
                   classNames="bg-[#00000000] border-[1px] w-full !py-[9px] mr-4 !text-[13px]"
                   name="Sign up"
+                  type={"submit"}
+                  isLoading={loading}
                 />
               </div>
               <div className="mt-12">

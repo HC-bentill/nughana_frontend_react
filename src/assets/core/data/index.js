@@ -63,7 +63,7 @@ import biz from "../../../assets/images/biz.png";
 import home from "../../../assets/images/home.png";
 import directory from "../../../assets/images/directory.png";
 import business from "../../../assets/images/business.png";
-
+import SupportIcon from "../../../assets/icons/customer_service.png";
 import NotificationIcon from "../../../assets/icons/notification2.png";
 import MessagesIcon from "../../../assets/icons/messages.png";
 import gallery1 from "../../../assets/images/gallery1.png";
@@ -813,7 +813,12 @@ export const profileMenuNavigation = [
     icon: MessagesIcon,
     href: "/messages",
   },
-];
+  {
+    label: "Support",
+    icon: SupportIcon,
+    href: "/Support",
+  }
+]
 
 export const galleryPhotos = {
   gallery1,
