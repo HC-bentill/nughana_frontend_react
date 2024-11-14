@@ -5,12 +5,13 @@ import { GetConnections } from "../../api/connections.service";
 import { useQuery } from "react-query";
 import { Loader } from "../../components/loader/_component.jsx";
 
-function YourConnections() {
+function YourConnections({searchWord}) {
+  
   const connections = useQuery({
     retry: (count, err) => count < 3,
     staleTime: Infinity,
     queryKey: ["connections"],
-    queryFn: () => GetConnections("personal").then((res) => res?.data),
+    queryFn: () => GetConnections("personal", searchWord).then((res) => res?.data),
     // onSuccess: (data) => onProductFetchSuccess(data),
   });
 

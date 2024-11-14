@@ -22,19 +22,6 @@ const Tabs = ({ tabs }) => {
         ))}
       </div>
 
-      {/* <div className="border-[#E5E5E7] bg-[#ffffff] border rounded-[30px] flex items-center gap-2 w-[90%] mx-auto md:hidden">
-        <img
-          src={Search}
-          alt="img"
-          className="w-[24px] h-[24px] shadow-sm m-2"
-        />
-        <input
-          className="text-sm font-light bg-[#ffffff] !w-full border-0 outline-none"
-          type="text"
-          placeholder="Search Connections"
-        />
-      </div> */}
-
       <div className="">
         {tabs.map((tab) =>
           activeTab === tab.label ? (
