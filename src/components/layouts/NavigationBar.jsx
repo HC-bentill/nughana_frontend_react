@@ -71,7 +71,7 @@ const NavigationBar = () => {
           <div className="flex items-center md:gap-0 gap-4 justify-between py-3 mx-auto md:max-w-[90%] md:px-0 px-7">
             <div className="">
               <img
-                onClick={() => navigate("/dashboard")}
+                onClick={() => navigate("/")}
                 src={NuGhanaLogo}
                 alt="img"
                 className="w-[40px] h-[40px] md:ml-[18px] shadow-sm"
@@ -121,7 +121,7 @@ const NavigationBar = () => {
         <div className="flex items-center justify-between px-8 py-2 pt-3">
           <div className="flex flex-col items-center">
             <img
-              onClick={() => navigate("/dashboard")}
+              onClick={() => navigate("/")}
               src={HomeMobile}
               alt="img"
               className="object-contain cursor-pointer"
@@ -181,8 +181,8 @@ const NavigationBar = () => {
               </div>
             </div>
             <div>
-              <p className="text-[16px]" onClick={handleNavigateToProfile}>{user?.user_display_name}</p>
-              <p className="text-[13px] text-[#AF7E00]">View my profile</p>
+              <p className="text-[16px]">{user?.user_display_name}</p>
+              <p className="text-[13px] text-[#AF7E00] cursor-pointer" onClick={handleNavigateToProfile}>View my profile</p>
             </div>
           </div>
 
@@ -229,7 +229,7 @@ const NavigationBar = () => {
               <MobileMenuItem
                 icon={HomeMobile}
                 label={"Home"}
-                href={"/dashboard"}
+                href={"/"}
                 onSelect={handleMenuNavToggle}
               />
             </div>

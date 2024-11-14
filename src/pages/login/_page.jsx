@@ -38,7 +38,7 @@ function Login() {
           storeItem("u_token", res.data.token);
           dispatch(setLogin(true))
           dispatch(setUserInformation(res.data));
-          navigate("/home");
+          navigate("/");
         } else {
           setLoading(false);
           toast.error(<p className="text-[12px]">{res?.data?.message ?? 'Unexpected error occurred'}</p>);

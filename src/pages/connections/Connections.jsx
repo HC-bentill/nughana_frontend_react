@@ -32,28 +32,29 @@ function Connections() {
 
   return (
     <>
-      <div className="flex justify-between ml-8">
-        <div className="">
-          <div className="flex items-center">
-            <h2 className="font-bold text-[22px] mr-7">Connections</h2>
-            <div className="border-[#E5E5E7] bg-[#ffffff] border rounded-[30px] flex items-center gap-2 w-72">
+      <div className="md:flex justify-between md:ml-8 md:px-0 gap-5">
+        <div className="flex-1">
+          <div className="md:flex items-center">
+            <h2 className="font-bold text-[22px] mr-7 md:flex hidden">Connections</h2>
+            <div className="border-[#E5E5E7] bg-[#ffffff] border rounded-[30px] flex items-center gap-2 md:w-72 w-[90%] md:mx-0 mx-auto">
               <img
                 src={Search}
                 alt="img"
                 className="w-[24px] h-[24px] shadow-sm m-2"
               />
               <input
-                className="text-sm font-light bg-[#ffffff] border-0 outline-none"
+                className="text-sm font-light bg-[#ffffff] border-0 outline-none w-full"
                 type="text"
                 placeholder="Search Connections"
               />
             </div>
           </div>
 
-          <div className="bg-gray-100 border-b mt-8 border-[#E5E7EB] w-full" />
           <Tabs tabs={tabOptions} />
         </div>
-        <Messages />
+        <div className="hidden xl:block">
+          <Messages />
+        </div>
       </div>
     </>
   );

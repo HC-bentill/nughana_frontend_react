@@ -27,12 +27,11 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Homepage />}></Route>
         <Route path="*" element={<p>page not found 404</p>} />
         {user ? (
           <>
             <Route element={<DashboardLayout />}>
-              <Route path="/home" element={<Dashboard />} />
+              <Route path="/" element={<Dashboard />} />
               <Route path="/connections" element={<Connections />} />
               <Route path="/communities" element={<Communities />} />
               <Route path="/view-communities" element={<ViewCommunities />} />
@@ -55,6 +54,7 @@ function App() {
           <>
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/" element={<Homepage />}></Route>
           </>
         )}
       </Routes>
