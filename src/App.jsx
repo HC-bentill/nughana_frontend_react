@@ -19,6 +19,7 @@ import BusinessDirectory from "./pages/business/BusinessDirectory";
 import BusinessDetails from "./pages/business/BusinessDetails";
 import Profile from "./pages/profile/Profile";
 import EditProfile from "./pages/profile/EditProfile";
+import PhotoGallery from "./pages/photo_gallery/PhotoGallery";
 import { useSelector } from "react-redux";
 
 function App() {
@@ -48,6 +49,7 @@ function App() {
               <Route path="/business-details" element={<BusinessDetails />} />
                <Route path="/profile" element={<Profile />} />
                <Route path="/edit-profile" element={<EditProfile />} />
+               <Route path="/photo-gallery" element={<PhotoGallery />} />
             </Route>
           </>
         ) : (

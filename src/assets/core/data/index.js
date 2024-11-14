@@ -66,7 +66,13 @@ import business from "../../../assets/images/business.png";
 import SupportIcon from "../../../assets/icons/customer_service.png";
 import NotificationIcon from "../../../assets/icons/notification2.png";
 import MessagesIcon from "../../../assets/icons/messages.png";
-
+import gallery1 from "../../../assets/images/gallery1.png";
+import gallery2 from "../../../assets/images/gallery2.png";
+import gallery3 from "../../../assets/images/gallery3.png";
+import gallery4 from "../../../assets/images/gallery4.png";
+import gallery5 from "../../../assets/images/gallery5.png";
+import gallery6 from "../../../assets/images/gallery6.png";
+import gallery7 from "../../../assets/images/gallery7.png";
 
 export const links = [
   {
@@ -814,3 +820,12 @@ export const profileMenuNavigation = [
   }
 ]
 
+export const galleryPhotos = {
+  gallery1,
+  gallery2,
+  gallery3,
+  gallery4,
+  gallery5,
+  gallery6,
+  gallery7,
+};

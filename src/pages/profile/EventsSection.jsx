@@ -3,8 +3,10 @@ import { dashboardFeaturedEvents } from "../../assets/core/data";
 import Button from "../../components/button/_component";
 import profilePhotos from "../../assets/images/profile-photos.png";
 import FeaturedEventCard from "../../components/featured_evernts_card/_component";
+import { useNavigate } from "react-router-dom";
 
 function EventsSection() {
+  const navigate = useNavigate();
   return (
     <div className="grid grid-cols-3 mt-16">
       <div className="p-8 bg-white rounded-[15px]">
@@ -12,7 +14,12 @@ function EventsSection() {
           <h3 className="text-[#171725] text-[14px] font-medium">
             Photos and Videos
           </h3>
-          <h3 className="text-[#B87C01] text-[14px] font-medium">See all</h3>
+          <h3
+            onClick={() => navigate("/photo-gallery")}
+            className="text-[#B87C01] cursor-pointer text-[14px] font-medium"
+          >
+            See all
+          </h3>
         </div>
         <hr className="border-t-2 my-3 border-[#F1F1F5]" />
         <div className="grid grid-cols-3 gap-4 mt-3">
