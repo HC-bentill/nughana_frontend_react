@@ -64,7 +64,8 @@ export const clearUserData = () => {
 
 export const apiAxios = (baseURL) => {
   const instance = axios.create({
-    baseURL: import.meta.env.VITE_APP_BACKEND_URL,
+    // baseURL: import.meta.env.VITE_APP_BACKEND_URL,
+    baseURL: 'https://api.afrotango.com/wp-json',
   });
   let token = getItem("u_token");
   if (token != null && token !== "") {
