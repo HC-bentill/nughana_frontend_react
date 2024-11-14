@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Search from "../../assets/images/svgs/search.svg?react";
 import Tabs from "../../components/tab/_component";
 import YourConnections from "./YourConnections";
@@ -10,6 +10,8 @@ import { GetConnections } from "../../api/connections.service";
 import { Loader } from "../../components/loader/_component";
 import ConnectionTray from "../../components/connection_tray/_component";
 
+let searchKeywordTimer;
+
 function Connections() {
   const [searchWord, setSearchWord] = useState("");
   const [activeTab, setActiveTab] = useState(0);
@@ -18,25 +20,36 @@ function Connections() {
     {
       label: "Your Connections",
       key: "personal",
+      description: "People you are connected to",
     },
     {
       label: "All Connections",
       key: "all",
+      description: "Explore Connections",
     },
     {
       label: "Favourite Connections",
       key: "following",
+      description: "Your favourite connections",
     },
   ];
 
   const connections = useQuery({
     retry: (count, err) => count < 3,
     staleTime: Infinity,
-    queryKey: ["connections", tabOptions[activeTab]?.key, searchWord],
+    queryKey: ["connections", tabOptions[activeTab]?.key],
     queryFn: () =>
-      GetConnections(tabOptions[activeTab]?.key, searchWord).then((res) => res?.data),
-    // onSuccess: (data) => onProductFetchSuccess(data),
+      GetConnections(tabOptions[activeTab]?.key, searchWord).then(
+        (res) => res?.data
+      ),
   });
+
+  useEffect(() => {
+    clearTimeout(searchKeywordTimer); // each time the keyword changes, clear the timer and start a new one
+    searchKeywordTimer = setTimeout(() => {
+      connections.refetch();
+    }, 700);
+  }, [searchWord, activeTab]);
 
   const groupByFirstLetter = (data) => {
     return data?.reduce((acc, ct) => {
@@ -57,8 +70,6 @@ function Connections() {
 
   const groupedData = groupByFirstLetter(connections?.data);
 
-
-
   return (
     <>
       <div className="md:flex justify-between md:ml-8 md:px-0 gap-5">
@@ -77,6 +88,7 @@ function Connections() {
                 className="text-sm font-light bg-[#ffffff] border-0 outline-none w-full"
                 type="text"
                 placeholder="Search Connections"
+                onChange={(e) => setSearchWord(e.target.value)}
               />
             </div>
           </div>
@@ -100,40 +112,51 @@ function Connections() {
 
             <div className="">
               <p className="text-[16px] font-semibold md:w-auto w-[94%] mx-auto my-7">
-                People you are connected to
+                {tabOptions[activeTab]?.description}
               </p>
 
-              {connections?.isLoading ? (
+              {connections?.isLoading || connections?.isFetching ? (
                 <div className="inset-0 flex justify-center bg-opacity-70 items-center z-[99] min-h-[50vh]">
                   <Loader />
                 </div>
               ) : (
                 <div>
-                  {Object.keys(groupedData)
-                    .sort()
-                    .map((letter) => (
-                      <div key={letter}>
-                        <h3 className="text-[#424242] my-5 ml-4">{letter}</h3>
-                        {groupedData[letter].map((ct, i) => (
-                          <div key={i}>
-                            <ConnectionTray
-                              profileImg={ct?.avatar_urls?.thumb}
-                              name={`${
-                                ct?.xprofile?.groups["1"]?.fields["1"]?.value
-                                  ?.raw || ""
-                              } ${
-                                ct?.xprofile?.groups["1"]?.fields["2"]?.value
-                                  ?.raw || ""
-                              }`}
-                              username={
-                                ct?.xprofile?.groups["1"]?.fields["3"]?.value
-                                  ?.raw || "Unknown Username"
-                              }
-                            />
+                  {Object.keys(groupedData)?.length > 0 ? (
+                    <>
+                      {" "}
+                      {Object.keys(groupedData)
+                        .sort()
+                        .map((letter) => (
+                          <div key={letter}>
+                            <h3 className="text-[#424242] my-5 ml-4">
+                              {letter}
+                            </h3>
+                            {groupedData[letter]?.map((ct, i) => (
+                              <div key={i}>
+                                <ConnectionTray
+                                  profileImg={ct?.avatar_urls?.thumb}
+                                  name={`${
+                                    ct?.xprofile?.groups["1"]?.fields["1"]
+                                      ?.value?.raw || ""
+                                  } ${
+                                    ct?.xprofile?.groups["1"]?.fields["2"]
+                                      ?.value?.raw || ""
+                                  }`}
+                                  username={
+                                    ct?.xprofile?.groups["1"]?.fields["3"]
+                                      ?.value?.raw || "Unknown Username"
+                                  }
+                                />
+                              </div>
+                            ))}
                           </div>
                         ))}
-                      </div>
-                    ))}
+                    </>
+                  ) : (
+                    <p className="text-center text-gray-500 text-[13px]">
+                      No Connections Found
+                    </p>
+                  )}
                 </div>
               )}
             </div>
