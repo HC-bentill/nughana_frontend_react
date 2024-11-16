@@ -1,5 +1,6 @@
 import React from "react";
 import fileImg from "../../assets/images/file.png";
+import { UploadImage } from "../../api/upload.service";
 
 function UploadFile() {
   const [isDragging, setIsDragging] = React.useState(false);
@@ -21,14 +22,24 @@ function UploadFile() {
   };
 
   const handleFiles = (file) => {
-    console.log("file: ", file[0].name);
-    setFileName(file[0].name);
+    console.log("file: ", file);
+    setFileName(file && file.name);
   };
 
   const handleBrowseFiles = (e) => {
-    const file = e.target.files;
+    const file = e.target.files[0];
+    const formData = new FormData();
+    formData.append("file", file);
+    console.log("f: ", file);
     handleFiles(file);
+
+    UploadImage(formData)
+      .then((res) => {
+        console.log("res: ", res);
+      })
+      .catch((error) => {});
   };
+
   return (
     <>
       <div

@@ -68,6 +68,7 @@ function MarketPlace() {
           </div>
           <div className="flex">
             <PilesTab
+              showSection={true}
               section={
                 <>
                   <div className="border-[#E5E5E7] mr-8 bg-white border rounded-[30px] flex items-center gap-2 w-[217px] h-[50px]">

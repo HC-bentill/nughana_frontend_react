@@ -2,7 +2,7 @@ import React from "react";
 import Button from "../../components/button/_component";
 import { Modal } from "../../components/modal/_component";
 import Messages from "../connections/Messages";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import link from "../../assets/icons/Link.png";
 import adBanner from "../../assets/images/adBanner.png";
 import g_bullet from "../../assets/icons/g-bullet.png";
@@ -14,53 +14,36 @@ import goldWhatsapp from "../../assets/icons/gold-whatsapp.png";
 import goldFb from "../../assets/icons/gold-fb.png";
 import goldSnap from "../../assets/icons/gold-snap.png";
 import goldInsta from "../../assets/icons/gold-insta.png";
-import {
-  dashboardFeaturedAd,
-  dashboardFeaturedEvents,
-} from "../../assets/core/data";
-import FeaturedAdCard from "../../components/featured_ad_card/_component";
-import AllMarketPlace from "../marketplace/AllMarketPlace";
+import { dashboardFeaturedEvents } from "../../assets/core/data";
 import CreateAd from "../marketplace/CreateAd";
 import FeaturedEventCard from "../../components/featured_evernts_card/_component";
+import { GetEvent } from "../../api/event.service";
+import { useQuery } from "react-query";
+import moment from "moment";
 
 function EventDetails() {
+  const { id } = useParams();
   const [modalOpen, setModalOpen] = React.useState(false);
 
   const navigate = useNavigate();
-  const tabOptions = [
-    {
-      label: "All",
-      content: <AllMarketPlace />,
-    },
-    {
-      label: "Finance",
-      content: <div className="">Finance</div>,
-    },
-    {
-      label: "Start up",
-      content: <div className="">Start up</div>,
-    },
-    {
-      label: "Entrepreneur",
-      content: <div className="">Entrepreneur</div>,
-    },
-    {
-      label: "Golfing",
-      content: <div className="">Golfing</div>,
-    },
-    {
-      label: "Sports",
-      content: <div className="">Sports</div>,
-    },
-  ];
+  const event = useQuery({
+    retry: (count, err) => count < 3,
+    // staleTime: Infinity,
+    queryKey: ["event"],
+    queryFn: () => GetEvent(id).then((res) => res),
+    // onSuccess: (data) => onProductFetchSuccess(data),
+  });
+
+  let eventData = event && event.data && event.data.data;
+
   return (
     <>
       <Modal open={modalOpen} close={() => setModalOpen(false)}>
         <CreateAd closeModal={() => setModalOpen(false)} />
       </Modal>
-      <div className="flex">
-        <div>
-          <div className="flex items-center justify-between">
+      <div className="flex justify-between">
+        <div className="md:ml-3">
+          <div className="flex items-center justify-between max-sm:mb-8">
             <div className="flex items-center">
               <img
                 onClick={() => navigate("/events")}
@@ -69,16 +52,16 @@ function EventDetails() {
                 className="w-[40px] cursor-pointer h-[40px] mr-5"
               />
               <h3 className="text-[14px] font-semibold text-[#1A314D]">
-                Event Name
+                {eventData && eventData.acf.event_name}
               </h3>
             </div>
             <Button
               //   onClick={() => setModalOpen(true)}
-              classNames="bg-black mr-3 w-[173px] text-[12px] !px-5 !py-3 text-xs"
+              classNames="bg-black flex justify-center m-auto max-sm:hidden mr-3 w-[173px] text-[12px] !px-5 !py-3 text-xs"
               name={"Register"}
             />
           </div>
-          <div className="flex justify-center text-center ml-2 py-8 w-[973px] h-[190px]">
+          <div className="max-sm:hidden flex justify-center text-center mt-9 py-8 w-[973px] h-[190px]">
             <div className="relative">
               <img
                 src={adBanner}
@@ -91,19 +74,44 @@ function EventDetails() {
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-3 gap-3 mx-4 mt-16">
-            <div className="col-span-2 w-[617px]">
-              <div className="flex items-center text-[22px] justify-between mb-6">
-                <h3 className="font-extrabold">Event Name</h3>
+          <div className="flex flex-col py-8 ml-2 md:hidden">
+            <div className="relative">
+              <img
+                src={adBanner}
+                className="border-[7px] object-fill h-[149px] w-[400px] border-white rounded-[15px] "
+                alt=""
+              />
+              <div className="bg-[#FEF9C3] px-3 py-1 rounded-full absolute flex items-center left-3 top-3">
+                <img className="w-1 h-1 mr-2" src={g_bullet} alt="bullet" />
+                <small className="text-[#EAB308]">Electronics</small>
+              </div>
+            </div>
+            <div className="flex justify-center bg-white p-8 w-[400px]">
+              <Button
+                //   onClick={() => setModalOpen(true)}
+                classNames="bg-black mr-3 w-[173px] text-[12px] !px-5 !py-3 text-xs"
+                name={"Register"}
+              />
+            </div>
+          </div>
+          <div className="grid grid-cols-3 gap-3 mx-4 mt-16 max-sm:grid-cols-1">
+            <div className="md:col-span-2 w-[617px]">
+              <div className="flex max-sm:flex-col md:items-center text-[22px] justify-between mb-6">
+                <h3 className="font-extrabold">
+                  {eventData && eventData.acf.event_name}
+                </h3>
                 <h3 className="font-extrabold  text-[#AF7E00]">
-                  3rd November, 2024
+                  {moment(
+                    eventData && eventData.acf.event_date,
+                    "YYYYMMDD"
+                  ).format("Do MMMM YYYY")}
                 </h3>
               </div>
               <div className="bg-white h-[243px] rounded-[15px]">
                 <h3 className="p-4">Description</h3>
                 <hr />
                 <p className="p-4 text-[#44444F]">
-                  Blabla it is a good product
+                  {eventData && eventData.acf.description}
                 </p>
               </div>
             </div>
@@ -151,18 +159,34 @@ function EventDetails() {
                 <h3 className="text-[#171725] text-[14px]">+233444444444</h3>
               </div>
 
-              <div className="flex items-center justify-between mt-5">
-                <img className="w-[28px] h-[28px]" src={goldWhatsapp} alt="" />
-                <img className="w-[28px] h-[28px]" src={goldFb} alt="" />
-                <img className="w-[28px] h-[28px]" src={goldSnap} alt="" />
-                <img className="w-[28px] h-[28px]" src={goldInsta} alt="" />
+              <div className="flex items-center mt-5 md:justify-between">
+                <img
+                  className="w-[28px] h-[28px] max-sm:mr-3"
+                  src={goldWhatsapp}
+                  alt=""
+                />
+                <img
+                  className="w-[28px] h-[28px] max-sm:mr-3"
+                  src={goldFb}
+                  alt=""
+                />
+                <img
+                  className="w-[28px] h-[28px] max-sm:mr-3"
+                  src={goldSnap}
+                  alt=""
+                />
+                <img
+                  className="w-[28px] h-[28px] max-sm:mr-3"
+                  src={goldInsta}
+                  alt=""
+                />
               </div>
             </div>
           </div>
           <h3 className="mb-5 mt-12 ml-4 text-[18px] font-semibold">
             Similar Events
           </h3>
-          <div className="grid grid-cols-3 gap-4 mx-3">
+          <div className="grid grid-cols-3 gap-4 mx-3 max-sm:flex max-sm:overflow-y-scroll">
             {dashboardFeaturedEvents?.map((df, i) => (
               <FeaturedEventCard
                 otherClassNames={"w-[312px]"}

@@ -5,7 +5,7 @@ import kite from "../../assets/images/kite.png";
 
 function Messages() {
   return (
-    <div>
+    <div className=" max-sm:hidden">
       <div className="p-7 bg-white -mt-[18px] rounded-[12px]">
         <h3 className="font-semibold text-[17px] mt-4 mb-4">Messages</h3>
         {messages.map((msg, i) => (

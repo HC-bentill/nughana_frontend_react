@@ -65,7 +65,7 @@ export const clearUserData = () => {
 export const apiAxios = (baseURL) => {
   const instance = axios.create({
     // baseURL: import.meta.env.VITE_APP_BACKEND_URL,
-    baseURL: 'https://api.afrotango.com/wp-json',
+    baseURL: "https://api.afrotango.com/wp-json",
   });
   let token = getItem("u_token");
   if (token != null && token !== "") {
@@ -190,3 +190,12 @@ export function extractUsername(email) {
 
   return cleanUsername;
 }
+const dateOptions = { weekday: "long", day: "numeric", month: "long" };
+export const formatDate = (date) => {
+  if (!date) return "";
+
+  const [day, month, year] = date.split("/");
+  const newDate = new Date(`${year}-${month}-${day}`);
+  const formattedDate = newDate.toLocaleDateString("en-GB", dateOptions);
+  return formattedDate;
+};

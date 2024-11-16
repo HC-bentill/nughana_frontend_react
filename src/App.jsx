@@ -24,7 +24,7 @@ import { useSelector } from "react-redux";
 
 function App() {
   const user = useSelector((state) => state.user.user);
-  
+
   return (
     <>
       <Routes>
@@ -40,16 +40,16 @@ function App() {
               <Route path="/market-ad-details" element={<MarketAdDetails />} />
               <Route path="/market-category" element={<MarketCategory />} />
               <Route path="/events" element={<Event />} />
-              <Route path="/event-details" element={<EventDetails />} />
+              <Route path="/event-details/:id" element={<EventDetails />} />
               <Route path="/resource-center" element={<ResourceCenter />} />
               <Route
                 path="/business-directory"
                 element={<BusinessDirectory />}
               />
               <Route path="/business-details" element={<BusinessDetails />} />
-               <Route path="/profile" element={<Profile />} />
-               <Route path="/edit-profile" element={<EditProfile />} />
-               <Route path="/photo-gallery" element={<PhotoGallery />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/edit-profile" element={<EditProfile />} />
+              <Route path="/photo-gallery" element={<PhotoGallery />} />
             </Route>
           </>
         ) : (

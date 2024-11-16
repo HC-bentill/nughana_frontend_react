@@ -7,7 +7,7 @@ import Search from "../../assets/images/svgs/search.svg?react";
 import { Modal } from "../../components/modal/_component";
 import CreateCommunity from "./CreateCommunity";
 import { useNavigate } from "react-router-dom";
-import link from "../../assets/icons/Link.png";  
+import link from "../../assets/icons/Link.png";
 
 function ViewCommunities() {
   const [modalOpen, setModalOpen] = React.useState(false);
@@ -19,7 +19,7 @@ function ViewCommunities() {
         <CreateCommunity closeModal={() => setModalOpen(false)} />
       </Modal>
       <div className="flex">
-        <div className="-mt-6 pt-5 px-5 mr-8 bg-white max-w-[235px]">
+        <div className="-mt-6 max-sm:hidden pt-5 px-5 mr-8 bg-white max-w-[235px]">
           <div className="border-[#E5E5E7] border rounded-[30px] flex items-center gap-2 w-[210px] h-[50px]">
             <img
               src={Search}
@@ -58,7 +58,7 @@ function ViewCommunities() {
               My Communities
             </h3>
           </div>
-          <div className="bg-[#FED28A] flex justify-center text-center ml-2 border-[7px] border-white rounded-[15px] py-8 w-[1070px] h-[194px]">
+          <div className="bg-[#FED28A] max-sm:hidden flex justify-center text-center ml-2 border-[7px] border-white rounded-[15px] py-8 w-[1070px] h-[194px]">
             <div>
               <h3 className="font-extrabold text-[22px]">
                 Communities you have created
@@ -73,6 +73,23 @@ function ViewCommunities() {
                   name={"Create a community"}
                 />
               </div>
+            </div>
+          </div>
+          <div className="md:hidden flex ml-3 flex-col max-sm:max-w-[400px]">
+            <div className="bg-[#FED28A] rounded-t-[15px] text-center p-8">
+              <h3 className="font-extrabold text-[22px]">
+                Communities you have created
+              </h3>
+              <small className="font-semibold text-[12.7px]">
+                34 communities created by you
+              </small>
+            </div>
+            <div className="flex justify-center p-8 bg-white">
+              <Button
+                onClick={() => setModalOpen(true)}
+                classNames="bg-black mr-3 w-[186px] text-[12px] !px-5 !py-3 text-xs"
+                name={"Create a community"}
+              />
             </div>
           </div>
           <div className="mt-8">
