@@ -6,8 +6,22 @@ import FeaturedCommunities from "./FeaturedCommunities";
 import FeaturedBusiness from "./FeaturedBusiness";
 import FeaturedEvents from "./FeaturedEvents";
 import FeaturedAd from "./FeaturedAd";
+import { GetUserDetails } from "../../api/auth.service";
+import { useQuery } from "react-query";
+import { storeItem } from "../../api/storage.service";
 
 export default function Dashboard() {
+
+  const GetUserDetailsQuery = useQuery({
+    retry: (count, err) => count < 3,
+    queryKey: ["Mpc"],
+    queryFn: () => GetUserDetails().then((res) => res?.data),
+    onSuccess: (data) => {
+      storeItem("u_id", data?.id);
+    }
+  });
+
+
   return (
     <>
       <div className="md:ml-8 mx-auto md:px-0 px-3">
