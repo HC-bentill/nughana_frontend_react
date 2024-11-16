@@ -64,7 +64,7 @@ function CreateAd({ closeModal }) {
         phone: data?.phone,
         location: data?.location,
       },
-    };
+    }; 
 
     CreateMarketplaceAd(payload)
       .then((response) => {
