@@ -6,8 +6,8 @@ import kite from "../../assets/images/kite.png";
 function Messages() {
   return (
     <div>
-      <div className="p-7 bg-white -mt-[18px] rounded-[12px]">
-        <h3 className="font-semibold text-[17px] mt-4 mb-4">Messages</h3>
+      <div className="p-5 bg-white -mt-[18px] rounded-[12px]">
+        <h3 className="font-semibold text-[16px] mt-4 mb-4">Messages</h3>
         {messages.map((msg, i) => (
           <MessagesCard
             key={i}
@@ -19,7 +19,7 @@ function Messages() {
           />
         ))}
       </div>
-      <div className="w-[361px] h-[150px] rounded-[10px] mt-3 flex items-center justify-center bg-black">
+      <div className="w-auto h-[150px] rounded-[10px] mt-3 flex items-center justify-center bg-black">
         <img src={kite} className="w-[64px] h-[64px] mr-3" alt="" />
         <h3 className="text-[14px] text-white">Events AD</h3>
       </div>

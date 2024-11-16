@@ -1,27 +1,28 @@
 import React from "react";
 import FeaturedAdCard from "../../components/featured_ad_card/_component";
 import { dashboardFeaturedAd } from "../../assets/core/data";
+import call from "../../assets/icons/call.png";
+import whatsapp from "../../assets/icons/whatsapp.png";
+import mail from "../../assets/icons/mail.png";
+import featuredAdd from "../../assets/images/featured-ad.png";
 
-function MarketCategoryAds() {
+function MarketCategoryAds({ads, category}) {
   return (
     <>
-      <div className="grid grid-cols-4 gap-4 mt-8">
-        {dashboardFeaturedAd?.map((df, i) => (
-          <div key={i} className="flex-shrink-0">
+      <div className="grid grid-cols-4 gap-3 mt-8">
+        {ads?.map((df, i) => (
             <FeaturedAdCard
-              footerDesc=" "
-              img={df.img}
+              img={df?.acf?.ad_image}
               footerIconsWith="w-[20px]"
-              footerImgs={df.footerImgs}
-              header={df.name}
-              desc={df.desc}
-              footerAction={
-                <a className="text-sm text-blue-500 underline" href="#">
-                  View in maps
-                </a>
-              }
+              header={df?.acf?.ad_name}
+              desc={df?.acf?.description}
+              otherClassNames="w-full"
+              price={df?.acf?.ad_pricing}
+              category={category}
+              id={df?.id}
+              createdAt={df?.date}
+              location={df?.acf?.location}
             />
-          </div>
         ))}
       </div>
     </>

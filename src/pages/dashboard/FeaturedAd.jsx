@@ -34,6 +34,7 @@ function FeaturedAd() {
                 footerImgs={df.footerImgs}
                 header={df.name}
                 desc={df.desc}
+                otherClassNames={'w-[190px] mb-8'}
               />
             </div>
           ))}

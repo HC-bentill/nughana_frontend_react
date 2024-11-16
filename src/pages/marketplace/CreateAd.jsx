@@ -17,7 +17,7 @@ function CreateAd({ closeModal }) {
   };
   return (
     <>
-      <form className="w-[668px]" onSubmit={handleSubmit}>
+      <form className="" onSubmit={handleSubmit}>
         <div className="p-8 bg-white rounded-t-[16px]">
           <h3 className="font-bold flex mt-2 mb-8 justify-center text-[18px] text-[#1F2937]">
             Post Ad
