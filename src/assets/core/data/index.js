@@ -281,6 +281,13 @@ export const countryCode = [
   { value: "+234", label: "+234" },
   { value: "+235", label: "+235" },
 ];
+
+export const categories = [
+  { value: "cat1", label: "category 1" },
+  { value: "cat2", label: "category 2" },
+  { value: "cat3", label: "category 3" },
+];
+
 export const sidemenuIcons = [
   // {
   //   route: "",
@@ -817,8 +824,8 @@ export const profileMenuNavigation = [
     label: "Support",
     icon: SupportIcon,
     href: "/Support",
-  }
-]
+  },
+];
 
 export const galleryPhotos = {
   gallery1,

@@ -8,7 +8,7 @@ import apple from "../../assets/icons/apple.png";
 import facebook from "../../assets/icons/facebook.png";
 import Button from "../../components/button/_component";
 import Footer from "../homepage/footer";
-import { set, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { UserLogin } from "../../api/auth.service";
 import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
@@ -36,18 +36,25 @@ function Login() {
         if (res.status === 200) {
           setLoading(false);
           storeItem("u_token", res.data.token);
-          dispatch(setLogin(true))
+          dispatch(setLogin(true));
           dispatch(setUserInformation(res.data));
           navigate("/");
         } else {
           setLoading(false);
-          toast.error(<p className="text-[12px]">{res?.data?.message ?? 'Unexpected error occurred'}</p>);
+          toast.error(
+            <p className="text-[12px]">
+              {res?.data?.message ?? "Unexpected error occurred"}
+            </p>
+          );
         }
       })
       .catch((err) => {
         setLoading(false);
         toast.error(
-          <p className="text-[12px]">{<HtmlRenderer htmlContent={err.response?.data?.message} /> ?? 'An error occured. Please try again !'}</p>
+          <p className="text-[12px]">
+            {<HtmlRenderer htmlContent={err.response?.data?.message} /> ??
+              "An error occured. Please try again !"}
+          </p>
         );
       });
   };
@@ -59,7 +66,7 @@ function Login() {
   return (
     <>
       <div
-        className="relative h-screen z-10 flex md:grid place-items-center"
+        className="relative z-10 flex h-screen md:grid place-items-center"
         style={{
           backgroundImage: "url(" + loginImg + ")",
           backgroundSize: "cover",

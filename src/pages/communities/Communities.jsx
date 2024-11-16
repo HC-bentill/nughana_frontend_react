@@ -47,7 +47,7 @@ function Communities() {
         <CreateCommunity closeModal={() => setModalOpen(false)} />
       </Modal>
       <div className="flex">
-        <div className="-mt-6 pt-5 px-5 mr-8 bg-white max-w-[235px]">
+        <div className="-mt-6 pt-5 max-sm:hidden px-5 mr-8 bg-white max-w-[235px]">
           <div className="border-[#E5E5E7] border rounded-[30px] flex items-center gap-2 w-[210px] h-[50px]">
             <img
               src={Search}
@@ -75,7 +75,7 @@ function Communities() {
           </div>
         </div>
         <div>
-          <div className="bg-[#FED28A] flex justify-center text-center ml-2 border-[7px] border-white rounded-[15px] py-8 w-[1070px] h-[194px]">
+          <div className="bg-[#FED28A] max-sm:hidden flex justify-center text-center ml-2 border-[7px] border-white rounded-[15px] py-8 w-[1070px] h-[194px]">
             <div>
               <h3 className="font-extrabold text-[22px]">
                 Title for Community Banner
@@ -92,6 +92,30 @@ function Communities() {
                 <Button
                   onClick={() => navigate("/view-communities")}
                   classNames="bg-[#FED28A] font-semibold !text-black w-[200px] text-[12px] border-[1px] border-black !px-5 !py-3 text-xs"
+                  name={"View your communities"}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="flex justify-center md:hidden item">
+            <div>
+              <div className="bg-[#FED28A] rounded-t-[15px] text-center p-8">
+                <h3 className="font-extrabold text-[22px]">
+                  Title for Community Banner
+                </h3>
+                <small className="font-semibold text-[12.7px]">
+                  34 communities created by you
+                </small>
+              </div>
+              <div className="flex flex-col items-center justify-center w-full p-8 bg-white">
+                <Button
+                  onClick={() => setModalOpen(true)}
+                  classNames="bg-black mr-3 w-[200px] text-[12px] !px-5 !py-3 text-xs"
+                  name={"Create a community"}
+                />
+                <Button
+                  onClick={() => navigate("/view-communities")}
+                  classNames="bg-white my-2 font-semibold !text-black w-[200px] text-[12px] border-[1px] border-black !px-5 !py-3 text-xs"
                   name={"View your communities"}
                 />
               </div>

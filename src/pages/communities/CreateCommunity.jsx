@@ -1,21 +1,66 @@
 import React from "react";
 import avatar from "../../assets/images/svgs/avatar.svg";
 import Select from "react-select";
-import { countryCode } from "../../assets/core/data";
+import { categories, countryCode } from "../../assets/core/data";
 import Button from "../../components/button/_component";
+import { useForm } from "react-hook-form";
+import { CreateACommunity } from "../../api/communities.service";
+import HtmlRenderer from "../../components/html_renderer/HtmlRendrer";
+import toast from "react-hot-toast";
 
 function CreateCommunity({ closeModal }) {
-  const [selectCode, setSelectedCode] = React.useState(null);
+  const [seletedCategory, setSelectedCategory] = React.useState(null);
+  const [loading, setLoading] = React.useState(false);
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm();
+
   const handleCountryCodeChange = (option) => {
-    setSelectedCode(option);
+    setSelectedCategory(option.value);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const onSubmit = (data) => {
+    setLoading(true);
+    let allFormData = {
+      ...data,
+      type: seletedCategory,
+    };
+    CreateACommunity(allFormData)
+      .then((res) => {
+        if (res.status === 200) {
+          setLoading(false);
+          toast.success(
+            <p className="text-[12px]">
+              {<HtmlRenderer htmlContent={"Community created successfully"} />}
+            </p>
+          );
+          reset();
+          closeModal();
+        } else {
+          setLoading(false);
+          toast.error(
+            <p className="text-[12px]">
+              {<HtmlRenderer htmlContent={res.data.message} />}
+            </p>
+          );
+        }
+      })
+      .catch((err) => {
+        setLoading(false);
+        toast.error(
+          <p className="text-[12px]">
+            {<HtmlRenderer htmlContent={err.response?.data?.message} /> ??
+              "An error occured. Please try again !"}
+          </p>
+        );
+      });
   };
   return (
     <>
-      <form className="" onSubmit={handleSubmit}>
+      <form className="" onSubmit={handleSubmit(onSubmit)}>
         <div className="p-8 bg-white">
           <h3 className="font-bold flex mt-2 mb-8 justify-center text-[18px] text-[#1F2937]">
             Create a Community
@@ -31,7 +76,7 @@ function CreateCommunity({ closeModal }) {
               name={"Change Community Image"}
             />
           </div>
-          <div className="flex items-center">
+          <div className="flex items-center max-sm:flex-col">
             <div className="flex flex-col mr-4">
               <label className="mb-1 font-semibold text-[14px] text-[#1F2937]">
                 Community Name
@@ -39,18 +84,19 @@ function CreateCommunity({ closeModal }) {
               <input
                 type="text"
                 placeholder="Community Name"
+                {...register("name", { required: true })}
                 className="w-[268px] text-[12px] h-[49px] py-[14px] px-[16px] rounded-full border border-gray-300 focus:outline-none focus:border-gray-400"
               />
             </div>
-            <div className="flex flex-col">
-              <label className="mb-1 font-semibold text-[14px] text-[#1F2937]">
+            <div className="flex flex-col w-full -mt-3 max-sm:mt-3">
+              <label className="font-semibold text-[14px] text-[#1F2937]">
                 Select Category
               </label>
               <Select
                 className="w-[268px] !h-[49px] !rounded-full"
-                defaultValue={selectCode}
+                defaultValue={seletedCategory}
                 onChange={handleCountryCodeChange}
-                options={countryCode}
+                options={categories}
                 placeholder="Select category"
               />
             </div>
@@ -62,6 +108,7 @@ function CreateCommunity({ closeModal }) {
             <input
               type="text"
               placeholder="Community Description"
+              {...register("description", { required: true })}
               className="w-full text-[12px] rounded-full h-[49px] py-[14px] px-[16px] border border-gray-300 focus:outline-none focus:border-gray-400"
             />
           </div>
@@ -74,8 +121,10 @@ function CreateCommunity({ closeModal }) {
             Cancel
           </div>
           <Button
+            type={"submit"}
             classNames="text-white text-[12px] h-[38px] py-[6px] px-[36px] bg-black w-[114px]"
             name={"Create"}
+            isLoading={loading}
           />
         </div>
       </form>
