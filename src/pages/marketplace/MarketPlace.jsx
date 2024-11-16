@@ -57,7 +57,7 @@ function MarketPlace() {
       <Modal open={modalOpen} close={() => setModalOpen(false)}>
         <CreateAd closeModal={() => setModalOpen(false)} />
       </Modal>
-      {marketplaceCategories?.isLoading ? (
+      {marketplaceCategories?.isLoading || marketplaceCategories?.isFetching ? (
         <div className="flex justify-center items-center h-[100vh]">
           <Loader />
         </div>
@@ -100,30 +100,32 @@ function MarketPlace() {
                 />
               </div>
               <div className="overflow-x-auto flex gap-2 hide-scrollbar">
-                {marketplaceCategories?.data?.map((tab, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setActiveTab(i)}
-                    className={`text-[#1F2937] shrink-0 rounded-full border-[#9CA3AF] border-[0.5px] text-[12px] px-4 font-medium py-2 ${
-                      activeTab === i
-                        ? "!text-white !border-none bg-black rounded-full"
-                        : "text-gray-600"
-                    }`}
-                  >
-                    <HtmlRenderer htmlContent={tab?.name} />
-                  </button>
-                ))}
+                {marketplaceCategories?.data?.length > 0 &&
+                  marketplaceCategories?.data?.map((tab, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setActiveTab(i)}
+                      className={`text-[#1F2937] shrink-0 rounded-full border-[#9CA3AF] border-[0.5px] text-[12px] px-4 font-medium py-2 ${
+                        activeTab === i
+                          ? "!text-white !border-none bg-black rounded-full"
+                          : "text-gray-600"
+                      }`}
+                    >
+                      <HtmlRenderer htmlContent={tab?.name} />
+                    </button>
+                  ))}
               </div>
             </div>
             <div className="grid grid-cols-3 gap-2">
-              {marketplaceCategories?.data?.map((am, i) => (
-                <MarketPlaceCard
-                  key={i}
-                  onClick={() => navigate(`/market-category/${am?.id}`)}
-                  img={market}
-                  name={am.name}
-                />
-              ))}
+              {marketplaceCategories?.data?.length > 0 &&
+                marketplaceCategories?.data?.map((am, i) => (
+                  <MarketPlaceCard
+                    key={i}
+                    onClick={() => navigate(`/market-category/${am?.id}`)}
+                    img={market}
+                    name={am.name}
+                  />
+                ))}
             </div>
           </div>
           <div className="hidden xl:block">

@@ -10,3 +10,9 @@ export const UserSignup = async (p) =>
   await apiAxios().post(
     `/buddyboss/v1/signup?signup_email=${p?.email}&signup_password=${p?.password}&signup_email_confirm=${p?.email}&signup_password_confirm=${p?.password}&field_3=${extractUsername(p.email)}&legal_agreement=agreed`
   );
+
+  export const GetUserDetails = async (p) =>
+    await apiAxios().get(
+      `/wp/v2/users/me`
+    );
+  

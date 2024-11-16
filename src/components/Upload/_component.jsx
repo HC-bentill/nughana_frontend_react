@@ -32,8 +32,8 @@ function UploadFile() {
   return (
     <>
       <div
-        className={`border-2 pt-20 border-dashed rounded-lg pb-8 text-center ${
-          isDragging ? "border-blue-500 bg-blue-50" : "border-gray-300"
+        className={`border-2 pt-12 border-dashed rounded-lg pb-1 text-center ${
+          isDragging ? "border-blue-500 bg-blue-50" : "border-[#E5E7EB]"
         }`}
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}
@@ -48,12 +48,12 @@ function UploadFile() {
         />
         <label htmlFor="fileInput" className="cursor-pointer">
           <div className="flex flex-col items-center">
-            <img src={fileImg} className="w-[70px] h-[45px]" />
-            <p className="text-gray-500">
+            <img src={fileImg} className="w-[55px] object-contain" />
+            <p className="text-gray-500 mt-3 text-[12px]">
               Drop your ad image here or{" "}
               <span className="text-blue-500">browse</span>
             </p>
-            <p className="text-xs text-gray-400">Maximum size: 50MB</p>
+            <p className=" text-gray-400 text-[11px]">Maximum size: 50MB</p>
           </div>
         </label>
       </div>
