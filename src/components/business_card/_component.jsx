@@ -1,40 +1,52 @@
 import React from "react";
 import bullet from "../../assets/icons/bullet.png";
 import star from "../../assets/icons/star.svg";
+import { useNavigate } from "react-router-dom";
 
 function BusinessCard({
   img,
+  name,
   footerImgs,
   footerDesc,
   otherClassNames,
   footerIconsWith,
   eventfooterDesc,
   dashboardfooterDesc,
+  address,
+  id,
+  link
 }) {
+
+  const navigate = useNavigate();
+  
   return (
     <>
-      <div className={`${otherClassNames} flex flex-col`}>
+      <div
+        onClick={() => navigate(`/business-details/${id}`)}
+        className={`${otherClassNames} flex flex-col cursor-pointer`}
+      >
         <div>
-          <img src={img} alt="image" />
+          <img src={img} alt="image" className="w-full h-[150px] rounded-t-[15px]" />
         </div>
-        <div className="px-4 py-8 bg-white rounded-b-xl">
+        <div className="p-4 bg-white rounded-b-[15px]">
           <div className="flex items-center">
-            <div className="-mt-[3px] text-xs">
-              <h3 className="mb-2 font-semibold">Name of place</h3>
+            <div className=" text-xs">
+              <h3 className="mb-2 text-[13px] font-semibold shorten-text max-w-[150px]">
+                {name}
+              </h3>
               <div className="flex items-center text-[#92929D]">
-                <h3 className="mr-2">Address </h3>
-                <img className="w-[4px] mx-2 h-[4px]" src={bullet} alt="" />
+                <h3 className="mr-2 shorten-text max-w-[150px]">{address}</h3>
+                <img className=" mx-2 h-[4px]" src={bullet} alt="" />
                 <img src={star} alt="" />
                 <img src={star} alt="" />
                 <img src={star} alt="" />
                 <img src={star} alt="" />
                 <img src={star} alt="" />
-
                 <h3>5.0</h3>
               </div>
             </div>
           </div>
-          <div className="flex items-center justify-between mt-7">
+          <div className="flex items-center justify-between mt-5">
             <div className="flex">
               {footerImgs?.map((fi, i) => (
                 <div
@@ -50,7 +62,7 @@ function BusinessCard({
               ))}
             </div>
 
-            <h3 className="text-[12px] underline text-[#4987FF]">
+            <h3 className="text-[9px] underline text-[#4987FF] cursor-pointer" onClick={() => window.open(`${link}`, '_blank')}>
               {eventfooterDesc}
             </h3>
           </div>

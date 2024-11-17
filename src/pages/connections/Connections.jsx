@@ -72,7 +72,7 @@ function Connections() {
   return (
     <>
       <div className="md:flex justify-between md:ml-8 md:px-0 gap-5">
-        <div className="flex-1">
+        <div className="lg:w-[55%] md:w-[96%] w-full">
           <div className="md:flex items-center">
             <h2 className="font-bold text-[22px] mr-7 md:flex hidden">
               Connections

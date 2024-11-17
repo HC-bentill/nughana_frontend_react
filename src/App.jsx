@@ -46,7 +46,7 @@ function App() {
                 path="/business-directory"
                 element={<BusinessDirectory />}
               />
-              <Route path="/business-details" element={<BusinessDetails />} />
+              <Route path="/business-details/:id" element={<BusinessDetails />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/edit-profile" element={<EditProfile />} />
               <Route path="/photo-gallery" element={<PhotoGallery />} />

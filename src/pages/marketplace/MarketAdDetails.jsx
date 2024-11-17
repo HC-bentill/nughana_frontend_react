@@ -127,7 +127,7 @@ function MarketAdDetails() {
                   />
                   <div>
                     <h3 className="text-[#171725] text-[12px]">
-                      {ad?.data?.acf?.created_by?.data?.display_name}
+                      {ad?.data?.acf?.created_by?.display_name}
                     </h3>
                     <small className="text-[#92929D] text-[10px]">
                       {moment(ad?.data?.date).format("D MMMM [at] hh:mm A")}
@@ -147,7 +147,7 @@ function MarketAdDetails() {
                 <div className="flex items-center mb-4">
                   <img className="w-[18px] mr-4 h-[18px]" src={globe} alt="" />
                   <h3 className="text-[#171725] text-[12px]">
-                    {ad?.data?.acf?.created_by?.data?.user_email}
+                    {ad?.data?.acf?.created_by?.user_email}
                   </h3>
                 </div>
                 <div className="flex items-center mb-4">
