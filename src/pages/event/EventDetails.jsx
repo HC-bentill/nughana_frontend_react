@@ -117,7 +117,7 @@ function EventDetails() {
             </div>
             <div className="p-8 bg-white rounded-[15px]">
               <h3 className="text-[#171725] text-[14px] font-medium">
-                Ad Created by
+                Event Created by
               </h3>
               <div className="flex my-3">
                 <img
