@@ -30,7 +30,7 @@ function WhatCanDo() {
           </div>
           <div className="text-center my-44">
             <h3 className="mb-3 text-[35px] md:text-[43px] font-[500] text-center">
-              NuGhana business
+              Afro Tango business
             </h3>
             <Underline className="m-auto mb-2 w-44" />
             <p className="font-light">
@@ -42,7 +42,7 @@ function WhatCanDo() {
                 <div className="md:mt-10 mt-14">
                   <div className="text-2xl md:text-3xl mb-7">
                     <h3 className="t">Business is easy</h3>
-                    with <span className="text-[#E9B328]">NuGhana</span>
+                    with <span className="text-[#E9B328]">Afro Tango</span>
                     <div className="text-[#E9B328]">Connect</div>
                   </div>
                   <div className="grid place-items-center md:block">

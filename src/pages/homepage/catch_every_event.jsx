@@ -42,7 +42,7 @@ function CatchEveryEvent() {
               <h3 className="text-4xl">Catch every event in town</h3>
               <Underline className="w-56 m-auto mb-4" />
               <small>
-                Never miss an event. NuGhana connect is where all events in
+                Never miss an event. Afro Tango connect is where all events in
                 Ghana converge.
               </small>
             </div>
