@@ -54,13 +54,16 @@ function ReadyToAssist() {
               </div>
               <label>Phone number</label>
               <div className="flex items-center">
-                <Select
+                {/* <Select
                   className="w-auto mr-3"
                   defaultValue={selectCode}
                   onChange={handleCountryCodeChange}
                   options={countryCode}
                   placeholder="+233"
-                />
+                /> */}
+                <select className="my-3 w-1/2 block mr-2 p-2.5 text-sm text-gray-900 border border-gray-300 rounded-lg bg-white outline-0">
+                  <option value="ghana">+233</option>
+                </select>
                 <input
                   required
                   type="number"
