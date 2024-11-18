@@ -1,6 +1,5 @@
 import React from "react";
 import FeaturedEventCard from "../../components/featured_evernts_card/_component";
-import { dashboardFeaturedEvents } from "../../assets/core/data";
 import { useNavigate } from "react-router-dom";
 import { GetEvents } from "../../api/event.service";
 import { useQuery } from "react-query";
@@ -11,10 +10,9 @@ function AllEvents() {
 
   const events = useQuery({
     retry: (count, err) => count < 3,
-    // staleTime: Infinity,
+    refetchOnWindowFocus: false,
     queryKey: ["events"],
     queryFn: () => GetEvents().then((res) => res),
-    // onSuccess: (data) => onProductFetchSuccess(data),
   });
 
   let allEvents = events && events.data && events.data.data;

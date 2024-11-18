@@ -32,6 +32,8 @@ function UploadFile({ onUploadSuccess }) {
     const file = e.dataTransfer.files[0];
     const formData = new FormData();
     formData.append("file", file);
+    let preview = URL.createObjectURL(file);
+    setPreviewImage(preview);
     handleFiles(file);
 
     UploadImage(formData)
@@ -43,12 +45,13 @@ function UploadFile({ onUploadSuccess }) {
             {<HtmlRenderer htmlContent={"Upload successful."} />}
           </p>
         );
-        setPreviewImage(res?.data.guid.rendered);
+
         if (onUploadSuccess) {
           onUploadSuccess(res?.data.id);
         }
       })
       .catch((err) => {
+        setIsUploading(false);
         toast.error(
           <p className="text-[12px]">
             {<HtmlRenderer htmlContent={err.response?.data?.message} /> ??
@@ -67,6 +70,8 @@ function UploadFile({ onUploadSuccess }) {
     const file = e.target.files[0];
     const formData = new FormData();
     formData.append("file", file);
+    let preview = URL.createObjectURL(file);
+    setPreviewImage(preview);
     handleFiles(file);
 
     UploadImage(formData)
@@ -78,12 +83,12 @@ function UploadFile({ onUploadSuccess }) {
             {<HtmlRenderer htmlContent={"Upload successful."} />}
           </p>
         );
-        setPreviewImage(res?.data.guid.rendered);
         if (onUploadSuccess) {
           onUploadSuccess(res?.data.id);
         }
       })
       .catch((err) => {
+        setIsUploading(false);
         toast.error(
           <p className="text-[12px]">
             {<HtmlRenderer htmlContent={err.response?.data?.message} /> ??

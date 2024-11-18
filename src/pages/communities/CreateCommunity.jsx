@@ -76,41 +76,62 @@ function CreateCommunity({ closeModal }) {
               name={"Change Community Image"}
             />
           </div>
-          <div className="flex items-center max-sm:flex-col">
+          <div className="grid grid-cols-2 max-sm:flex-col">
             <div className="flex flex-col mr-4">
-              <label className="mb-1 font-semibold text-[14px] text-[#1F2937]">
+              <label className="font-semibold text-[11px] text-[#1F2937]">
                 Community Name
               </label>
               <input
                 type="text"
                 placeholder="Community Name"
                 {...register("name", { required: true })}
-                className="w-[268px] text-[12px] h-[49px] py-[14px] px-[16px] rounded-full border border-gray-300 focus:outline-none focus:border-gray-400"
+                className="w-full max-sm:w-[370px] text-[11px] h-[39px] py-[10px] px-[13px] rounded-full border border-gray-300 focus:outline-none focus:border-gray-400"
               />
+              {errors.name && (
+                <span className="text-red-500 text-[11px]">
+                  This field is required
+                </span>
+              )}
             </div>
-            <div className="flex flex-col w-full -mt-3 max-sm:mt-3">
-              <label className="font-semibold text-[14px] text-[#1F2937]">
+            <div className="flex flex-col w-full max-sm:mt-3">
+              <label className="font-semibold text-[11px] text-[#1F2937]">
                 Select Category
               </label>
-              <Select
-                className="w-[268px] !h-[49px] !rounded-full"
-                defaultValue={seletedCategory}
-                onChange={handleCountryCodeChange}
-                options={categories}
-                placeholder="Select category"
-              />
+              <select
+                className="text-[11px] w-full py-[10px] px-[13px] rounded-full border border-gray-300 focus:outline-none focus:border-gray-400"
+                {...register("category", { required: true })}
+                name="cars"
+                id="cars"
+              >
+                <option value="">-- Select category</option>
+                <option value="volvo">Cat 1</option>
+                <option value="saab">Cat 2</option>
+                <option value="mercedes">Cat 3</option>
+                <option value="audi">Cat 4</option>
+              </select>
+
+              {errors.category && (
+                <span className="text-red-500 text-[11px]">
+                  This field is required
+                </span>
+              )}
             </div>
           </div>
           <div className="flex flex-col mt-8">
-            <label className="font-semibold text-[14px] text-[#1F2937]">
+            <label className="font-semibold text-[11px] text-[#1F2937]">
               About Community
             </label>
             <input
               type="text"
               placeholder="Community Description"
               {...register("description", { required: true })}
-              className="w-full text-[12px] rounded-full h-[49px] py-[14px] px-[16px] border border-gray-300 focus:outline-none focus:border-gray-400"
+              className="w-full text-[12px] rounded-full h-[39px] py-[3px] px-[13px] border border-gray-300 focus:outline-none focus:border-gray-400"
             />
+            {errors.description && (
+              <span className="text-red-500 text-[11px]">
+                This field is required
+              </span>
+            )}
           </div>
         </div>
         <div className="flex justify-end w-full bg-[#E5E7EB] p-4">

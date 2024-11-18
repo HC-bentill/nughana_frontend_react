@@ -46,10 +46,7 @@ function Event() {
         <div>
           <div className="bg-[#FED28A] max-sm:hidden flex justify-center text-center ml-2 border-[7px] border-white rounded-[15px] py-8 w-[973px] h-[190px]">
             <div>
-              <h3 className="font-extrabold text-[22px]">Title</h3>
-              <small className="font-semibold text-[12.7px]">
-                Taglines needed
-              </small>
+              <h3 className="font-extrabold text-[22px]">Events</h3>
               <div className="flex mt-6">
                 <Button
                   onClick={() => setModalOpen(true)}

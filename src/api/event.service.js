@@ -16,3 +16,6 @@ export const GetEvent = async (id) => {
 
   return await apiAxios().get(url);
 };
+
+export const GetEventsCategories = async (p) =>
+  await apiAxios().get(`wp/v2/events-categories`);

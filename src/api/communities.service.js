@@ -10,3 +10,9 @@ export const GetCommunities = async () => {
 
   return await apiAxios().get(url);
 };
+
+export const GetCommunitiesCoverImage = async (id) => {
+  let url = `buddyboss/v1/groups/${id}/cover`;
+
+  return await apiAxios().get(url);
+};
