@@ -50,7 +50,7 @@ function BusinessDetails() {
 
 
   const imgTag = GetBusinessDirectory?.data?.acf?.created_by?.user_avatar;
-  const imgMatch = imgTag.match(/src='([^']+)'/);
+  const imgMatch = imgTag?.match(/src='([^']+)'/);
   
 
   return (

@@ -46,7 +46,7 @@ function MarketAdDetails() {
    }, [id]);
 
    const imgTag = ad?.data?.acf?.created_by?.user_avatar;
-   const imgMatch = imgTag.match(/src='([^']+)'/);  
+   const imgMatch = imgTag?.match(/src='([^']+)'/);  
 
    return (
       <>
