@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import NuGhanaLogo from "../../assets/images/svgs/logo.svg?react";
+import NuGhanaLogo from "../../assets/images/svgs/logo.png";
 import Search from "../../assets/images/svgs/search.svg?react";
 import BellIcon from "../../assets/icons/bell.svg?react";
 import ThreeDotsMenu from "../../assets/icons/ThreeDotsMenu.png";

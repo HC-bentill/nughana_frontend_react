@@ -88,7 +88,7 @@ const Testimonials = () => {
 
         <div className="md:flex items-center justify-between mt-[200px] bg-[#FFEBB9] rounded-[24px] py-[28px] px-[29px] md:w-auto w-3/4 mx-auto  md:px-[123px]">
           <p className="text-sm font-semibold leading-[30px]">
-            What are you waiting for? Join the NuGhana Connect community now!
+            What are you waiting for? Join the Afro Tango Connect community now!
           </p>
           <Button classNames="bg-black md:mt-0 mt-5" name="Join our community" />
         </div>

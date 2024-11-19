@@ -25,6 +25,32 @@ function MarketPlace() {
     queryFn: () => GetMarketplaceCategories().then((res) => res?.data),
   });
 
+  const tabOptions = [
+    {
+      label: "All",
+      content: <AllMarketPlace />,
+    },
+    {
+      label: "Finance",
+      content: <div className="">Finance</div>,
+    },
+    {
+      label: "Start up",
+      content: <div className="">Start up</div>,
+    },
+    {
+      label: "Entrepreneur",
+      content: <div className="">Entrepreneur</div>,
+    },
+    {
+      label: "Golfing",
+      content: <div className="">Golfing</div>,
+    },
+    {
+      label: "Sports",
+      content: <div className="">Sports</div>,
+    },
+  ];
   const navigate = useNavigate();
   return (
     <>
@@ -36,7 +62,7 @@ function MarketPlace() {
           <Loader />
         </div>
       ) : (
-        <div className="justify-between gap-5 md:flex md:ml-3 md:px-0">
+        <div className="md:flex justify-between md:ml-3 md:px-0 gap-5">
           <div className="flex-1">
             <div className="bg-[#FED28A] flex justify-center text-center border-[7px] border-white rounded-[15px] py-8">
               <div>
@@ -73,7 +99,7 @@ function MarketPlace() {
                   placeholder="Search in Marketplace"
                 />
               </div>
-              <div className="flex gap-2 overflow-x-auto hide-scrollbar">
+              <div className="overflow-x-auto flex gap-2 hide-scrollbar">
                 {marketplaceCategories?.data?.length > 0 &&
                   marketplaceCategories?.data?.map((tab, i) => (
                     <button

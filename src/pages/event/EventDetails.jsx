@@ -24,8 +24,8 @@ import { Loader } from "../../components/loader/_component";
 import AllEvents from "./AllEvents";
 
 function EventDetails() {
-  const { id } = useParams();
-  const [modalOpen, setModalOpen] = React.useState(false);
+   const { id } = useParams();
+   const [modalOpen, setModalOpen] = React.useState(false);
 
   const navigate = useNavigate();
   const event = useQuery({
@@ -37,7 +37,8 @@ function EventDetails() {
     // onSuccess: (data) => onProductFetchSuccess(data),
   });
 
-  let eventData = event && event.data && event.data.data;
+
+   let eventData = event && event.data && event.data.data;
 
   return (
     <>
@@ -214,6 +215,7 @@ function EventDetails() {
       )}
     </>
   );
+
 }
 
 export default EventDetails;

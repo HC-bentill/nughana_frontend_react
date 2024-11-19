@@ -42,10 +42,7 @@ function App() {
               />
               <Route path="/view-communities" element={<ViewCommunities />} />
               <Route path="/marketplace" element={<MarketPlace />} />
-              <Route
-                path="/market-ad-details/:id"
-                element={<MarketAdDetails />}
-              />
+              <Route path="/market-ad-details/:id" element={<MarketAdDetails />} 
               <Route path="/market-category/:id" element={<MarketCategory />} />
               <Route path="/events" element={<Event />} />
               <Route path="/event-details/:id" element={<EventDetails />} />
@@ -54,7 +51,7 @@ function App() {
                 path="/business-directory"
                 element={<BusinessDirectory />}
               />
-              <Route path="/business-details" element={<BusinessDetails />} />
+              <Route path="/business-details/:id" element={<BusinessDetails />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/edit-profile" element={<EditProfile />} />
               <Route path="/photo-gallery" element={<PhotoGallery />} />

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { links, navLinks, rightLinks } from "../../assets/core/data";
-import logo from "../../assets/images/svgs/logo.svg";
+import logo from "../../assets/images/svgs/logo.png";
 import { useNavigate } from "react-router-dom";
 import { AiOutlineClose } from "react-icons/ai";
 import menuIcon from "../../assets/icons/hamburger.png";

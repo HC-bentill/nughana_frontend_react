@@ -15,11 +15,11 @@ function Welcome() {
 
           <div>
             <h3 className="text-[35px] md:text-[43px] font-[500] md:text-left text-center ">
-              Welcome to NuGhana
+              Welcome to Afro Tango
             </h3>
             <Underline className="flex justify-center m-auto mb-7 mr-5" />
             <div className="mb-4 text-sm md:text-left text-center">
-              Here at NuGhana, we connect you to everything Ghana regardless of
+              Here at Afro Tango, we connect you to everything Ghana regardless of
               your location
             </div>
             <div className="grid place-items-center md:block">
