@@ -22,7 +22,7 @@ import bullet from "../../assets/images/svgs/bullet.svg";
 import Testimonials from "./testimonials";
 import { AiOutlineClose } from "react-icons/ai";
 import Navbar from "../../components/navbar/_component";
-
+ 
 function Homepage() {
   const [handleNav, setHandleNav] = useState(false);
 
