@@ -46,7 +46,7 @@ function MarketAdDetails() {
    }, [id]);
 
    const imgTag = ad?.data?.acf?.created_by?.user_avatar;
-   const imgMatch = imgTag?.match(/src='([^']+)'/);
+   const imgMatch = imgTag?.match(/src='([^']+)'/);  
 
    return (
       <>
@@ -58,7 +58,7 @@ function MarketAdDetails() {
                <Loader />
             </div>
          ) : (
-            <div className="justify-between gap-5 md:flex md:ml-3 md:px-0">
+            <div className="md:flex justify-between md:ml-3 md:px-0 gap-5">
                <div className="flex-1">
                   <div className="flex items-center justify-between">
                      <div className="flex items-center">
@@ -133,12 +133,13 @@ function MarketAdDetails() {
                                  </>
                               )}
                            </div>
-                           <div className="flex items-center mt-5 gap-7">
+                           <div className="flex items-center gap-7 mt-5">
                               <img className="w-[22px] h-[22px]" src={goldWhatsapp} alt="" />
                               <img className="w-[22px] h-[22px]" src={goldFb} alt="" />
                               <img className="w-[22px] h-[22px]" src={goldSnap} alt="" />
                               <img className="w-[22px] h-[22px]" src={goldInsta} alt="" />
                            </div>
+                          
                         </div>
                      </div>
                   </div>
