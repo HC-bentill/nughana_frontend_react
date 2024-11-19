@@ -1,8 +1,8 @@
 import { apiAxios } from "../utils";
 
-export const CreateEvent = async (data) => {
-  let url = `buddyboss/v1/groups?name=${data.name}&description=${data.description}&type=${data.type}`;
-  return await apiAxios().post(url);
+export const CreateAnEvent = async (data) => {
+  let url = `wp/v2/events`;
+  return await apiAxios().post(url, data);
 };
 
 export const GetEvents = async () => {
@@ -16,3 +16,6 @@ export const GetEvent = async (id) => {
 
   return await apiAxios().get(url);
 };
+
+export const GetEventsCategories = async (p) =>
+  await apiAxios().get(`wp/v2/events-categories`);

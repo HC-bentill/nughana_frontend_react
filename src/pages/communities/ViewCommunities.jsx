@@ -1,13 +1,12 @@
 import React from "react";
 import Button from "../../components/button/_component";
-import PilesTab from "../../components/piles_tab/_component";
-import { communitiesSideTray } from "../../assets/core/data";
 import AllCommunities from "./AllCommunities";
 import Search from "../../assets/images/svgs/search.svg?react";
 import { Modal } from "../../components/modal/_component";
 import CreateCommunity from "./CreateCommunity";
 import { useNavigate } from "react-router-dom";
 import link from "../../assets/icons/Link.png";
+import CommunitiesSidePanel from "./CommunitiesSidePanel";
 
 function ViewCommunities() {
   const [modalOpen, setModalOpen] = React.useState(false);
@@ -34,16 +33,7 @@ function ViewCommunities() {
           </div>
           <h3 className="text-[18px] mt-6 font-semibold">Communities</h3>
           <div className="flex flex-col">
-            {communitiesSideTray.map((cs, i) => (
-              <div key={i} className="flex items-center">
-                <img
-                  className="w-[32px] h-[32px] mr-3 my-3"
-                  src={cs.img}
-                  alt="image"
-                />
-                <p className="text-[12px] font-normal">{cs.name}</p>
-              </div>
-            ))}
+            <CommunitiesSidePanel />
           </div>
         </div>
         <div>

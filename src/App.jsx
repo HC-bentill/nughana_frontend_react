@@ -21,6 +21,7 @@ import Profile from "./pages/profile/Profile";
 import EditProfile from "./pages/profile/EditProfile";
 import PhotoGallery from "./pages/photo_gallery/PhotoGallery";
 import { useSelector } from "react-redux";
+import CommunityDetails from "./pages/communities/CommunityDetails";
 
 function App() {
   const user = useSelector((state) => state.user.user);
@@ -35,9 +36,13 @@ function App() {
               <Route path="/" element={<Dashboard />} />
               <Route path="/connections" element={<Connections />} />
               <Route path="/communities" element={<Communities />} />
+              <Route
+                path="/community-details/:id"
+                element={<CommunityDetails />}
+              />
               <Route path="/view-communities" element={<ViewCommunities />} />
               <Route path="/marketplace" element={<MarketPlace />} />
-              <Route path="/market-ad-details/:id" element={<MarketAdDetails />} />
+              <Route path="/market-ad-details/:id" element={<MarketAdDetails />} 
               <Route path="/market-category/:id" element={<MarketCategory />} />
               <Route path="/events" element={<Event />} />
               <Route path="/event-details/:id" element={<EventDetails />} />
