@@ -24,7 +24,7 @@ function StayConnected() {
               culture
             </h3>
             <p className="md:text-[14px] text-[13px] md:mt-0 mt-[80px]">
-              Here at NuGhana, we connect you to everything Ghana regardless of
+              Here at Afro Tango, we connect you to everything Ghana regardless of
               your location.
             </p>
           </div>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import banner from "../../assets/images/banner.png";
-import logo from "../../assets/images/svgs/logo.svg";
+import logo from "../../assets/images/svgs/logo.png";
 import menuIcon from "../../assets/icons/hamburger.png";
 import {
   imgs,
