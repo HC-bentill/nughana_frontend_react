@@ -2,11 +2,13 @@ import React from "react";
 import bullet from "../../assets/icons/bullet.png";
 import star from "../../assets/icons/star.svg";
 import { useNavigate } from "react-router-dom";
+import call from '../../assets/icons/call.png';
+import whatsapp from '../../assets/icons/whatsapp.png';
+import mail from '../../assets/icons/mail.png';
 
 function BusinessCard({
   img,
   name,
-  footerImgs,
   footerDesc,
   otherClassNames,
   footerIconsWith,
@@ -18,7 +20,7 @@ function BusinessCard({
 }) {
 
   const navigate = useNavigate();
-  
+  const footerImgs = [call, whatsapp, mail];
   return (
     <>
       <div

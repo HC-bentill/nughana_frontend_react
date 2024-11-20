@@ -27,6 +27,7 @@ function CreateAd({ closeModal }) {
   const marketplaceCategories = useQuery({
     retry: (count, err) => count < 3,
     queryKey: ["Mpc"],
+    refetchOnWindowFocus: false,
     queryFn: () => GetMarketplaceCategories().then((res) => res?.data),
   });
 
@@ -70,7 +71,7 @@ function CreateAd({ closeModal }) {
       .then((response) => {
         setIsloading(false);
         if (response.status === 201) {
-          toast.success(<p className="text-[12px]">Ad created successfully"</p>);
+          toast.success(<p className="text-[12px]">Ad created successfully</p>);
           navigate(`/market-ad-details/${response.data?.id}`);
         } else {
           isLoading(false);
@@ -111,7 +112,7 @@ function CreateAd({ closeModal }) {
         }
       })
       .catch((err) => {
-        setLoading(false);
+        setIsloading(false);
         toast.error(
           <p className="text-[12px]">
             {<HtmlRenderer htmlContent={err.response?.data?.message} /> ??
@@ -130,7 +131,7 @@ function CreateAd({ closeModal }) {
   return (
     <>
       <form className="" onSubmit={handleSubmit(onSubmit)}>
-        <div className="p-6 px-16  bg-white rounded-t-[16px] w-[540px]">
+        <div className="p-6 px-10  bg-white rounded-t-[16px] md:w-[540px]">
           <h3 className="font-bold flex mt-2 mb-5 justify-center text-[16px] text-[#1F2937]">
             Post Ad
           </h3>

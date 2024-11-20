@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Button from '../../components/button/_component';
 import { Modal } from '../../components/modal/_component';
 import Messages from '../connections/Messages';
@@ -36,6 +36,10 @@ function EventDetails() {
       queryFn: () => GetEvent(id).then((res) => res),
       // onSuccess: (data) => onProductFetchSuccess(data),
    });
+
+   useEffect(() => {
+      window.scrollTo(0, 0);
+   }, [id]);
 
    let eventData = event && event.data && event.data.data;
 

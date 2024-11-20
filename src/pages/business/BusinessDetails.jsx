@@ -35,6 +35,7 @@ function BusinessDetails() {
   const GetBusinessDirectories = useQuery({
     retry: (count, err) => count < 3,
     queryKey: ['getBusinessDirectories'],
+    refetchOnWindowFocus: false,
     queryFn: () => getBusinessDirectories().then((res) => res?.data),
   });
 
@@ -63,14 +64,14 @@ function BusinessDetails() {
           <Loader />
         </div>
       ) : (
-        <div className="md:flex justify-between md:ml-3 md:px-0 gap-5">
+        <div className="md:flex justify-between md:ml-3 md:px-0 px-4 gap-5">
           <div className="flex-1">
-            <div className="flex items-center justify-between">
+            <div className="md:flex items-center justify-between">
               <div className="flex items-center">
                 <img onClick={() => navigate('/business-directory')} src={link} alt="" className="w-[40px] cursor-pointer h-[40px] mr-5" />
                 <h3 className="text-[14px] font-semibold text-[#1A314D]">{GetBusinessDirectory?.data?.acf?.business_name}</h3>
               </div>
-              <Button classNames="bg-black text-[12px] !px-8 !py-2" name={'View in Google Maps'} onClick={() => window.open(`${GetBusinessDirectory?.data?.acf?.google_map_link_to_business}`, '_blank')} />
+              <Button classNames="bg-black md:mt-0 mt-4 text-[12px] !px-8 !py-2" name={'View in Google Maps'} onClick={() => window.open(`${GetBusinessDirectory?.data?.acf?.google_map_link_to_business}`, '_blank')} />
             </div>
 
             <div
@@ -87,7 +88,7 @@ function BusinessDetails() {
               </div>
             </div>
 
-            <div className="grid grid-cols-3 gap-5 mt-5">
+            <div className="grid md:grid-cols-3 gap-5 mt-5">
               <div className="col-span-2">
                 <div className="flex items-center text-[22px] justify-between mb-6">
                   <h3 className="font-extrabold shorten-text max-w-[250px] text-[18px]">{GetBusinessDirectory?.data?.acf?.business_name}</h3>
@@ -118,11 +119,11 @@ function BusinessDetails() {
                   </div>
                 </div>
               </div>
-              <div className="">
+              <div className="md:col-span-1 col-span-2">
                 <div className="p-4 bg-white rounded-[15px]">
                   <h3 className="text-[#171725] text-[13px]">Business listed by</h3>
                   <div className="flex my-3">
-                    <img src={imgMatch[1]} className="mr-3 w-[34px] h-[34px]" alt="" />
+                    <img src={imgMatch[1]} className="mr-3 w-[34px] h-[34px] rounded-full" alt="" />
                     <div>
                       <h3 className="text-[#171725] text-[12px]">{GetBusinessDirectory?.data?.acf?.created_by?.display_name}</h3>
                       <small className="text-[#92929D] text-[10px]">{moment(GetBusinessDirectory?.data?.date).format('D MMMM [at] hh:mm A')}</small>
@@ -156,7 +157,7 @@ function BusinessDetails() {
             </div>
 
             <h3 className="mb-5 mt-12 ml-4 text-[18px] font-semibold">Similar Businesses</h3>
-            <div className="grid grid-cols-3 gap-4">{GetBusinessDirectories?.data?.length > 0 && GetBusinessDirectories?.data?.map((am, i) => <BusinessCard otherClassNames={''} key={i} img={am?.acf?.business_image} footerImgs={[call, whatsapp, mail]} footerIconsWith={'w-[24px] mr-2'} header={am?.business_name} desc={am.desc} eventfooterDesc={'View in google maps'} name={am?.acf?.business_name} address={am?.acf?.address} id={am?.id} link={am?.acf?.google_map_link_to_business} />)}</div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">{GetBusinessDirectories?.data?.length > 0 && GetBusinessDirectories?.data?.map((am, i) => <BusinessCard otherClassNames={''} key={i} img={am?.acf?.business_image} footerImgs={[call, whatsapp, mail]} footerIconsWith={'w-[24px] mr-2'} header={am?.business_name} desc={am.desc} eventfooterDesc={'View in google maps'} name={am?.acf?.business_name} address={am?.acf?.address} id={am?.id} link={am?.acf?.google_map_link_to_business} />)}</div>
           </div>
           <div className="hidden xl:block">
             <Messages />

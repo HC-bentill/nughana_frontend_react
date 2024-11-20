@@ -19,6 +19,7 @@ function Communities() {
    const communities = useQuery({
       retry: (count, err) => count < 3,
       queryKey: ['communities'],
+      refetchOnWindowFocus: false,
       queryFn: () => GetCommunities().then((res) => res),
    });
 

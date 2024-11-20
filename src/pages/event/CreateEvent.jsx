@@ -33,6 +33,7 @@ function CreateEvent({ cancelModal }) {
       queryFn: () => GetEventsCategories().then((res) => res?.data),
    });
 
+
    const onSubmit = (data) => {
       if (!fileUrl) {
          toast.error('Please upload an image');
@@ -91,7 +92,6 @@ function CreateEvent({ cancelModal }) {
          <form className="w-[540px] max-sm:w-[350px] !text-[11px]" onSubmit={handleSubmit(onSubmit)}>
             <div className="p-8 space-y-5 bg-white rounded-t-[16px]">
                <h3 className="font-bold flex  justify-center text-[18px] text-[#1F2937]">Create Event</h3>
-
                <UploadFile onUploadSuccess={handleFileUpload} />
                <div className="grid grid-cols-2 gap-2 max-sm:grid-cols-1">
                   <div className="flex flex-col gap-[4px]">

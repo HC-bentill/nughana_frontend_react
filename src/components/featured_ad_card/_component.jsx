@@ -19,9 +19,9 @@ function FeaturedAdCard({
   const navigate = useNavigate(); 
   return (
     <>
-      <div onClick={()=> navigate(`/market-ad-details/${id}`)} className={`flex cursor-pointer flex-col ${otherClassNames}`}>
+      <div onClick={()=> navigate(`/market-ad-details/${id}`)} className={`${otherClassNames} flex cursor-pointer flex-col`}>
         <div className="relative">
-          <img src={img} alt="image" className="h-[150px] object-cover w-full  rounded-t-[15px]" />
+          <img src={img} alt="image" className="md:h-[150px] h-[120px] object-cover w-full rounded-t-[15px]" />
           <div className="bg-[#FEF9C3] px-3 py-1 rounded-full absolute flex items-center left-2 top-2">
             <img className="w-1 h-1 mr-2" src={g_bullet} alt="bullet" />
             <small className="text-[#EAB308] text-[11px] shorten-text"><HtmlRenderer htmlContent={category ?? ''}/></small>

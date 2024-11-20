@@ -16,8 +16,8 @@ function ConnectCard({ img, otherClassNames }) {
             </div>
             <div className="absolute  bottom-[12px] left-0  w-full grid place-items-center rounded-full p-[4px]">
                <div className="items-center flex justify-between text-[11px] pr-[22px] gap-2 px-[4px] py-[5px] bg-[#00000067] rounded-full">
-                  <img className="w-6 h-6 mr-2 rounded-full" src={profileIcon} alt="profile" />
-                  <small className="text-center text-white font-semibold mr-[2px]">Kacy M. Bartlett</small>
+                  <img className="w-6 h-6 mr-2 rounded-full" src={img} alt="profile" />
+                  <small className="text-center text-white font-semibold mr-[2px]">{name}</small>
                </div>
             </div>
          </div>

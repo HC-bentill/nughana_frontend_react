@@ -11,6 +11,7 @@ function AllCommunities() {
     retry: (count, err) => count < 3,
     // staleTime: Infinity,
     queryKey: ["communities"],
+    refetchOnWindowFocus: false,
     queryFn: () => GetCommunities().then((res) => res),
     // onSuccess: (data) => onProductFetchSuccess(data),
   });

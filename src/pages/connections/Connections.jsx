@@ -36,6 +36,7 @@ function Connections() {
 
   const connections = useQuery({
     retry: (count, err) => count < 3,
+    refetchOnWindowFocus: false,
     queryKey: ["connections", tabOptions[activeTab]?.key],
     queryFn: () =>
       GetConnections(tabOptions[activeTab]?.key, searchWord).then(
