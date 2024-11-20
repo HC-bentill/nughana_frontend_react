@@ -6,7 +6,7 @@ import { CreateACommunity } from '../../api/communities.service';
 import HtmlRenderer from '../../components/html_renderer/HtmlRendrer';
 import toast from 'react-hot-toast';
 
-function CreateCommunity({ closeModal, setCreateDone }) {
+function CreateCommunity({ cancelModal, setCreateDone }) {
    const [loading, setLoading] = React.useState(false);
    const {
       register,
@@ -27,7 +27,7 @@ function CreateCommunity({ closeModal, setCreateDone }) {
                toast.success(<p className="text-[12px]">{<HtmlRenderer htmlContent={'Community created successfully'} />}</p>);
                setCreateDone(true);
                reset();
-               closeModal();
+               cancelModal();
             } else {
                setLoading(false);
                toast.error(<p className="text-[12px]">{<HtmlRenderer htmlContent={res.data.message} />}</p>);
@@ -75,7 +75,7 @@ function CreateCommunity({ closeModal, setCreateDone }) {
                </div>
             </div>
             <div className="flex justify-end w-full bg-[#E5E7EB] p-4">
-               <div onClick={closeModal} className="cursor-pointer border-[2px] h-[38px] py-[10px] px-[12px] bg-white mr-3 w-[75px] flex justify-center text-center items-center font-semibold text-[12px] border-[#E5E7EB] rounded-[40px]">
+               <div onClick={cancelModal} className="cursor-pointer border-[2px] h-[38px] py-[10px] px-[12px] bg-white mr-3 w-[75px] flex justify-center text-center items-center font-semibold text-[12px] border-[#E5E7EB] rounded-[40px]">
                   Cancel
                </div>
                <Button type={'submit'} classNames="text-white text-[12px] h-[38px] py-[6px] px-[36px] bg-black w-[114px]" name={'Create'} isLoading={loading} />

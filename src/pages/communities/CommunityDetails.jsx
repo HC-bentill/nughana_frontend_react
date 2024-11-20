@@ -17,11 +17,15 @@ import CommunityActions from './CommunityActions';
 import toast from 'react-hot-toast';
 import HtmlRenderer from '../../components/html_renderer/HtmlRendrer';
 import CreateEvent from '../event/CreateEvent';
+import ListBusiness from '../business/ListBusiness';
+import { dashboardConnectCardFooter } from '../../assets/core/data';
+import ConnectCard from '../../components/connect_card/_component';
 
 function CommunityDetails() {
    const { id } = useParams();
    const [modalOpen, setModalOpen] = React.useState(false);
    const [createEvent, setCreateEvent] = React.useState(false);
+   const [listBusiness, setListBusiness] = React.useState(false);
    const [deleteIsLoading, setDeleteIsLoading] = React.useState(false);
    const navigate = useNavigate();
 
@@ -34,7 +38,7 @@ function CommunityDetails() {
 
    const communityBanner = useQuery({
       retry: (count, err) => count < 3,
-      queryKey: ['community-details'],
+      queryKey: ['community-banner'],
       refetchOnWindowFocus: false,
       queryFn: () => GetCommunitiesCoverImage(id).then((res) => res),
    });
@@ -85,14 +89,18 @@ function CommunityDetails() {
    return (
       <>
          <Modal open={modalOpen} close={() => setModalOpen(false)}>
-            <CreateCommunity closeModal={() => setModalOpen(false)} />
+            <CreateCommunity cancelModal={() => setModalOpen(false)} />
          </Modal>
 
-         <Modal open={modalOpen} close={() => setModalOpen(false)}>
-            <CreateEvent open={createEvent} close={() => setCreateEvent(false)} />
+         <Modal open={listBusiness} close={() => setListBusiness(false)}>
+            <ListBusiness cancelModal={() => setListBusiness(false)} />
          </Modal>
 
-         {communityBanner?.isLoading || communityBanner?.isFetching ? (
+         <Modal open={createEvent} close={() => setCreateEvent(false)}>
+            <CreateEvent cancelModal={() => setCreateEvent(false)} />
+         </Modal>
+
+         {communityBanner?.isLoading ? (
             <div className="flex justify-center items-center h-[100vh]">
                <Loader />
             </div>
@@ -108,54 +116,32 @@ function CommunityDetails() {
                      <CommunitiesSidePanel />
                   </div>
                </div>
-               <div className="flex justify-between w-full">
-                  <div>
+               <div className="flex justify-between w-full max-sm:flex-col">
+                  <div className=" max-sm:grid max-sm:grid-cols-1 place-items-center">
                      <CommunityActions deleteIsLoading={deleteIsLoading} handleCommunityDelete={handleCommunityDelete} profileImg={communityData && communityData.cover_url} membersCount={communityData && communityData.members_count} avatar={communityData && communityData.admins && communityData.admins[0].avatar} name={communityData && communityData.admins && communityData.admins[0].fullname} username={communityData && communityData.admins && communityData.admins[0].display_name} />
                      <GroupCreatedBy gropuAvatar={avatar && avatar.thumb} />
                      <AboutGroup />
                   </div>
 
-                  <div className="w-[777px]">
-                     <div style={{ backgroundImage: `url(${banner?.image})` }} className=" max-sm:hidden flex justify-center text-center border-[7px] border-white rounded-[15px] py-8 h-[194px]">
+                  <div className="md:w-[777px] max-sm:mt-8  max-sm:grid max-sm:grid-cols-1 max-sm:place-items-center">
+                     <div style={{ backgroundImage: `url(${banner?.image})` }} className=" max-sm:w-[335px] flex justify-center text-center items-center border-[7px] border-white rounded-[15px] py-8 h-[194px] max-sm:h-[250px]">
                         <div>
-                           <h3 className="font-extrabold text-[22px]">Title for Community Banner</h3>
+                           <h3 className="font-extrabold text-[22px] max-sm:text-[16px]">Title for Community Banner</h3>
                            <small className="font-semibold text-[12.7px]">Taglines needed</small>
-                           <div className="flex mt-8">
-                              <Button onClick={() => setModalOpen(true)} classNames="bg-black mr-3 w-[186px] text-[12px] !px-5 !py-3 text-xs" name={'Post an Ad'} />
-                              <Button onClick={() => navigate('/view-communities')} classNames="mr-3 bg-[#FED28A] font-semibold !text-black w-[200px] text-[12px] border-[1px] border-black !px-5 !py-3 text-xs" name={'List a Business'} />
-                              <Button onClick={() => navigate('/view-communities')} classNames="bg-[#FED28A] font-semibold !text-black w-[200px] text-[12px] border-[1px] border-black !px-5 !py-3 text-xs" name={'Create an Event'} />
+                           <div className="flex items-center justify-center mt-8 max-sm:space-y-3 max-sm:flex-col">
+                              <Button onClick={() => setModalOpen(true)} classNames="bg-black md:mr-3 max-sm:w-[200px] w-[186px] text-[12px] !px-5 !py-3 max-sm:!py-2 text-xs" name={'Post an Ad'} />
+                              <Button onClick={() => setListBusiness(true)} classNames="md:mr-3 bg-[#FED28A] font-semibold !text-black w-[200px] max-sm:!py-2 text-[12px] border-[1px] border-black !px-5 !py-3 text-xs" name={'List a Business'} />
+                              <Button onClick={() => setCreateEvent(true)} classNames="bg-[#FED28A] font-semibold !text-black w-[200px] max-sm:!py-2 text-[12px] border-[1px] border-black !px-5 !py-3 text-xs" name={'Create an Event'} />
                            </div>
                         </div>
                      </div>
-                     <div className="flex justify-center md:hidden item">
-                        <div>
-                           <div style={{ backgroundImage: `url(${banner?.image})` }} className="rounded-t-[15px] text-center p-8">
-                              <h3 className="font-extrabold text-[22px]">Title for Community Banner</h3>
-                              <small className="font-semibold text-[12.7px]">34 communities created by you</small>
+
+                     <div className="grid grid-cols-3 gap-4 mt-2 place-items-center max-sm:grid-cols-1 ">
+                        {dashboardConnectCardFooter.map((dc, i) => (
+                           <div key={i}>
+                              <ConnectCard otherClassNames={'!w-[208px] !h-[263px]'} img={dc.img} name={dc.name} />
                            </div>
-                           <div className="flex flex-col items-center justify-center w-full p-8 bg-white">
-                              <Button onClick={() => setModalOpen(true)} classNames="bg-black mr-3 w-[200px] text-[12px] !px-5 !py-3 text-xs" name={'Create a community'} />
-                              <Button onClick={() => navigate('/view-communities')} classNames="bg-white my-2 font-semibold !text-black w-[200px] text-[12px] border-[1px] border-black !px-5 !py-3 text-xs" name={'View your communities'} />
-                           </div>
-                        </div>
-                     </div>
-                     <div className="grid grid-cols-3 gap-4 mt-2 max-sm:grid-cols-1">
-                        <>
-                           {allCommunities?.map((ac, i) => (
-                              <div onClick={() => navigate(`/community-details/${ac.id}`)} key={i} className="flex items-center justify-center cursor-pointer">
-                                 <FeaturedCard
-                                    img={ac.cover_url}
-                                    // footerImgs={ac.footerImgs}
-                                    footerIconsWith={'w-[24px]'}
-                                    header={ac.name}
-                                    desc={ac.description.raw}
-                                    footerDesc={'700+ members'}
-                                    footerActionLink={ac.link}
-                                    footerAction={<Button classNames="-mt-7 !px-4 !py-1 text-xs bg-black" name="Join" />}
-                                 />
-                              </div>
-                           ))}
-                        </>
+                        ))}
                      </div>
                   </div>
                </div>

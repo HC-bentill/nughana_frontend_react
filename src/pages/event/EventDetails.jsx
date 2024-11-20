@@ -97,7 +97,7 @@ function EventDetails() {
                         </div>
                      </div>
                      <div className="grid grid-cols-3 gap-3 mx-4 mt-16 max-sm:grid-cols-1">
-                        <div className="md:col-span-2 w-[617px]">
+                        <div className="md:col-span-2 md:w-[617px]">
                            <div className="flex max-sm:flex-col md:items-center text-[22px] justify-between mb-6">
                               <h3 className="font-extrabold">{eventData && eventData.acf.event_name}</h3>
                               <h3 className="font-extrabold  text-[#AF7E00]">{moment(eventData && eventData.acf.event_date, ['MM/DD/YYYY', 'DD/MM/YYYY']).format('Do MMMM YYYY')}</h3>
