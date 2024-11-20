@@ -122,7 +122,7 @@ function BusinessDetails() {
                 <div className="p-4 bg-white rounded-[15px]">
                   <h3 className="text-[#171725] text-[13px]">Business listed by</h3>
                   <div className="flex my-3">
-                    <img src={imgMatch[1]} className="mr-3 w-[34px] h-[34px]" alt="" />
+                    <img src={imgMatch[1]} className="mr-3 w-[34px] h-[34px] rounded-full" alt="" />
                     <div>
                       <h3 className="text-[#171725] text-[12px]">{GetBusinessDirectory?.data?.acf?.created_by?.display_name}</h3>
                       <small className="text-[#92929D] text-[10px]">{moment(GetBusinessDirectory?.data?.date).format('D MMMM [at] hh:mm A')}</small>

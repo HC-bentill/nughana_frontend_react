@@ -70,7 +70,7 @@ function CreateAd({ closeModal }) {
       .then((response) => {
         setIsloading(false);
         if (response.status === 201) {
-          toast.success(<p className="text-[12px]">Ad created successfully"</p>);
+          toast.success(<p className="text-[12px]">Ad created successfully</p>);
           navigate(`/market-ad-details/${response.data?.id}`);
         } else {
           isLoading(false);
@@ -111,7 +111,7 @@ function CreateAd({ closeModal }) {
         }
       })
       .catch((err) => {
-        setLoading(false);
+        setIsloading(false);
         toast.error(
           <p className="text-[12px]">
             {<HtmlRenderer htmlContent={err.response?.data?.message} /> ??
