@@ -26,12 +26,14 @@ function BusinessDirectory() {
    const businessCategories = useQuery({
       retry: (count, err) => count < 3,
       queryKey: ['bC'],
+      refetchOnWindowFocus: false,
       queryFn: () => getBusinessCategories().then((res) => res?.data),
    });
 
    const GetBusinessDirectories = useQuery({
       retry: (count, err) => count < 3,
       queryKey: ['GetBusinessDirectories', activeTab],
+      refetchOnWindowFocus: false,
       queryFn: () => GetBusinessDirectoriesByCategoryById(activeTab).then((res) => res?.data),
    });
 

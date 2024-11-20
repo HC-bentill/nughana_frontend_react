@@ -24,6 +24,7 @@ function ListBusiness({ closeModal }) {
    const GetBusinessCategories = useQuery({
       retry: (count, err) => count < 3,
       queryKey: ['getBusinessCategories'],
+      refetchOnWindowFocus: false,
       queryFn: () => getBusinessCategories().then((res) => res?.data),
    });
 

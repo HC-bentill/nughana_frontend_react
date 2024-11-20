@@ -23,12 +23,14 @@ function MarketCategory() {
   const marketplaceCategory = useQuery({
     retry: (count, err) => count < 3,
     queryKey: ["Mpc1"],
+    refetchOnWindowFocus: false,
     queryFn: () => GetMarketplaceCategory(id).then((res) => res?.data),
   });
 
   const GetAdsByCategory = useQuery({
     retry: (count, err) => count < 3,
     queryKey: ["MpcbyId"],
+    refetchOnWindowFocus: false,
     queryFn: () => GetAdsByCategoryById(id).then((res) => res?.data),
   });
 

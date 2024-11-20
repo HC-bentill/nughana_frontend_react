@@ -11,6 +11,7 @@ function YourConnections({searchWord}) {
     retry: (count, err) => count < 3,
     staleTime: Infinity,
     queryKey: ["connections"],
+    refetchOnWindowFocus: false,
     queryFn: () => GetConnections("personal", searchWord).then((res) => res?.data),
     // onSuccess: (data) => onProductFetchSuccess(data),
   });

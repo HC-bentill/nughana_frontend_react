@@ -5,16 +5,28 @@ import FeaturedCard from '../../components/featured_communities_card/_component'
 import { Modal } from '../../components/modal/_component';
 import CreateCommunity from '../communities/CreateCommunity';
 import { useNavigate } from 'react-router-dom';
+import { useQuery } from 'react-query';
+import { GetCommunities } from '../../api/communities.service';
 
 function FeaturedCommunities() {
    const [communityModalOpen, setCommunityModalOpen] = React.useState(false);
    const navigate = useNavigate();
+
+   const getCommunities = useQuery({
+      retry: (count, err) => count < 3,
+      queryKey: ['GetCommunities'],
+      refetchOnWindowFocus: false,
+      queryFn: () => GetCommunities().then((res) => res?.data),
+   });
+
    return (
       <>
          <div className="mt-14">
             <div className="flex justify-between items-center">
                <h3 className="font-semibold">Featured Communities</h3>
-               <p className="mr-4 text-[15px] text-[#AF7E00] md:hidden block">View More</p>
+               <p className="mr-4 text-[15px] text-[#AF7E00] md:hidden block" onClick={() => navigate('/communities')}>
+                  View More
+               </p>
                <div className="md:flex hidden mr-2">
                   <Button classNames="bg-black !px-5 !py-2 text-xs mr-3" name={'Find community'} onClick={() => navigate('/communities')} />
                   <Button classNames="bg-black  !text-xs !px-5 !py-3" name={'Create a community'} onClick={() => setCommunityModalOpen(true)} />
@@ -22,9 +34,20 @@ function FeaturedCommunities() {
             </div>
 
             <div className="flex max-w-full gap-2 mt-2 overflow-x-auto hide-scrollbar">
-               {dashboardFeaturedCommunity?.map((df, i) => (
+               {getCommunities?.data?.map((df, i) => (
                   <div key={i} className="flex-shrink-0">
-                     <FeaturedCard img={df.img} footerImgs={df.footerImgs} footerIconsWith={'w-[24px]'} footerImgsOverlay={true} header={df.name} desc={df.desc} footerDesc={'700+ members'} footerAction={<Button classNames="text-xs bg-black w-full  !py-[9px]" name="Join" />} />
+                     <div onClick={() => navigate(`/community-details/${ac.id}`)} key={i} className="flex items-center justify-center cursor-pointer">
+                        <FeaturedCard
+                           img={df.cover_url}
+                           // footerImgs={ac.footerImgs}
+                           footerIconsWith={'w-[24px]'}
+                           header={df.name}
+                           desc={df.description.raw}
+                           footerDesc={'700+ members'}
+                           footerActionLink={df.link}
+                           footerAction={<Button classNames="-mt-7 !px-4 !py-1 text-xs bg-black" name="Join" />}
+                        />
+                     </div>{' '}
                   </div>
                ))}
             </div>

@@ -22,6 +22,7 @@ function MarketPlace() {
    const marketplaceCategories = useQuery({
       retry: (count, err) => count < 3,
       queryKey: ['Mpc'],
+      refetchOnWindowFocus: false,
       queryFn: () => GetMarketplaceCategories().then((res) => res?.data),
    });
 

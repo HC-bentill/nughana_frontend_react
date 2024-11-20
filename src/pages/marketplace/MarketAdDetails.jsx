@@ -32,12 +32,14 @@ function MarketAdDetails() {
    const ads = useQuery({
       retry: (count, err) => count < 3,
       queryKey: ['getAds'],
+      refetchOnWindowFocus: false,
       queryFn: () => GetAds().then((res) => res?.data),
    });
 
    const ad = useQuery({
       retry: (count, err) => count < 3,
       queryKey: ['getAd', id],
+      refetchOnWindowFocus: false,
       queryFn: () => GetAd(id).then((res) => res?.data),
    });
 

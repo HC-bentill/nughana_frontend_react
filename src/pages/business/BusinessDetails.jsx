@@ -35,6 +35,7 @@ function BusinessDetails() {
   const GetBusinessDirectories = useQuery({
     retry: (count, err) => count < 3,
     queryKey: ['getBusinessDirectories'],
+    refetchOnWindowFocus: false,
     queryFn: () => getBusinessDirectories().then((res) => res?.data),
   });
 

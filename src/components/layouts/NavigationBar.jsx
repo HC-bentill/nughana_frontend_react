@@ -33,6 +33,7 @@ const NavigationBar = () => {
    const getMemberDetails = useQuery({
       retry: (count, err) => count < 3,
       queryKey: ['GetMemberDetails'],
+      refetchOnWindowFocus: false,
       queryFn: () => GetMemberDetails(getItem('u_id')).then((res) => res?.data),
    });
 

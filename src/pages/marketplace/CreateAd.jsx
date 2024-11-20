@@ -27,6 +27,7 @@ function CreateAd({ closeModal }) {
   const marketplaceCategories = useQuery({
     retry: (count, err) => count < 3,
     queryKey: ["Mpc"],
+    refetchOnWindowFocus: false,
     queryFn: () => GetMarketplaceCategories().then((res) => res?.data),
   });
 
@@ -130,7 +131,7 @@ function CreateAd({ closeModal }) {
   return (
     <>
       <form className="" onSubmit={handleSubmit(onSubmit)}>
-        <div className="p-6 px-16  bg-white rounded-t-[16px] md:w-[540px]">
+        <div className="p-6 px-10  bg-white rounded-t-[16px] md:w-[540px]">
           <h3 className="font-bold flex mt-2 mb-5 justify-center text-[16px] text-[#1F2937]">
             Post Ad
           </h3>

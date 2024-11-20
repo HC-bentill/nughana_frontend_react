@@ -31,6 +31,7 @@ function CreateEvent({ closeModal }) {
   const eventsCategories = useQuery({
     retry: (count, err) => count < 3,
     queryKey: ["events-categories"],
+    refetchOnWindowFocus: false,
     queryFn: () => GetEventsCategories().then((res) => res?.data),
   });
 
