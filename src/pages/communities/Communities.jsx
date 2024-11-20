@@ -58,7 +58,7 @@ function Communities() {
    return (
       <>
          <Modal open={modalOpen} close={() => setModalOpen(false)}>
-            <CreateCommunity setCreateDone={() => setIsCreateCommunityDone} closeModal={() => setModalOpen(false)} />
+            <CreateCommunity setCreateDone={() => setIsCreateCommunityDone} cancelModal={() => setModalOpen(false)} />
          </Modal>
 
          {communities?.isLoading ? (

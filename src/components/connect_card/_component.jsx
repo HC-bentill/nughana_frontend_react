@@ -2,11 +2,11 @@ import React from 'react';
 import heart from '../../assets/icons/heart.png';
 import profileIcon from '../../assets/icons/connect_profile_icon.png';
 
-function ConnectCard({ img, name }) {
+function ConnectCard({ img, otherClassNames }) {
    return (
       <>
          <div
-            className="rounded-[8px] h-[238px] w-[184px] bg-no-repeat relative"
+            className={`${otherClassNames} rounded-[8px] h-[238px] w-[184px] bg-no-repeat relative`}
             style={{
                backgroundImage: 'url(' + img + ')',
             }}

@@ -96,7 +96,7 @@ function UploadFile({ onUploadSuccess }) {
       <>
          <FsLightbox toggler={toggler} sources={[previewImage]} />
 
-         <div className="max-sm:w-[370px]">
+         <div className="max-sm:w-[300px]">
             <div className={`border-2 pt-20 border-dashed rounded-lg pb-8 text-center ${isDragging ? 'border-blue-500 bg-blue-50' : 'border-gray-300'}`} onDragOver={handleDragOver} onDragLeave={handleDragLeave} onDrop={handleDrop}>
                <input type="file" multiple id="fileInput" className="hidden" ref={fileInputRef} onChange={handleBrowseFiles} />
                <label htmlFor="fileInput" className="cursor-pointer">
