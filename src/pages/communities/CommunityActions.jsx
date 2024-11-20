@@ -3,7 +3,7 @@ import Button from '../../components/button/_component';
 import profile from '../../assets/images/prof.png';
 import profile2 from '../../assets/images/prof1.png';
 
-function CommunityActions({ name, username, profileImg, avatar, membersCount }) {
+function CommunityActions({ name, username, deleteIsLoading, profileImg, avatar, membersCount, handleCommunityDelete }) {
    return (
       <div className="p-8 bg-white rounded-[15px] h-[257px] w-[335px] mb-3">
          <div className="flex items-center">
@@ -25,7 +25,7 @@ function CommunityActions({ name, username, profileImg, avatar, membersCount }) 
             </div>
             <Button classNames={'!p-2 bg-black w-[100px] !text-[10px]'} name={'View Members'} />
          </div>
-         <Button classNames={'!px-0 bg-black w-full mt-7 !text-[10px]'} name={'Delete Community'} />
+         <Button isLoading={deleteIsLoading} onClick={handleCommunityDelete} classNames={'!px-0 bg-black w-full mt-7 !text-[10px]'} name={'Delete Community'} />
       </div>
    );
 }
