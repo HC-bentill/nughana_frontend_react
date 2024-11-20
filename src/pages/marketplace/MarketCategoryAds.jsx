@@ -9,7 +9,7 @@ import featuredAdd from "../../assets/images/featured-ad.png";
 function MarketCategoryAds({ads, category}) {
   return (
     <>
-      <div className="grid grid-cols-4 gap-3 mt-8">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-8">
         {ads?.map((df, i) => (
             <FeaturedAdCard
               img={df?.acf?.ad_image}

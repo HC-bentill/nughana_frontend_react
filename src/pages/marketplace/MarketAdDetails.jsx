@@ -46,30 +46,30 @@ function MarketAdDetails() {
    }, [id]);
 
    const imgTag = ad?.data?.acf?.created_by?.user_avatar;
-   const imgMatch = imgTag?.match(/src='([^']+)'/);  
+   const imgMatch = imgTag?.match(/src='([^']+)'/);
+
+   const handleContactSeller = () => {
+      window.location.href = `tel:${ad?.data?.acf?.phone}`;
+   };
 
    return (
       <>
          <Modal open={modalOpen} close={() => setModalOpen(false)}>
             <CreateAd closeModal={() => setModalOpen(false)} />
          </Modal>
-         {ads?.isLoading || ad?.isLoading ? (
+         {ads?.isLoading || ad?.isLoading || ad?.isFetching ? (
             <div className="flex justify-center items-center h-[100vh]">
                <Loader />
             </div>
          ) : (
-            <div className="md:flex justify-between md:ml-3 md:px-0 gap-5">
+            <div className="md:flex justify-between md:ml-3 md:px-0 px-4 gap-5">
                <div className="flex-1">
                   <div className="flex items-center justify-between">
                      <div className="flex items-center">
                         <img onClick={() => navigate(-1)} src={link} alt="" className="w-[40px] cursor-pointer h-[40px] mr-5" />
                         <h3 className="text-[14px] shorten-text max-w-[150px] font-semibold text-[#1A314D]">{ad?.data?.acf?.ad_name}</h3>
                      </div>
-                     <Button
-                        //   onClick={() => setModalOpen(true)}
-                        classNames="bg-black mr-3 w-[173px] text-[12px] !px-5 !py-3 text-xs"
-                        name={'Contact Seller'}
-                     />
+                     <Button onClick={handleContactSeller} classNames="bg-black mr-3 w-[173px] text-[12px] !px-5 !py-3 text-xs" name={'Contact Seller'} />
                   </div>
                   {/* <div className="flex justify-center text-center ml-2 py-8  h-[190px]">
               <div className="relative">
@@ -92,7 +92,7 @@ function MarketAdDetails() {
                         </small>
                      </div>
                   </div>
-                  <div className="grid grid-cols-3 gap-5 mt-5">
+                  <div className="grid md:grid-cols-3 gap-5 mt-5">
                      <div className="col-span-2">
                         <div className="flex items-center justify-between mb-6">
                            <h3 className="font-extrabold shorten-text max-w-[250px] text-[18px]">{ad?.data?.acf?.ad_name}</h3>
@@ -106,7 +106,7 @@ function MarketAdDetails() {
                            </p>
                         </div>
                      </div>
-                     <div>
+                     <div className="md:col-span-1 col-span-2">
                         <div className="p-4 bg-white rounded-[15px]">
                            <h3 className="text-[#171725] text-[13px]">Ad Created by</h3>
                            <div className="flex my-3">
@@ -139,12 +139,11 @@ function MarketAdDetails() {
                               <img className="w-[22px] h-[22px]" src={goldSnap} alt="" />
                               <img className="w-[22px] h-[22px]" src={goldInsta} alt="" />
                            </div>
-                          
                         </div>
                      </div>
                   </div>
                   <h3 className="mb-5 mt-12 ml-4 text-[18px] font-semibold">Similar Ads</h3>
-                  <div className="grid grid-cols-4 gap-4 mx-3">
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:mx-3">
                      {ads?.data?.map((df, i) => (
                         <FeaturedAdCard img={df?.acf?.ad_image} footerIconsWith="w-[20px]" header={df?.acf?.ad_name} desc={df.acf?.description} otherClassNames="w-full" price={df.acf?.ad_pricing} id={df.id} category={df.acf?.category?.name} createdAt={df?.date} location={df?.acf?.location} />
                      ))}

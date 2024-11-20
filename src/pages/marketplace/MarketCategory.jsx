@@ -42,12 +42,12 @@ function MarketCategory() {
       <Modal open={modalOpen} close={() => setModalOpen(false)}>
         <CreateAd closeModal={() => setModalOpen(false)} />
       </Modal>
-      {marketplaceCategory?.isLoading || GetAdsByCategory?.isLoading || GetAdsByCategory?.isFetching ? (
+      {marketplaceCategory?.isLoading || GetAdsByCategory?.isLoading || marketplaceCategory?.isFetching ? (
         <div className="flex justify-center items-center h-[100vh]">
           <Loader />
         </div>
       ) : (
-        <div className="md:flex justify-between md:ml-3 md:px-0 gap-10">
+        <div className="md:flex justify-between md:ml-3 md:px-0 px-4 gap-10">
           <div className="flex-1">
             <div className="flex items-center mb-8">
               <Link to="/marketplace">
@@ -80,7 +80,7 @@ function MarketCategory() {
                 </div>
               </div>
             </div>
-            <div className="flex gap-2 my-5">
+            <div className="hidden md:flex gap-2 my-5">
               <div className="border-[#E5E5E7] bg-[#ffffff] border rounded-[30px] flex items-center gap-2 md:w-52 w-[90%] md:mx-0 mx-auto md:mb-0 mb-7">
                 <img
                   src={Search}
