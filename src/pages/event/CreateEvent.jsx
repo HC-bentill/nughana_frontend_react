@@ -103,7 +103,7 @@ function CreateEvent({ closeModal }) {
       >
         <div className="p-8 space-y-5 bg-white rounded-t-[16px]">
           <h3 className="font-bold flex  justify-center text-[18px] text-[#1F2937]">
-            Post Ad
+            Create Event
           </h3>
 
           <UploadFile onUploadSuccess={handleFileUpload} />
