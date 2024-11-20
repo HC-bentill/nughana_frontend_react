@@ -6,7 +6,7 @@ import Search from '../../assets/images/svgs/search.svg?react';
 import { Modal } from '../../components/modal/_component';
 import CreateCommunity from './CreateCommunity';
 import { useNavigate, useParams } from 'react-router-dom';
-import { GetCommunities, GetCommunitiesCoverImage, GetCommunity } from '../../api/communities.service';
+import { DeleteCommunity, GetCommunities, GetCommunitiesCoverImage, GetCommunity, GetCommunityAvatar } from '../../api/communities.service';
 import { useQuery } from 'react-query';
 import { Loader } from '../../components/loader/_component';
 import CommunitiesSidePanel from './CommunitiesSidePanel';
@@ -14,10 +14,15 @@ import FeaturedCard from '../../components/featured_communities_card/_component'
 import GroupCreatedBy from './GroupCreatedBy';
 import AboutGroup from './AboutGroup';
 import CommunityActions from './CommunityActions';
+import toast from 'react-hot-toast';
+import HtmlRenderer from '../../components/html_renderer/HtmlRendrer';
+import CreateEvent from '../event/CreateEvent';
 
 function CommunityDetails() {
    const { id } = useParams();
    const [modalOpen, setModalOpen] = React.useState(false);
+   const [createEvent, setCreateEvent] = React.useState(false);
+   const [deleteIsLoading, setDeleteIsLoading] = React.useState(false);
    const navigate = useNavigate();
 
    const communities = useQuery({
@@ -34,6 +39,13 @@ function CommunityDetails() {
       queryFn: () => GetCommunitiesCoverImage(id).then((res) => res),
    });
 
+   const communityAvatar = useQuery({
+      retry: (count, err) => count < 3,
+      queryKey: ['community-avatar'],
+      refetchOnWindowFocus: false,
+      queryFn: () => GetCommunityAvatar(id).then((res) => res),
+   });
+
    const community = useQuery({
       retry: (count, err) => count < 3,
       queryKey: ['community'],
@@ -41,14 +53,43 @@ function CommunityDetails() {
       queryFn: () => GetCommunity(id).then((res) => res),
    });
 
+   const handleCommunityDelete = () => {
+      if (window.confirm('Are you sure you want to delete this community?')) {
+         setDeleteIsLoading(true);
+         DeleteCommunity(id)
+            .then((res) => {
+               console.log('res: ', res);
+               if (res.status === 200) {
+                  setDeleteIsLoading(false);
+                  toast.success(<p className="text-[12px]">{<HtmlRenderer htmlContent={'Community deleted successfully'} />}</p>);
+                  setTimeout(() => {
+                     navigate('/view-communities');
+                  }, 2000);
+               } else {
+                  setDeleteIsLoading(false);
+                  toast.error(<p className="text-[12px]">{<HtmlRenderer htmlContent={res.data.message} />}</p>);
+               }
+            })
+            .catch((err) => {
+               setDeleteIsLoading(false);
+               toast.error(<p className="text-[12px]">{<HtmlRenderer htmlContent={err.response?.data?.message} /> ?? 'An error occured. Please try again !'}</p>);
+            });
+      }
+   };
+
    let banner = communityBanner && communityBanner.data && communityBanner.data.data;
    let allCommunities = communities && communities.data && communities.data.data;
    let communityData = community && community.data && community.data.data;
+   let avatar = communityAvatar && communityAvatar.data && communityAvatar.data.data;
 
    return (
       <>
          <Modal open={modalOpen} close={() => setModalOpen(false)}>
             <CreateCommunity closeModal={() => setModalOpen(false)} />
+         </Modal>
+
+         <Modal open={modalOpen} close={() => setModalOpen(false)}>
+            <CreateEvent open={createEvent} close={() => setCreateEvent(false)} />
          </Modal>
 
          {communityBanner?.isLoading || communityBanner?.isFetching ? (
@@ -69,8 +110,8 @@ function CommunityDetails() {
                </div>
                <div className="flex justify-between w-full">
                   <div>
-                     <CommunityActions profileImg={communityData && communityData.cover_url} membersCount={communityData && communityData.members_count} avatar={communityData && communityData.admins && communityData.admins[0].avatar} name={communityData && communityData.admins && communityData.admins[0].fullname} username={communityData && communityData.admins && communityData.admins[0].display_name} />
-                     <GroupCreatedBy />
+                     <CommunityActions deleteIsLoading={deleteIsLoading} handleCommunityDelete={handleCommunityDelete} profileImg={communityData && communityData.cover_url} membersCount={communityData && communityData.members_count} avatar={communityData && communityData.admins && communityData.admins[0].avatar} name={communityData && communityData.admins && communityData.admins[0].fullname} username={communityData && communityData.admins && communityData.admins[0].display_name} />
+                     <GroupCreatedBy gropuAvatar={avatar && avatar.thumb} />
                      <AboutGroup />
                   </div>
 

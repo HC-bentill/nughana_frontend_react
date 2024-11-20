@@ -22,3 +22,15 @@ export const GetCommunitiesCoverImage = async (id) => {
 
    return await apiAxios().get(url);
 };
+
+export const GetCommunityAvatar = async (id) => {
+   let url = `buddyboss/v1/groups/${id}/avatar`;
+
+   return await apiAxios().get(url);
+};
+
+export const DeleteCommunity = async (id) => {
+   let url = `buddyboss/v1/groups/${id}`;
+
+   return await apiAxios().delete(url);
+};

@@ -13,6 +13,7 @@ import CommunitiesSidePanel from './CommunitiesSidePanel';
 
 function Communities() {
    const [modalOpen, setModalOpen] = React.useState(false);
+   const [isCreateCommunityDone, setIsCreateCommunityDone] = React.useState(false);
    const navigate = useNavigate();
 
    const communities = useQuery({
@@ -23,6 +24,7 @@ function Communities() {
 
    let allCommunities = communities && communities.data && communities.data.data;
 
+   if (isCreateCommunityDone) communities.refetch();
    const tabOptions = [
       {
          label: 'All',
@@ -56,7 +58,7 @@ function Communities() {
    return (
       <>
          <Modal open={modalOpen} close={() => setModalOpen(false)}>
-            <CreateCommunity closeModal={() => setModalOpen(false)} />
+            <CreateCommunity setCreateDone={() => setIsCreateCommunityDone} closeModal={() => setModalOpen(false)} />
          </Modal>
 
          {communities?.isLoading ? (
