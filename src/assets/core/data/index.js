@@ -793,19 +793,19 @@ export const allMarketPlace = [
 export const expats = [
   {
     icon: doc,
-    name: "Experience Name",
+    name: "Expats Documents",
   },
   {
     icon: biz,
-    name: "Experience Name",
+    name: "Expats Biz Start-up",
   },
   {
     icon: home,
-    name: "Experience Name",
+    name: "Expats Homes",
   },
   {
     icon: directory,
-    name: "Experience Name",
+    name: "Expats Directory",
   },
 ];
 
