@@ -22,6 +22,7 @@ import EditProfile from './pages/profile/EditProfile';
 import PhotoGallery from './pages/photo_gallery/PhotoGallery';
 import { useSelector } from 'react-redux';
 import CommunityDetails from './pages/communities/CommunityDetails';
+import Notifications from './pages/notifications/Notifications';
 
 function App() {
    const user = useSelector((state) => state.user.user);
@@ -50,6 +51,7 @@ function App() {
                      <Route path="/profile/:id" element={<Profile />} />
                      <Route path="/edit-profile" element={<EditProfile />} />
                      <Route path="/photo-gallery" element={<PhotoGallery />} />
+                     <Route path="/notifications" element={<Notifications />} />
                   </Route>
                </>
             ) : (
