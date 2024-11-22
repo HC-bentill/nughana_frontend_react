@@ -823,7 +823,7 @@ export const profileMenuNavigation = [
   {
     label: "Support",
     icon: SupportIcon,
-    href: "/Support",
+    href: "/resource-center",
   },
 ];
 
