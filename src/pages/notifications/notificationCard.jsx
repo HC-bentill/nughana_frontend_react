@@ -13,7 +13,8 @@ const NotificationCard = ({ img, description, time }) => {
          ></div>
          <div>
             <p className="text-[12px]  md:w-[700px]" title={description}>
-               <HtmlRenderer htmlContent={description} />
+               {/* <HtmlRenderer htmlContent={description} /> */}
+               {description.match(/<a [^>]*>(.*?)<\/a>/)[1]}
             </p>
             <p className="text-[10px] font-light text-[#92929D]">{moment(time).format('D MMMM [at] hh:mm A')} </p>
          </div>
