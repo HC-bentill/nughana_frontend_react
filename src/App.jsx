@@ -22,6 +22,7 @@ import EditProfile from './pages/profile/EditProfile';
 import PhotoGallery from './pages/photo_gallery/PhotoGallery';
 import { useSelector } from 'react-redux';
 import CommunityDetails from './pages/communities/CommunityDetails';
+import Posts from './pages/posts/Posts';
 import Notifications from './pages/notifications/Notifications';
 
 function App() {
@@ -47,10 +48,11 @@ function App() {
                      <Route path="/resource-center" element={<ResourceCenter />} />
                      <Route path="/business-directory" element={<BusinessDirectory />} />
                      <Route path="/business-details/:id" element={<BusinessDetails />} />
-                     <Route path="/profile" element={<Profile />} />
-                     <Route path="/profile/:id" element={<Profile />} />
+                     <Route path="/my-profile/:id" element={<Profile />} />
+                     <Route path="/others-profile/:id" element={<Profile />} />
                      <Route path="/edit-profile" element={<EditProfile />} />
                      <Route path="/photo-gallery" element={<PhotoGallery />} />
+                     <Route path="/posts" element={<Posts />} />
                      <Route path="/notifications" element={<Notifications />} />
                   </Route>
                </>
@@ -64,7 +66,6 @@ function App() {
          </Routes>
       </>
    );
-
 }
 
 export default App;

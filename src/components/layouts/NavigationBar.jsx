@@ -41,7 +41,7 @@ const NavigationBar = () => {
    const handleProfileNavToggle = () => setHandleNav(!handleNav);
 
    const handleNavigateToProfile = () => {
-      navigate('/profile');
+      navigate(`/my-profile/${getItem('u_id')}`);
       setHandleNav(false);
    };
 

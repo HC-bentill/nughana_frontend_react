@@ -11,13 +11,11 @@ import { useQuery } from 'react-query';
 import { storeItem } from '../../api/storage.service';
 import { Modal } from '../../components/modal/_component';
 import CreateAd from '../marketplace/CreateAd';
-import CreateCommunity from '../communities/CreateCommunity';
-import ListBusiness from '../business/ListBusiness';
 import { useNavigate } from 'react-router-dom';
 import { GetMembers } from '../../api/connections.service';
 import { Loader } from '../../components/loader/_component';
 
-export default function Dashboard() {
+export default function Dashboard({ othersProfile }) {
    const navigate = useNavigate();
 
    const GetUserDetailsQuery = useQuery({
@@ -46,8 +44,8 @@ export default function Dashboard() {
                <Loader />
             </div>
          ) : (
-            <div className="md:ml-8 mx-auto md:px-0 px-3">
-               <div className="flex md:justify-start justify-center items-center">
+            <div className="px-3 mx-auto md:ml-8 md:px-0">
+               <div className="flex items-center justify-center md:justify-start">
                   <Button classNames="bg-black md:w-auto w-full !text-[11px] !px-5 !py-3  mr-3 text-xs" onClick={() => setAdModalOpen(true)} name={'Post an Ad'} />
                   <Button classNames="bg-black md:w-auto w-full !text-[11px]  !px-5 !py-3 text-xs" onClick={() => setCommunityModalOpen(true)} name={'Create a community'} />
                </div>
@@ -55,9 +53,9 @@ export default function Dashboard() {
                   <h3 className="font-semibold">Find people to connect with</h3>
                   <Button classNames="bg-black text-xs !px-5 !py-2 md:block hidden" onClick={() => navigate('/connections')} name={'Find people'} />
                </div>
-               <div className=" flex max-w-full gap-2 overflow-x-auto hide-scrollbar">
+               <div className="flex max-w-full gap-2 overflow-x-auto hide-scrollbar">
                   {getMembers?.data?.map((dc, i) => (
-                     <div key={i} className="flex-shrink-0 cursor-pointer" onClick={() => navigate(`/profile/${dc?.id}`)}>
+                     <div key={i} className="flex-shrink-0 cursor-pointer" onClick={() => navigate(`/others-profile/${dc?.id}`)}>
                         <ConnectCard img={dc?.avatar_urls?.full} name={`${dc?.xprofile?.groups['1']?.fields['1']?.value?.raw || ''} ${dc?.xprofile?.groups['1']?.fields['2']?.value?.raw || ''}`} />
                      </div>
                   ))}
