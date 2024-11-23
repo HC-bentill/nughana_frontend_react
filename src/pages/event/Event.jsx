@@ -31,9 +31,9 @@ function Event() {
                <Loader />
             </div>
          ) : (
-            <div className="flex justify-between">
-               <div>
-                  <div className="bg-[#FED28A] max-sm:hidden flex justify-center text-center ml-9 border-[7px] border-white rounded-[15px] py-8 w-[973px] h-[190px]">
+            <div className="md:flex justify-between md:ml-3 md:px-0 px-4 gap-5">
+               <div className="flex-1">
+                  <div className="bg-[#FED28A] max-sm:hidden flex justify-center text-center ml-9 border-[7px] border-white rounded-[15px] py-8  h-[190px]">
                      <div>
                         <h3 className="font-extrabold text-[22px]">Events</h3>
                         <div className="flex mt-6">
@@ -72,7 +72,9 @@ function Event() {
                   </div>
                   {/* <PilesTab showSection={true} tabHeader={'Featured events'} section={<></>} tabs={tabOptions} /> */}
                </div>
-               <Messages />
+               <div className="hidden xl:block">
+                  <Messages />
+               </div>
             </div>
          )}
       </>

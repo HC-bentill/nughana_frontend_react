@@ -88,7 +88,7 @@ const NavigationBar = () => {
                   </div>
                   <div className="flex items-center md:gap-5">
                      <div className="bg-[#F9FAFB] p-[1px] rounded-full">
-                        <img src={BellIcon} alt="img" className="w-[12px] md:block hidden cursor-pointer h-[12px] object-contain shadow-sm m-2" />
+                        <img onClick={()=> navigate('/notifications')} src={BellIcon} alt="img" className="w-[12px] md:block hidden cursor-pointer h-[12px] object-contain shadow-sm m-2" />
                      </div>
                      <div className="flex items-center" onClick={() => handleProfileNavToggle()}>
                         <div
@@ -153,7 +153,7 @@ const NavigationBar = () => {
 
                <div className="pt-5">
                   {profileMenuNavigation?.map((item, idx) => (
-                     <MobileMenuItem key={idx} icon={item.icon} label={item.label} badge={item.badge} onSelect={handleProfileNavToggle} />
+                     <MobileMenuItem key={idx} icon={item.icon} label={item.label} badge={item.badge} href={item?.href} onSelect={()=> handleProfileNavToggle()} />
                   ))}
                   <img alt="img" src={EventAd} className="my-4" />
                   <MobileMenuItem icon={LogoutIcon} label={'Logout'} onSelect={handleLogout} />
