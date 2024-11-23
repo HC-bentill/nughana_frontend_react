@@ -93,7 +93,7 @@ function MarketPlace() {
                            ))}
                      </div>
                   </div>
-                  <div className="grid md:grid-cols-3 gap-2 md:mt-0 mt-4">{marketplaceCategories?.data?.length > 0 && marketplaceCategories?.data?.map((am, i) => <MarketPlaceCard key={i} onClick={() => navigate(`/market-category/${am?.id}`)} img={market} name={am.name} />)}</div>
+                  <div className="grid md:grid-cols-3 grid-cols-2 gap-2 md:mt-0 mt-4">{marketplaceCategories?.data?.length > 0 && marketplaceCategories?.data?.map((am, i) => <MarketPlaceCard key={i} onClick={() => navigate(`/market-category/${am?.id}`)} img={market} name={am.name} />)}</div>
                </div>
                <div className="hidden xl:block">
                   <Messages />
